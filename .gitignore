@@ -1,0 +1,26 @@
+# 微信开发者工具本机配置
+project.private.config.json
+
+# 依赖与构建产物
+node_modules/
+miniprogram_npm/
+
+# 环境变量与凭据
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# 日志和临时文件
+*.log
+logs/
+temp/
+tmp/
+
+# 系统及编辑器文件
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
