@@ -1,5 +1,6 @@
 // index.js
 const { getUserProfile, saveUserProfile } = require('../../utils/user-profile')
+const { getBodyProfile } = require('../../services/user-profile-service')
 
 Page({
   data: {
@@ -11,7 +12,11 @@ Page({
       nickName: '',
       avatarUrl: ''
     },
-    errorMessage: ''
+    errorMessage: '',
+    profileStatus: 'loading',
+    bodyProfileErrorMessage: '',
+    showBodyProfileOnboarding: false,
+    isOpeningBodyProfile: false
   },
 
   onLoad() {
@@ -19,9 +24,51 @@ Page({
   },
 
   onShow() {
-    if (!this.data.isLoading) {
-      this.loadUserProfile(false)
+    this.setData({ isOpeningBodyProfile: false })
+    if (!this.data.isLoading && this.data.userProfile && !this.data.isEditing) {
+      this.loadBodyProfile()
     }
+  },
+
+  async loadBodyProfile() {
+    const requestId = (this.bodyProfileRequestId || 0) + 1
+    this.bodyProfileRequestId = requestId
+    this.setData({
+      profileStatus: 'loading',
+      bodyProfileErrorMessage: '',
+      showBodyProfileOnboarding: false
+    })
+
+    try {
+      const result = await getBodyProfile()
+      if (requestId !== this.bodyProfileRequestId) return
+
+      if (!result.exists || !result.isComplete) {
+        const app = getApp()
+        const dismissed = Boolean(app.globalData && app.globalData.bodyProfileOnboardingDismissed)
+        this.setData({
+          profileStatus: 'incomplete',
+          showBodyProfileOnboarding: !dismissed
+        })
+        return
+      }
+
+      this.setData({
+        profileStatus: 'complete',
+        showBodyProfileOnboarding: false
+      })
+    } catch (error) {
+      if (requestId !== this.bodyProfileRequestId) return
+      this.setData({
+        profileStatus: 'error',
+        bodyProfileErrorMessage: error.message || '暂时无法读取身体档案，请稍后重试',
+        showBodyProfileOnboarding: false
+      })
+    }
+  },
+
+  retryBodyProfile() {
+    this.loadBodyProfile()
   },
 
   loadUserProfile(showLoading = true) {
@@ -109,6 +156,7 @@ Page({
         errorMessage: ''
       })
       wx.showToast({ title: '资料已保存', icon: 'success' })
+      this.loadBodyProfile()
     } catch (error) {
       this.setData({ errorMessage: '保存失败，请稍后重试' })
     }
@@ -135,6 +183,27 @@ Page({
   },
 
   openBodyProfile() {
-    wx.navigateTo({ url: '/pages/body-profile/body-profile' })
+    if (this.data.isOpeningBodyProfile) return
+    this.setData({ isOpeningBodyProfile: true, showBodyProfileOnboarding: false })
+    wx.navigateTo({
+      url: '/pages/body-profile/body-profile',
+      fail: () => {
+        this.setData({ isOpeningBodyProfile: false })
+        wx.showToast({ title: '暂时无法打开页面', icon: 'none' })
+      }
+    })
+  },
+
+  openMyPortrait() {
+    wx.navigateTo({
+      url: '/pages/my-portrait/my-portrait',
+      fail: () => wx.showToast({ title: '暂时无法打开页面', icon: 'none' })
+    })
+  },
+
+  dismissBodyProfileOnboarding() {
+    const app = getApp()
+    if (app.globalData) app.globalData.bodyProfileOnboardingDismissed = true
+    this.setData({ showBodyProfileOnboarding: false })
   }
 })

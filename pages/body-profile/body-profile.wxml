@@ -2,8 +2,19 @@
 
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="page">
-    <view class="card">
-      <text class="title">完善身体信息</text>
+    <view wx:if="{{loadStatus === 'loading'}}" class="state-card">
+      <view class="loading-dot"></view>
+      <text>正在读取身体档案</text>
+    </view>
+
+    <view wx:elif="{{loadStatus === 'error'}}" class="state-card">
+      <text class="state-title">暂时无法读取身体档案</text>
+      <text class="state-description">{{errorMessage}}</text>
+      <button class="retry-button" bindtap="retryLoad">重新加载</button>
+    </view>
+
+    <view wx:else class="card">
+      <text class="title">{{hasExistingProfile ? '查看与修改身体信息' : '完善身体信息'}}</text>
       <text class="description">这些信息只会保存到当前微信用户的云端资料中。</text>
 
       <view class="field">
@@ -36,7 +47,7 @@
 
       <view class="field">
         <text class="label">目标体重（kg）</text>
-        <input class="input" type="digit" value="{{form.targetWeightKg}}" data-field="targetWeightKg" bindinput="changeNumber" placeholder="20–400" />
+        <input class="input" type="digit" value="{{form.targetWeightKg}}" data-field="targetWeightKg" bindinput="changeNumber" placeholder="选填，20–400" />
         <text wx:if="{{fieldErrors.targetWeightKg}}" class="field-error">{{fieldErrors.targetWeightKg}}</text>
       </view>
 
@@ -50,7 +61,7 @@
 
       <text wx:if="{{errorMessage}}" class="error-message" role="alert">{{errorMessage}}</text>
       <button class="submit-button" loading="{{isSubmitting}}" disabled="{{isSubmitting}}" bindtap="submit">
-        {{isSubmitting ? '保存中…' : '保存身体信息'}}
+        {{isSubmitting ? '保存中…' : (hasExistingProfile ? '保存修改' : '保存身体信息')}}
       </button>
     </view>
   </view>

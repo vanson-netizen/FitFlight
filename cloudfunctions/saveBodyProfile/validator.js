@@ -38,10 +38,13 @@ function validate(event) {
 
   const heightCm = parseNumber(event.heightCm)
   const weightKg = parseNumber(event.weightKg)
-  const targetWeightKg = parseNumber(event.targetWeightKg)
+  const hasTargetWeight = event.targetWeightKg !== '' && event.targetWeightKg !== null && event.targetWeightKg !== undefined
+  const targetWeightKg = hasTargetWeight ? parseNumber(event.targetWeightKg) : null
   if (!Number.isFinite(heightCm) || heightCm < 80 || heightCm > 250) errors.heightCm = '身高须在 80–250 cm 之间'
   if (!Number.isFinite(weightKg) || weightKg < 20 || weightKg > 400) errors.weightKg = '体重须在 20–400 kg 之间'
-  if (!Number.isFinite(targetWeightKg) || targetWeightKg < 20 || targetWeightKg > 400) errors.targetWeightKg = '目标体重须在 20–400 kg 之间'
+  if (hasTargetWeight && (!Number.isFinite(targetWeightKg) || targetWeightKg < 20 || targetWeightKg > 400)) {
+    errors.targetWeightKg = '目标体重须在 20–400 kg 之间'
+  }
 
   if (Object.keys(errors).length) return { errors }
   return { value: {
@@ -49,7 +52,7 @@ function validate(event) {
     birthDate: event.birthDate,
     heightCm: Math.round(heightCm * 10) / 10,
     weightKg: Math.round(weightKg * 10) / 10,
-    targetWeightKg: Math.round(targetWeightKg * 10) / 10,
+    targetWeightKg: hasTargetWeight ? Math.round(targetWeightKg * 10) / 10 : null,
     activityLevel: event.activityLevel
   } }
 }

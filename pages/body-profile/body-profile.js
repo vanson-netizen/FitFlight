@@ -1,4 +1,4 @@
-const { ERROR_CODES, saveBodyProfile } = require('../../services/user-profile-service')
+const { ERROR_CODES, getBodyProfile, saveBodyProfile } = require('../../services/user-profile-service')
 
 const GENDER_OPTIONS = [
   { label: '男', value: 'male' },
@@ -30,7 +30,58 @@ Page({
     },
     fieldErrors: {},
     errorMessage: '',
+    loadStatus: 'loading',
+    profileVersion: 0,
+    hasExistingProfile: false,
     isSubmitting: false
+  },
+
+  onLoad() {
+    this.loadBodyProfile()
+  },
+
+  async loadBodyProfile() {
+    if (this.data.isSubmitting) return
+    this.setData({ loadStatus: 'loading', errorMessage: '', fieldErrors: {} })
+
+    try {
+      const result = await getBodyProfile()
+      const profile = result.profile || {
+        gender: '',
+        birthDate: '',
+        heightCm: '',
+        weightKg: '',
+        targetWeightKg: '',
+        activityLevel: ''
+      }
+      const genderIndex = GENDER_OPTIONS.findIndex((option) => option.value === profile.gender)
+      const activityIndex = ACTIVITY_OPTIONS.findIndex((option) => option.value === profile.activityLevel)
+
+      this.setData({
+        loadStatus: 'ready',
+        hasExistingProfile: result.exists === true,
+        profileVersion: result.profileVersion || 0,
+        genderIndex,
+        activityIndex,
+        form: {
+          gender: profile.gender || '',
+          birthDate: profile.birthDate || '',
+          heightCm: profile.heightCm === null || profile.heightCm === undefined ? '' : String(profile.heightCm),
+          weightKg: profile.weightKg === null || profile.weightKg === undefined ? '' : String(profile.weightKg),
+          targetWeightKg: profile.targetWeightKg === null || profile.targetWeightKg === undefined ? '' : String(profile.targetWeightKg),
+          activityLevel: profile.activityLevel || ''
+        }
+      })
+    } catch (error) {
+      this.setData({
+        loadStatus: 'error',
+        errorMessage: error.message || '暂时无法读取身体档案，请稍后重试'
+      })
+    }
+  },
+
+  retryLoad() {
+    this.loadBodyProfile()
   },
 
   changeGender(event) {
@@ -63,11 +114,11 @@ Page({
   },
 
   async submit() {
-    if (this.data.isSubmitting) return
+    if (this.data.isSubmitting || this.data.loadStatus !== 'ready') return
 
     this.setData({ isSubmitting: true, fieldErrors: {}, errorMessage: '' })
     try {
-      await saveBodyProfile(this.data.form)
+      await saveBodyProfile(this.data.form, this.data.profileVersion)
       wx.showToast({ title: '身体信息已保存', icon: 'success' })
       setTimeout(() => wx.navigateBack(), 800)
     } catch (error) {
@@ -75,6 +126,13 @@ Page({
         this.setData({
           fieldErrors: error.fieldErrors || {},
           errorMessage: error.message || '请检查填写内容'
+        })
+      } else if (error.code === ERROR_CODES.PROFILE_VERSION_CONFLICT) {
+        wx.showModal({
+          title: '资料已更新',
+          content: '身体档案已在其他页面更新，请重新加载最新资料后再修改。',
+          showCancel: false,
+          success: () => this.loadBodyProfile()
         })
       } else {
         this.setData({ errorMessage: error.message || '保存失败，请稍后重试' })

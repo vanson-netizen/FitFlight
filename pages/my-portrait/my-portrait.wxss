@@ -1,0 +1,23 @@
+page { height: 100vh; color: #28362d; background: #fbf8ec; }
+.scrollarea { height: 100%; }
+.page { min-height: 100%; padding: 36rpx 32rpx calc(64rpx + env(safe-area-inset-bottom)); box-sizing: border-box; }
+.state-card, .profile-card { width: 100%; max-width: 720rpx; margin: 0 auto; border: 1rpx solid rgba(93, 121, 79, .14); border-radius: 28rpx; background: #fffefa; box-shadow: 0 12rpx 34rpx rgba(72, 91, 61, .08); box-sizing: border-box; }
+.state-card { min-height: 420rpx; padding: 48rpx 36rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #7c887f; text-align: center; }
+.loading-dot { width: 18rpx; height: 18rpx; margin-bottom: 22rpx; border-radius: 50%; background: #a8d96f; }
+.state-title { color: #28362d; font-size: 34rpx; font-weight: 700; }
+.state-description { margin-top: 14rpx; font-size: 25rpx; line-height: 1.6; }
+.state-action, .edit-button { border-radius: 999rpx; color: #466b34; background: #eaf6d5; font-weight: 600; }
+.state-action { margin-top: 32rpx; padding: 0 40rpx; font-size: 27rpx; line-height: 70rpx; }
+.state-action::after, .edit-button::after { border: 0; }
+.profile-card { padding: 38rpx 32rpx; }
+.card-heading { display: flex; align-items: center; }
+.heading-copy { min-width: 0; flex: 1; display: flex; flex-direction: column; }
+.card-title { font-size: 36rpx; font-weight: 700; }
+.card-description { margin-top: 8rpx; color: #7c887f; font-size: 22rpx; }
+.edit-button { flex: none; margin: 0 0 0 18rpx; padding: 0 24rpx; font-size: 23rpx; line-height: 58rpx; }
+.profile-list { margin-top: 30rpx; overflow: hidden; border-radius: 20rpx; background: #f4f7ec; }
+.profile-row { min-height: 82rpx; padding: 18rpx 24rpx; display: flex; align-items: center; border-bottom: 1rpx solid rgba(93, 121, 79, .12); box-sizing: border-box; }
+.profile-row:last-child { border-bottom: 0; }
+.profile-label { flex: none; color: #7c887f; font-size: 25rpx; }
+.profile-value { min-width: 0; flex: 1; margin-left: 24rpx; font-size: 27rpx; font-weight: 600; text-align: right; }
+.profile-value-long { line-height: 1.45; }

@@ -1,0 +1,10 @@
+<view wx:if="{{visible}}" class="onboarding-layer" catchtouchmove="preventTouchMove">
+  <view class="onboarding-mask" bindtap="dismiss"></view>
+  <view class="onboarding-card" role="dialog" aria-label="完善身体信息">
+    <text class="onboarding-title">完善身体信息</text>
+    <text class="onboarding-description">完成基础信息后，可以生成更适合你的培养方案</text>
+    <button class="primary-button" disabled="{{primaryDisabled}}" bindtap="confirm">{{primaryDisabled ? '正在打开…' : '现在完善'}}</button>
+    <button class="secondary-button" bindtap="dismiss">稍后再说</button>
+    <text class="privacy-hint">身体信息仅用于 FitFlight 个性化服务</text>
+  </view>
+</view>

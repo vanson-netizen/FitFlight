@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "navigation-bar": "/components/navigation-bar/navigation-bar"
+    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "body-profile-onboarding": "/components/body-profile-onboarding/body-profile-onboarding"
   }
 }

@@ -1,5 +1,8 @@
 const ERROR_CODES = {
   INVALID_PARAM: 'INVALID_PARAM',
+  UNAUTHORIZED: 'UNAUTHORIZED',
+  PROFILE_VERSION_CONFLICT: 'PROFILE_VERSION_CONFLICT',
+  PROFILE_DATA_CONFLICT: 'PROFILE_DATA_CONFLICT',
   NETWORK_ERROR: 'NETWORK_ERROR',
   SERVER_ERROR: 'SERVER_ERROR'
 }
@@ -7,11 +10,11 @@ const ERROR_CODES = {
 function normalizeCloudError(error) {
   const result = error && error.result
 
-  if (result && result.code === ERROR_CODES.INVALID_PARAM) {
-    const validationError = new Error(result.message || '身体信息填写有误')
-    validationError.code = ERROR_CODES.INVALID_PARAM
-    validationError.fieldErrors = result.fieldErrors || {}
-    return validationError
+  if (result && result.code) {
+    const cloudError = new Error(result.message || '服务暂时不可用，请稍后重试')
+    cloudError.code = ERROR_CODES[result.code] || ERROR_CODES.SERVER_ERROR
+    cloudError.fieldErrors = result.fieldErrors || {}
+    return cloudError
   }
 
   const message = error && error.errMsg ? error.errMsg : ''
@@ -21,9 +24,25 @@ function normalizeCloudError(error) {
   return normalizedError
 }
 
-function saveBodyProfile(profile) {
+function callBodyProfileFunction(data) {
+  return wx.cloud.callFunction({
+    name: 'saveBodyProfile',
+    data
+  }).then(({ result }) => {
+    if (!result || result.ok !== true) throw { result }
+    return result
+  }).catch((error) => {
+    throw normalizeCloudError(error)
+  })
+}
+
+function getBodyProfile() {
+  return callBodyProfileFunction({ action: 'get' })
+}
+
+function saveBodyProfile(profile, expectedVersion) {
   // 只发送身体信息白名单；服务端身份始终来自 cloud.getWXContext()。
-  const data = {
+  const bodyProfile = {
     gender: profile.gender,
     birthDate: profile.birthDate,
     heightCm: profile.heightCm,
@@ -32,20 +51,15 @@ function saveBodyProfile(profile) {
     activityLevel: profile.activityLevel
   }
 
-  return wx.cloud.callFunction({
-    name: 'saveBodyProfile',
-    data
-  }).then(({ result }) => {
-    if (!result || result.ok !== true) {
-      throw { result }
-    }
-    return result.profile
-  }).catch((error) => {
-    throw normalizeCloudError(error)
+  return callBodyProfileFunction({
+    action: 'save',
+    profile: bodyProfile,
+    expectedVersion
   })
 }
 
 module.exports = {
   ERROR_CODES,
+  getBodyProfile,
   saveBodyProfile
 }

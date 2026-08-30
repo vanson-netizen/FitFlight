@@ -1,0 +1,40 @@
+<navigation-bar title="我的画像" color="#25352b" background="#dff3b7"></navigation-bar>
+
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="page">
+    <view wx:if="{{profileStatus === 'loading'}}" class="state-card">
+      <view class="loading-dot"></view>
+      <text>正在读取身体档案…</text>
+    </view>
+
+    <view wx:elif="{{profileStatus === 'error'}}" class="state-card">
+      <text class="state-title">身体档案读取失败</text>
+      <text class="state-description">{{errorMessage}}</text>
+      <button class="state-action" bindtap="retryLoad">重试</button>
+    </view>
+
+    <view wx:elif="{{profileStatus === 'incomplete'}}" class="state-card">
+      <text class="state-title">身体信息尚未完善</text>
+      <text class="state-description">填写后可用于生成个性化培养方案</text>
+      <button class="state-action" bindtap="openBodyProfile">继续填写</button>
+    </view>
+
+    <view wx:else class="profile-card">
+      <view class="card-heading">
+        <view class="heading-copy">
+          <text class="card-title">身体档案</text>
+          <text class="card-description">仅展示当前微信用户的云端资料</text>
+        </view>
+        <button class="edit-button" bindtap="openBodyProfile">查看/修改</button>
+      </view>
+      <view class="profile-list">
+        <view class="profile-row"><text class="profile-label">性别</text><text class="profile-value">{{bodyProfile.gender}}</text></view>
+        <view class="profile-row"><text class="profile-label">出生日期</text><text class="profile-value">{{bodyProfile.birthDate}}</text></view>
+        <view class="profile-row"><text class="profile-label">身高</text><text class="profile-value">{{bodyProfile.height}}</text></view>
+        <view class="profile-row"><text class="profile-label">当前体重</text><text class="profile-value">{{bodyProfile.weight}}</text></view>
+        <view class="profile-row"><text class="profile-label">目标体重</text><text class="profile-value">{{bodyProfile.targetWeight}}</text></view>
+        <view class="profile-row"><text class="profile-label">日常活动水平</text><text class="profile-value profile-value-long">{{bodyProfile.activityLevel}}</text></view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

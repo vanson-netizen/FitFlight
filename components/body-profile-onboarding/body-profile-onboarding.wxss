@@ -1,0 +1,11 @@
+.onboarding-layer { position: fixed; z-index: 1000; top: 0; right: 0; bottom: 0; left: 0; display: flex; align-items: center; justify-content: center; padding: 40rpx 36rpx calc(40rpx + env(safe-area-inset-bottom)); box-sizing: border-box; }
+.onboarding-mask { position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(31, 43, 34, .42); }
+.onboarding-card { position: relative; z-index: 1; width: 100%; max-width: 620rpx; padding: 50rpx 42rpx 38rpx; border-radius: 30rpx; background: #fffefa; box-shadow: 0 24rpx 64rpx rgba(31, 43, 34, .2); box-sizing: border-box; text-align: center; }
+.onboarding-title { display: block; color: #28362d; font-size: 40rpx; font-weight: 700; }
+.onboarding-description { display: block; margin-top: 18rpx; color: #718078; font-size: 27rpx; line-height: 1.6; }
+.primary-button, .secondary-button { height: 88rpx; border-radius: 20rpx; font-size: 29rpx; font-weight: 600; line-height: 88rpx; }
+.primary-button { margin-top: 38rpx; color: #23321f; background: #a8d96f; }
+.primary-button[disabled] { color: #eef2ed; background: #829087; }
+.secondary-button { margin-top: 14rpx; color: #4f624f; background: #eaf6d5; }
+.primary-button::after, .secondary-button::after { border: 0; }
+.privacy-hint { display: block; margin-top: 22rpx; color: #8b968e; font-size: 22rpx; line-height: 1.5; }

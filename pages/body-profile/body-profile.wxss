@@ -1,7 +1,13 @@
 page { background: #f4f7ef; color: #25352b; }
 .scrollarea { height: 100vh; }
 .page { box-sizing: border-box; min-height: 100%; padding: 32rpx 28rpx 64rpx; }
-.card { padding: 40rpx 32rpx; border-radius: 28rpx; background: #fff; }
+.card, .state-card { padding: 40rpx 32rpx; border-radius: 28rpx; background: #fff; }
+.state-card { min-height: 360rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #718078; text-align: center; }
+.loading-dot { width: 20rpx; height: 20rpx; margin-bottom: 22rpx; border-radius: 50%; background: #a8d96f; }
+.state-title { color: #25352b; font-size: 32rpx; font-weight: 700; }
+.state-description { margin-top: 14rpx; font-size: 25rpx; line-height: 1.6; }
+.retry-button { margin-top: 30rpx; padding: 0 36rpx; border-radius: 999rpx; color: #25352b; background: #dff3b7; font-size: 27rpx; }
+.retry-button::after { border: 0; }
 .title { display: block; font-size: 42rpx; font-weight: 700; }
 .description { display: block; margin: 14rpx 0 36rpx; color: #718078; font-size: 26rpx; line-height: 1.6; }
 .field { margin-top: 28rpx; }

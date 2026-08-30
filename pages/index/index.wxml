@@ -44,12 +44,27 @@
           </view>
           <button class="edit-button" bindtap="editProfile">编辑资料</button>
         </view>
-        <view class="body-profile-tip" role="button" bindtap="openBodyProfile">
+        <view wx:if="{{profileStatus === 'loading'}}" class="body-profile-tip body-profile-state">
+          <view class="body-profile-loading-dot"></view>
+          <text class="body-profile-description">正在读取身体档案…</text>
+        </view>
+        <view wx:elif="{{profileStatus === 'error'}}" class="body-profile-tip body-profile-state">
+          <view class="body-profile-copy">
+            <text class="body-profile-title">身体档案读取失败</text>
+            <text class="body-profile-description">{{bodyProfileErrorMessage}}</text>
+          </view>
+          <button class="body-profile-action" bindtap="retryBodyProfile">重试</button>
+        </view>
+        <view wx:elif="{{profileStatus === 'incomplete'}}" class="body-profile-tip" role="button" bindtap="openBodyProfile">
           <view class="body-profile-copy">
             <text class="body-profile-title">身体信息尚未完善</text>
-            <text class="body-profile-description">填写后可查看体重、目标与运动频率</text>
+            <text class="body-profile-description">填写后可用于生成个性化培养方案</text>
           </view>
           <text class="continue-link">继续填写</text>
+        </view>
+        <view wx:else class="body-profile-motivation">
+          <text class="body-profile-complete-label">身体档案已完成</text>
+          <text class="body-profile-motivation-text">每一次认真记录，都是向更好的自己靠近。</text>
         </view>
         <!-- 后续小雪纳瑞插画替换位 -->
         <view class="art-placeholder dog-placeholder" aria-hidden="true"></view>
@@ -80,7 +95,7 @@
 
       <view class="layout-spacer layout-spacer-progress-entry" aria-hidden="true"></view>
       <view class="entry-list">
-        <view class="menu-card menu-card-single"><view class="menu-item"><view class="entry-icon-placeholder art-placeholder" aria-hidden="true"></view><text class="menu-title">我的画像</text><text class="menu-arrow">›</text></view></view>
+        <view class="menu-card menu-card-single" role="button" bindtap="openMyPortrait"><view class="menu-item"><view class="entry-icon-placeholder art-placeholder" aria-hidden="true"></view><text class="menu-title">我的画像</text><text class="menu-arrow">›</text></view></view>
         <view class="menu-card menu-card-single"><view class="menu-item"><view class="entry-icon-placeholder art-placeholder" aria-hidden="true"></view><text class="menu-title">我的方案</text><text class="menu-arrow">›</text></view></view>
         <view class="menu-card menu-card-single settings-card"><view class="menu-item"><view class="entry-icon-placeholder art-placeholder" aria-hidden="true"></view><text class="menu-title">设置与隐私</text><text class="menu-arrow">›</text></view></view>
       </view>
@@ -94,3 +109,10 @@
   <view class="bottom-navigation-item"><!-- 后续社区图标替换位 --><view class="nav-icon-placeholder art-placeholder"></view><text>社区</text></view>
   <view class="bottom-navigation-item bottom-navigation-item-active"><view class="nav-icon-placeholder art-placeholder"></view><text>我的</text></view>
 </view>
+
+<body-profile-onboarding
+  visible="{{showBodyProfileOnboarding}}"
+  primary-disabled="{{isOpeningBodyProfile}}"
+  bindconfirm="openBodyProfile"
+  binddismiss="dismissBodyProfileOnboarding"
+></body-profile-onboarding>
