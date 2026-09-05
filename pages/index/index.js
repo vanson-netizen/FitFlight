@@ -1,6 +1,12 @@
 // index.js
 const { getUserProfile, saveUserProfile } = require('../../utils/user-profile')
 const { getBodyProfile } = require('../../services/user-profile-service')
+const fifiGrowthService = require('../../services/fifi-growth-service')
+
+function buildHomeAchievementSlots(achievements = []) {
+  return achievements.filter((achievement) => achievement.unlocked !== false).slice(0, 2)
+    .map((achievement) => ({ ...achievement, unlocked: true }))
+}
 
 Page({
   data: {
@@ -16,7 +22,10 @@ Page({
     profileStatus: 'loading',
     bodyProfileErrorMessage: '',
     showBodyProfileOnboarding: false,
-    isOpeningBodyProfile: false
+    isOpeningBodyProfile: false,
+    growthStatus: 'loading',
+    growthErrorMessage: '',
+    growthModel: null
   },
 
   onLoad() {
@@ -27,7 +36,34 @@ Page({
     this.setData({ isOpeningBodyProfile: false })
     if (!this.data.isLoading && this.data.userProfile && !this.data.isEditing) {
       this.loadBodyProfile()
+      this.loadGrowth()
     }
+  },
+
+  async loadGrowth() {
+    const requestId = (this.growthRequestId || 0) + 1
+    this.growthRequestId = requestId
+    this.setData({ growthStatus: 'loading', growthErrorMessage: '' })
+    try {
+      const model = await fifiGrowthService.loadFifiGrowthData()
+      if (requestId !== this.growthRequestId) return
+      this.setData({
+        growthStatus: model.cultivationDays > 0 ? 'ready' : 'empty',
+        growthModel: { ...model, homeAchievements: buildHomeAchievementSlots(model.achievements) },
+        growthErrorMessage: ''
+      })
+    } catch (error) {
+      if (requestId !== this.growthRequestId) return
+      this.setData({
+        growthStatus: 'error',
+        growthModel: null,
+        growthErrorMessage: (error && error.message) || '暂时无法读取成长记录，请稍后重试'
+      })
+    }
+  },
+
+  retryGrowth() {
+    this.loadGrowth()
   },
 
   async loadBodyProfile() {
@@ -157,6 +193,7 @@ Page({
       })
       wx.showToast({ title: '资料已保存', icon: 'success' })
       this.loadBodyProfile()
+      this.loadGrowth()
     } catch (error) {
       this.setData({ errorMessage: '保存失败，请稍后重试' })
     }
@@ -201,9 +238,53 @@ Page({
     })
   },
 
+  openMyPlan() {
+    wx.navigateTo({
+      url: '/pages/my-plan/my-plan',
+      fail: () => wx.showToast({ title: '暂时无法打开页面', icon: 'none' })
+    })
+  },
+
+  openAchievements() {
+    wx.navigateTo({
+      url: '/pages/achievements/achievements',
+      fail: () => wx.showToast({ title: '暂时无法打开页面', icon: 'none' })
+    })
+  },
+
+  openCultivation() {
+    wx.navigateTo({
+      url: '/pages/cultivation/cultivation',
+      fail: () => wx.showToast({ title: '暂时无法打开页面', icon: 'none' })
+    })
+  },
+
+  openFifi() {
+    wx.navigateTo({
+      url: '/pages/fifi/fifi',
+      fail: () => wx.showToast({ title: '暂时无法打开页面', icon: 'none' })
+    })
+  },
+
+  openCommunity() {
+    wx.navigateTo({
+      url: '/pages/community/community',
+      fail: () => wx.showToast({ title: '暂时无法打开页面', icon: 'none' })
+    })
+  },
+
+  openSettings() {
+    wx.navigateTo({
+      url: '/pages/settings/settings',
+      fail: () => wx.showToast({ title: '暂时无法打开页面', icon: 'none' })
+    })
+  },
+
   dismissBodyProfileOnboarding() {
     const app = getApp()
     if (app.globalData) app.globalData.bodyProfileOnboardingDismissed = true
     this.setData({ showBodyProfileOnboarding: false })
   }
 })
+
+module.exports.buildHomeAchievementSlots = buildHomeAchievementSlots

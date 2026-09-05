@@ -1,0 +1,15 @@
+<navigation-bar title="健康记录" color="#25352b" background="#dff3b7"></navigation-bar>
+<scroll-view class="health-scroll" scroll-y="{{true}}" enhanced="{{true}}" type="list"><view class="health-page">
+  <view wx:if="{{pageStatus === 'loading'}}" class="state-card"><view class="loading-dot"></view><text>正在读取记录…</text></view>
+  <view wx:elif="{{pageStatus === 'error'}}" class="state-card"><text class="state-title">记录读取失败</text><text class="state-copy">{{errorMessage}}</text><button class="retry-button" bindtap="retryLoad">重试</button></view>
+  <view wx:elif="{{pageStatus === 'empty' || pageStatus === 'ready'}}" class="card editor-card">
+    <view class="field"><text class="field-label">记录日期 *</text><picker mode="date" value="{{form.recordDate}}" end="{{today}}" bindchange="changeDate"><view class="picker-value">{{form.recordDate}}</view></picker></view>
+    <view class="field-grid"><view class="field"><text class="field-label">体重（kg）</text><input class="field-input" type="digit" value="{{form.weightKg}}" placeholder="可选" data-field="weightKg" bindinput="changeNumber" /></view><view class="field"><text class="field-label">睡眠（小时）</text><input class="field-input" type="digit" value="{{form.sleepHours}}" placeholder="可选" data-field="sleepHours" bindinput="changeNumber" /></view></view>
+    <view class="field"><text class="field-label">精力状态</text><view class="choice-row"><view wx:for="{{energyLevels}}" wx:key="value" class="choice {{form.energyLevel === item.value ? 'choice-active' : ''}}" role="button" data-value="{{item.value}}" bindtap="chooseEnergy">{{item.label}}</view></view></view>
+    <view class="field"><text class="field-label">身体感受</text><view class="choice-row"><view wx:for="{{bodyFeelings}}" wx:key="value" class="choice {{form.bodyFeeling === item.value ? 'choice-active' : ''}}" role="button" data-value="{{item.value}}" bindtap="chooseFeeling">{{item.label}}</view></view></view>
+    <view class="field"><text class="field-label">备注</text><textarea class="note-input" maxlength="500" value="{{form.note}}" placeholder="可选，记录测量条件或当天感受" adjust-position="{{true}}" bindinput="changeNote"></textarea><text class="count">{{form.note.length}} / 500</text></view>
+    <text wx:if="{{saveError}}" class="save-error">{{saveError}}</text>
+    <button class="save-button" loading="{{isSaving}}" disabled="{{isSaving}}" bindtap="save">{{isSaving ? '保存中…' : '保存'}}</button>
+  </view>
+  <text class="disclaimer">至少填写一项健康指标。记录不会直接修改身体档案、画像或培养方案。</text>
+</view></scroll-view>

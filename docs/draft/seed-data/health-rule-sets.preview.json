@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0.0-draft",
+  "dataVersion": "health-rules-draft.2",
+  "records": [
+    {
+      "ruleSetId": "fitflight-general-adult-v1",
+      "ruleVersion": "fitflight-cultivation-v1-draft.2",
+      "status": "draft",
+      "authoritySourceIds": [
+        "cn-dietary-guidelines-2022",
+        "national-fitness-guide-2017",
+        "healthy-china-action-2019-2030",
+        "weight-management-principles-2024"
+      ],
+      "applicablePopulation": {
+        "minimumAgeYears": 18,
+        "maximumAgeYears": 64,
+        "profileAndPortraitMustBeCurrent": true,
+        "allowedExerciseLimitationStatuses": ["none"],
+        "requiredSafetyScreening": true,
+        "missingSafetyAnswersAreSafe": false
+      },
+      "safetyGates": {
+        "professionalGuidanceStatus": "requires_professional_guidance",
+        "stableCodes": [
+          "PROFILE_OR_PORTRAIT_INCOMPLETE",
+          "MINOR_OUT_OF_V1_SCOPE",
+          "AGE_GROUP_OUT_OF_V1_SCOPE",
+          "LIMITATION_REQUIRES_CLARIFICATION",
+          "LIMITATION_REQUIRES_PROFESSIONAL_GUIDANCE",
+          "PAIN_INJURY_OR_RECOVERY_OUT_OF_SCOPE",
+          "MEDICAL_RESTRICTION_OUT_OF_SCOPE",
+          "MEDICAL_REQUEST_OUT_OF_SCOPE",
+          "SAFETY_SCREENING_INCOMPLETE",
+          "GOAL_DIRECTION_CONFLICT",
+          "AGGRESSIVE_OR_IMPLAUSIBLE_TARGET",
+          "INPUT_VERSION_CONFLICT",
+          "DATA_VERSION_NOT_ELIGIBLE"
+        ],
+        "targetBmiReferenceRange": { "min": 18.5, "max": 23.9, "reviewStatus": "draft_needs_medical_confirmation" },
+        "maximumFourWeekWeightChangeRatio": null
+      },
+      "cycleConfig": {
+        "totalWeeks": 4,
+        "progressionOrderForBeginners": ["duration", "frequency", "intensity"],
+        "sessionSections": ["preparation", "main", "cooldown"],
+        "weeklyStages": [
+          { "week": 1, "stage": "adaptation", "durationIncrementMinutes": 0, "frequencyIncrementDays": 0, "intensityIncrementLevels": 0 },
+          { "week": 2, "stage": "stable_completion", "durationIncrementMinutes": 0, "frequencyIncrementDays": 0, "intensityIncrementLevels": 0 },
+          { "week": 3, "stage": "controlled_progression", "durationIncrementMinutes": 5, "frequencyIncrementDays": 1, "chooseAtMostOneIncrement": true, "requiresCompletionAndNoDiscomfortFeedback": true, "noFeedbackDecision": "hold", "intensityIncrementLevels": 0 },
+          { "week": 4, "stage": "consolidation_review", "durationIncrementMinutes": 0, "frequencyIncrementDays": 0, "intensityIncrementLevels": 0 }
+        ],
+        "beginnerIntensityCeiling": "moderate",
+        "vigorousAutoSelectionEnabled": false,
+        "minimumRecoveryDaysPerWeek": 1,
+        "maximumStructuredTrainingDaysPerWeek": 6,
+        "weeklyModerateAerobicTargetMinutes": { "min": 150, "max": null },
+        "weeklyResistanceSessionTarget": { "min": 2, "max": 3 },
+        "minimumRecoveryHoursBetweenResistanceSessions": null,
+        "numericReviewStatus": "draft_needs_sports_and_medical_review"
+      },
+      "goalPolicies": {
+        "fat_loss": { "priority": ["aerobic_base", "resistance", "routine"], "energyDeficitKcal": null },
+        "muscle_gain": { "priority": ["resistance", "recovery", "aerobic_maintenance"], "energySurplusKcal": null },
+        "fitness_improvement": { "priority": ["aerobic", "strength", "mobility"] },
+        "weight_gain": { "priority": ["resistance", "regular_meals"], "mode": "conservative" },
+        "maintain": { "priority": ["routine", "balanced_activity"], "mode": "conservative" }
+      },
+      "sleepPolicy": {
+        "focus": ["consistent_bedtime", "consistent_wake_time", "adequate_recovery"],
+        "recommendedDurationMinutes": null,
+        "reviewStatus": "draft_needs_medical_confirmation"
+      },
+      "reviewRequirements": ["doctor_or_sports_medicine", "registered_dietitian", "physical_education_teacher"],
+      "reviewedBy": null,
+      "notes": "产品结构样本。当前安全问卷字段不完整；除明确关联官方来源的成人一般原则外，4周周期、递增、恢复和目标决策均尚未完成专业审查，不得接入 reviewed/active 生成器。"
+    }
+  ]
+}

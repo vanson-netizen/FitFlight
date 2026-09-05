@@ -1,0 +1,7 @@
+<navigation-bar title="数据使用说明" back="{{true}}" color="#25352b" background="#dff3b7"></navigation-bar>
+<scroll-view class="settings-scroll" scroll-y="{{true}}" enhanced="{{true}}"><view class="settings-page"><view class="content-card">
+  <view class="content-section"><text class="content-heading">我们如何使用数据</text><text class="content-copy">FitFlight 会使用你主动填写或产生的身体档案、用户画像、培养方案、每日打卡、健康记录和日志数据，为你提供对应的记录、展示与培养辅助功能。</text></view>
+  <view class="content-section"><text class="content-heading">校园资源说明</text><text class="content-copy">北航运动与餐饮资源由学生人工整理，信息仅供参考。地点、开放时间和菜品等信息可能发生变化，请以现场实际情况为准。</text></view>
+  <view class="content-section"><text class="content-heading">健康信息边界</text><text class="content-copy">训练建议、健康记录趋势及相关提示属于课程项目的一般健康管理信息，不构成医疗诊断、康复方案或营养处方。</text></view>
+  <view class="content-section"><text class="content-heading">本地与云端数据</text><text class="content-copy">“清除本地缓存”仅清理白名单内的未保存草稿和临时页面缓存，不会删除画像、方案、打卡、健康记录、日志等云端数据。</text></view>
+</view></view></scroll-view>

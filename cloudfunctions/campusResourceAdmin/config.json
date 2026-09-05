@@ -1,0 +1,7 @@
+{
+  "permissions": { "openapi": [] },
+  "envVariables": {
+    "CAMPUS_RESOURCE_APPLY_ENABLED": "false",
+    "CAMPUS_RESOURCE_ADMIN_OPENID": ""
+  }
+}

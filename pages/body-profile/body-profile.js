@@ -33,10 +33,14 @@ Page({
     loadStatus: 'loading',
     profileVersion: 0,
     hasExistingProfile: false,
-    isSubmitting: false
+    isSubmitting: false,
+    showPortraitOnboarding: false,
+    isOpeningPortraitEditor: false
   },
 
-  onLoad() {
+  onLoad(options = {}) {
+    const prefillWeightKg = Number(options.prefillWeightKg)
+    this.pendingWeightPrefill = Number.isFinite(prefillWeightKg) && prefillWeightKg >= 20 && prefillWeightKg <= 400 ? String(prefillWeightKg) : ''
     this.loadBodyProfile()
   },
 
@@ -67,7 +71,7 @@ Page({
           gender: profile.gender || '',
           birthDate: profile.birthDate || '',
           heightCm: profile.heightCm === null || profile.heightCm === undefined ? '' : String(profile.heightCm),
-          weightKg: profile.weightKg === null || profile.weightKg === undefined ? '' : String(profile.weightKg),
+          weightKg: this.pendingWeightPrefill || (profile.weightKg === null || profile.weightKg === undefined ? '' : String(profile.weightKg)),
           targetWeightKg: profile.targetWeightKg === null || profile.targetWeightKg === undefined ? '' : String(profile.targetWeightKg),
           activityLevel: profile.activityLevel || ''
         }
@@ -118,9 +122,18 @@ Page({
 
     this.setData({ isSubmitting: true, fieldErrors: {}, errorMessage: '' })
     try {
-      await saveBodyProfile(this.data.form, this.data.profileVersion)
+      const result = await saveBodyProfile(this.data.form, this.data.profileVersion)
       wx.showToast({ title: '身体信息已保存', icon: 'success' })
-      setTimeout(() => wx.navigateBack(), 800)
+      const app = getApp()
+      const dismissed = Boolean(app.globalData && app.globalData.portraitOnboardingDismissed)
+      if (!result.isFirstCompletion || dismissed) {
+        setTimeout(() => wx.navigateBack(), 800)
+        return
+      }
+      this.setData({
+        profileVersion: result.profileVersion,
+        showPortraitOnboarding: true
+      })
     } catch (error) {
       if (error.code === ERROR_CODES.INVALID_PARAM) {
         this.setData({
@@ -140,5 +153,24 @@ Page({
     } finally {
       this.setData({ isSubmitting: false })
     }
+  },
+
+  openPortraitEditor() {
+    if (this.data.isOpeningPortraitEditor) return
+    this.setData({ isOpeningPortraitEditor: true, showPortraitOnboarding: false })
+    wx.redirectTo({
+      url: '/pages/portrait-editor/portrait-editor?source=initial',
+      fail: () => {
+        this.setData({ isOpeningPortraitEditor: false, showPortraitOnboarding: true })
+        wx.showToast({ title: '暂时无法打开画像页面', icon: 'none' })
+      }
+    })
+  },
+
+  skipPortraitOnboarding() {
+    const app = getApp()
+    if (app.globalData) app.globalData.portraitOnboardingDismissed = true
+    this.setData({ showPortraitOnboarding: false })
+    wx.navigateBack()
   }
 })

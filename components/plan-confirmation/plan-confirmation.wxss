@@ -1,0 +1,10 @@
+.confirmation-layer { position: fixed; z-index: 1100; top: 0; right: 0; bottom: 0; left: 0; display: flex; align-items: center; justify-content: center; padding: 40rpx 36rpx calc(40rpx + env(safe-area-inset-bottom)); box-sizing: border-box; }
+.confirmation-mask { position: absolute; inset: 0; background: rgba(28, 38, 31, .48); }
+.confirmation-card { position: relative; z-index: 1; width: 100%; max-width: 620rpx; padding: 50rpx 42rpx 38rpx; border-radius: 30rpx; background: #fffefa; box-shadow: 0 24rpx 64rpx rgba(31, 43, 34, .2); box-sizing: border-box; text-align: center; }
+.confirmation-title, .confirmation-description { display: block; }
+.confirmation-title { color: #25352b; font-size: 38rpx; font-weight: 700; }
+.confirmation-description { margin-top: 18rpx; color: #718078; font-size: 27rpx; line-height: 1.65; }
+.primary-button, .secondary-button { border-radius: 999rpx; font-size: 29rpx; font-weight: 600; }
+.primary-button { margin-top: 36rpx; color: #25352b; background: #a8d96f; }
+.secondary-button { margin-top: 14rpx; color: #526158; background: #eef3e8; }
+.primary-button::after, .secondary-button::after { border: 0; }

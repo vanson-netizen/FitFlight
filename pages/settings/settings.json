@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "设置与隐私",
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar"
+  }
+}

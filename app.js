@@ -1,7 +1,10 @@
 // app.js
+const { CLOUD_ENV_ID } = require('./constants/cloud')
+
 App({
   globalData: {
-    bodyProfileOnboardingDismissed: false
+    bodyProfileOnboardingDismissed: false,
+    portraitOnboardingDismissed: false
   },
 
   onLaunch() {
@@ -10,8 +13,8 @@ App({
       return
     }
 
-    // 不写死环境 ID，使用微信开发者工具中当前选择的云开发环境。
     wx.cloud.init({
+      env: CLOUD_ENV_ID,
       traceUser: true
     })
   }

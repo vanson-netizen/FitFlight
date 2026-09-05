@@ -1,3 +1,6 @@
+const { safeNavigateBack } = require('../../utils/navigation')
+const { MAIN_PAGE_TITLE } = require('../../constants/navigation')
+
 Component({
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
@@ -6,6 +9,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    mainPage: { type: Boolean, value: false },
     extClass: {
       type: String,
       value: ''
@@ -55,6 +59,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    mainTitle: MAIN_PAGE_TITLE,
     displayStyle: ''
   },
   lifetimes: {
@@ -92,9 +97,7 @@ Component({
     back() {
       const data = this.data
       if (data.delta) {
-        wx.navigateBack({
-          delta: data.delta
-        })
+        safeNavigateBack()
       }
       this.triggerEvent('back', { delta: data.delta }, {})
     }

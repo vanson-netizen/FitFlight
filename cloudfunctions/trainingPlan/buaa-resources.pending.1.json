@@ -1,0 +1,387 @@
+{
+  "schemaVersion": "1.0.0",
+  "resourceDataVersion": "buaa-resource-pending.1",
+  "status": "pending_verification",
+  "eligibleForVerifiedRecommendation": false,
+  "sourceFiles": {
+    "venues": {
+      "filename": "运动场地.csv",
+      "encoding": "gbk",
+      "sha256": "dd89c2009f9edc1a952ef73638b5e96a64990c5f1341c99aad6d3e52d3b8cd73",
+      "recordCount": 3
+    },
+    "diningHalls": {
+      "filename": "食堂信息.csv",
+      "encoding": "gbk",
+      "sha256": "d83c1397355873fabb405e35e44004e821f2c4829e32998ea5d042f32252c693",
+      "recordCount": 6
+    },
+    "foodOptions": {
+      "filename": "菜品信息.csv",
+      "encoding": "gbk",
+      "sha256": "b6a5d89e8a0abc86b105d3faaedfffc34d09bb493cb0c6896f31381b60cd96e0",
+      "recordCount": 2
+    }
+  },
+  "venues": [
+    {
+      "venueId": "venue-xueyuan-xinbei-gym-001",
+      "campus": "xueyuan_road",
+      "name": "新北健身房",
+      "locationText": "新北15公寓下沉广场",
+      "supportedActivities": [
+        "健身房：有氧+无氧器械"
+      ],
+      "capabilityTags": [
+        "cardio_equipment",
+        "strength_equipment"
+      ],
+      "equipmentTags": [
+        "爬坡机",
+        "哑铃",
+        "固定力量设备"
+      ],
+      "indoorOutdoor": "indoor",
+      "openingRule": {
+        "daysText": "非节假日开放",
+        "startTime": "8:00:",
+        "endTime": "22:00"
+      },
+      "reservation": {
+        "required": false,
+        "method": "不需要预约"
+      },
+      "usageRestrictions": [
+        "会员"
+      ],
+      "feeText": "学生720/6个月",
+      "temporaryClosureText": "暂无",
+      "source": {
+        "typeText": "其他待核实线索",
+        "evidenceText": "用户现场记录，开放时间、收费及预约规则待进一步核实"
+      },
+      "investigatedAt": "2026-8-31",
+      "validUntil": "2026-9-30",
+      "status": "pending_verification",
+      "verifiedAt": null,
+      "notes": null
+    },
+    {
+      "venueId": "venue-xueyuan-swim-gym-001",
+      "campus": "xueyuan_road",
+      "name": "游泳馆健身房",
+      "locationText": "游泳馆2层",
+      "supportedActivities": [
+        "健身房：主要为有氧"
+      ],
+      "capabilityTags": [
+        "cardio_equipment",
+        "free_weights"
+      ],
+      "equipmentTags": [
+        "爬坡机",
+        "骑行机",
+        "哑铃"
+      ],
+      "indoorOutdoor": "indoor",
+      "openingRule": {
+        "daysText": "非节假日开放",
+        "startTime": "8:00:",
+        "endTime": "22:00"
+      },
+      "reservation": {
+        "required": false,
+        "method": "不需要预约"
+      },
+      "usageRestrictions": [
+        "会员"
+      ],
+      "feeText": "学生720/6个月",
+      "temporaryClosureText": "暂无",
+      "source": {
+        "typeText": "其他待核实线索",
+        "evidenceText": "用户现场记录，开放时间、收费及预约规则待进一步核实"
+      },
+      "investigatedAt": "2026-8-31",
+      "validUntil": "2026-9-30",
+      "status": "pending_verification",
+      "verifiedAt": null,
+      "notes": null
+    },
+    {
+      "venueId": "venue-xueyuan-badminton-001",
+      "campus": "xueyuan_road",
+      "name": "羽毛球馆",
+      "locationText": "体育馆",
+      "supportedActivities": [
+        "羽毛球"
+      ],
+      "capabilityTags": [
+        "badminton_court"
+      ],
+      "equipmentTags": [
+        "提供场地",
+        "设备自带"
+      ],
+      "indoorOutdoor": "indoor",
+      "openingRule": {
+        "daysText": "非节假日开放",
+        "startTime": "7:00:",
+        "endTime": "22:00"
+      },
+      "reservation": {
+        "required": true,
+        "method": "线上智慧北航预约"
+      },
+      "usageRestrictions": [
+        "学生"
+      ],
+      "feeText": "20/小时",
+      "temporaryClosureText": "暂无",
+      "source": {
+        "typeText": "其他待核实线索",
+        "evidenceText": "用户现场记录，开放时间、收费及预约规则待进一步核实"
+      },
+      "investigatedAt": "2026-8-31",
+      "validUntil": "2026-9-30",
+      "status": "pending_verification",
+      "verifiedAt": null,
+      "notes": null
+    }
+  ],
+  "diningHalls": [
+    {
+      "diningHallId": "dining-xueyuan-heyi-001",
+      "campus": "xueyuan_road",
+      "name": "合一食堂",
+      "floor": "2层",
+      "locationText": "学院路校区南区20公寓旁",
+      "mealPeriodText": {
+        "breakfast": "不供应",
+        "lunch": "11:00-14:00",
+        "dinner": "17:00-20:00",
+        "lateNight": "不供应"
+      },
+      "halalAvailable": true,
+      "longTermOpen": null,
+      "source": {
+        "typeText": "北航官网/现场待核实",
+        "evidenceText": "名称与营业时间需按具体楼层拆分核实；用户现场记录仅作线索"
+      },
+      "investigatedAt": "2026-8-31",
+      "validUntil": "2026-9-30",
+      "status": "pending_verification",
+      "verifiedAt": null,
+      "notes": null
+    },
+    {
+      "diningHallId": "dining-xueyuan-north-001",
+      "campus": "xueyuan_road",
+      "name": "新北食堂",
+      "floor": "-1层",
+      "locationText": "学院路校区北区13公寓旁",
+      "mealPeriodText": {
+        "breakfast": "不供应",
+        "lunch": "11:00-14:00",
+        "dinner": "17:00-21：00",
+        "lateNight": "不供应"
+      },
+      "halalAvailable": true,
+      "longTermOpen": null,
+      "source": {
+        "typeText": "北航官网/现场待核实",
+        "evidenceText": "名称与营业时间需按具体楼层拆分核实；用户现场记录仅作线索"
+      },
+      "investigatedAt": "2026-8-31",
+      "validUntil": "2026-9-30",
+      "status": "pending_verification",
+      "verifiedAt": null,
+      "notes": null
+    },
+    {
+      "diningHallId": "dining-xueyuan-heyi-002",
+      "campus": "xueyuan_road",
+      "name": "合一食堂",
+      "floor": "3层",
+      "locationText": "学院路校区南区20公寓旁",
+      "mealPeriodText": {
+        "breakfast": "7:00-9:00",
+        "lunch": "11:00-14:00",
+        "dinner": "17:00-20:00",
+        "lateNight": "不供应"
+      },
+      "halalAvailable": true,
+      "longTermOpen": null,
+      "source": {
+        "typeText": "北航官网/现场待核实",
+        "evidenceText": "名称与营业时间需按具体楼层拆分核实；用户现场记录仅作线索"
+      },
+      "investigatedAt": "2026-8-31",
+      "validUntil": "2026-9-30",
+      "status": "pending_verification",
+      "verifiedAt": null,
+      "notes": null
+    },
+    {
+      "diningHallId": "dining-xueyuan-north-002",
+      "campus": "xueyuan_road",
+      "name": "新北食堂",
+      "floor": "1层",
+      "locationText": "学院路校区北区13公寓旁",
+      "mealPeriodText": {
+        "breakfast": "7:00-9:00",
+        "lunch": "11:00-14:00",
+        "dinner": "17:00-20:00",
+        "lateNight": "不供应"
+      },
+      "halalAvailable": true,
+      "longTermOpen": null,
+      "source": {
+        "typeText": "北航官网/现场待核实",
+        "evidenceText": "名称与营业时间需按具体楼层拆分核实；用户现场记录仅作线索"
+      },
+      "investigatedAt": "2026-8-31",
+      "validUntil": "2026-9-30",
+      "status": "pending_verification",
+      "verifiedAt": null,
+      "notes": null
+    },
+    {
+      "diningHallId": "dining-xueyuan-north-003",
+      "campus": "xueyuan_road",
+      "name": "新北食堂",
+      "floor": "2层",
+      "locationText": "学院路校区北区13公寓旁",
+      "mealPeriodText": {
+        "breakfast": "不供应",
+        "lunch": "11:00-14:00",
+        "dinner": "17:00-20:00",
+        "lateNight": "不供应"
+      },
+      "halalAvailable": true,
+      "longTermOpen": null,
+      "source": {
+        "typeText": "北航官网/现场待核实",
+        "evidenceText": "名称与营业时间需按具体楼层拆分核实；用户现场记录仅作线索"
+      },
+      "investigatedAt": "2026-8-31",
+      "validUntil": "2026-9-30",
+      "status": "pending_verification",
+      "verifiedAt": null,
+      "notes": null
+    },
+    {
+      "diningHallId": "dining-xueyuan-north-004",
+      "campus": "xueyuan_road",
+      "name": "新北食堂",
+      "floor": "3层",
+      "locationText": "学院路校区北区13公寓旁",
+      "mealPeriodText": {
+        "breakfast": "不供应",
+        "lunch": "11:00-14:00",
+        "dinner": "17:00-20:00",
+        "lateNight": "不供应"
+      },
+      "halalAvailable": true,
+      "longTermOpen": null,
+      "source": {
+        "typeText": "北航官网/现场待核实",
+        "evidenceText": "名称与营业时间需按具体楼层拆分核实；用户现场记录仅作线索"
+      },
+      "investigatedAt": "2026-8-31",
+      "validUntil": "2026-9-30",
+      "status": "pending_verification",
+      "verifiedAt": null,
+      "notes": null
+    }
+  ],
+  "foodOptions": [
+    {
+      "foodOptionId": "food-xueyuan-heyi-meal-001",
+      "campus": "xueyuan_road",
+      "diningHallId": "dining-xueyuan-heyi-002",
+      "floorOrStall": "合一3楼北侧",
+      "dishName": "减脂餐",
+      "mealPeriods": [
+        "lunch"
+      ],
+      "foodGroupTags": {
+        "staples": [
+          "杂粮饭",
+          "荞麦面"
+        ],
+        "vegetables": [
+          "水煮菜"
+        ],
+        "proteins": [
+          "肉",
+          "豆腐",
+          "鸡蛋"
+        ]
+      },
+      "cookingMethodText": "少油煎+水煮为主",
+      "vegetarian": null,
+      "halal": false,
+      "priceCny": null,
+      "servingText": "一人份",
+      "nutrition": {
+        "estimatedKcal": null,
+        "otherText": null
+      },
+      "nutritionSource": {
+        "kcalSourceText": null,
+        "otherSourceText": null
+      },
+      "supplyPatternText": "常规供应",
+      "supplyDaysText": "开学期间",
+      "investigatedAt": "2026-8-31",
+      "validUntil": "2026-9-30",
+      "status": "pending_verification",
+      "verifiedAt": null,
+      "notes": "当前为餐食类别线索，不代表固定菜品；请核实具体搭配、份量、价格与营养数据后再用于正式方案"
+    },
+    {
+      "foodOptionId": "food-xueyuan-north-meal-001",
+      "campus": "xueyuan_road",
+      "diningHallId": "dining-xueyuan-north-001",
+      "floorOrStall": "新北负一层",
+      "dishName": "健康餐",
+      "mealPeriods": [
+        "lunch"
+      ],
+      "foodGroupTags": {
+        "staples": [
+          "粗粮"
+        ],
+        "vegetables": [
+          "水煮菜"
+        ],
+        "proteins": [
+          "肉",
+          "豆腐",
+          "鸡蛋"
+        ]
+      },
+      "cookingMethodText": "少油煎+水煮为主",
+      "vegetarian": null,
+      "halal": false,
+      "priceCny": null,
+      "servingText": "一人份",
+      "nutrition": {
+        "estimatedKcal": null,
+        "otherText": null
+      },
+      "nutritionSource": {
+        "kcalSourceText": null,
+        "otherSourceText": null
+      },
+      "supplyPatternText": "常规供应",
+      "supplyDaysText": "开学期间",
+      "investigatedAt": "2026-8-31",
+      "validUntil": "2026-9-30",
+      "status": "pending_verification",
+      "verifiedAt": null,
+      "notes": "当前为餐食类别线索，不代表固定菜品；请核实具体搭配、份量、价格与营养数据后再用于正式方案"
+    }
+  ]
+}

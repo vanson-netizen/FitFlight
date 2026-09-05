@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "身体信息",
   "usingComponents": {
-    "navigation-bar": "/components/navigation-bar/navigation-bar"
+    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "portrait-onboarding": "/components/portrait-onboarding/portrait-onboarding"
   }
 }

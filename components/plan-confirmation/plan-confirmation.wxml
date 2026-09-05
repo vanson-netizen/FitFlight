@@ -1,0 +1,9 @@
+<view wx:if="{{visible}}" class="confirmation-layer" catchtouchmove="preventTouchMove">
+  <view class="confirmation-mask"></view>
+  <view class="confirmation-card" role="dialog">
+    <text class="confirmation-title">{{type === 'adjustment' ? '是否调整培养方案？' : '生成个性化方案？'}}</text>
+    <text class="confirmation-description">{{type === 'adjustment' ? '你的身体信息已经改变，是否根据最新信息调整当前方案？' : '是否根据刚刚填写的信息生成你的培养方案？'}}</text>
+    <button class="primary-button" disabled="{{loading}}" loading="{{loading}}" bindtap="confirm">{{type === 'adjustment' ? '调整方案' : '生成方案'}}</button>
+    <button class="secondary-button" disabled="{{loading}}" bindtap="defer">{{type === 'adjustment' ? '暂不调整' : '暂不生成'}}</button>
+  </view>
+</view>

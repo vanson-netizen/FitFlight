@@ -1,0 +1,10 @@
+<navigation-bar title="校园分享" color="#25352b" background="#dff3b7"></navigation-bar>
+<scroll-view class="community-scroll" scroll-y type="list">
+  <view class="community-page forum-page">
+    <view class="forum-heading"><text class="forum-eyebrow">社区论坛</text><text class="forum-title">校园分享</text><text class="forum-description">这里将用于展示经过适当管理的校园健康经验分享。</text></view>
+    <view wx:if="{{pageStatus === 'loading'}}" class="forum-state"><view class="forum-symbol">·</view><text class="forum-state-title">正在读取校园分享</text></view>
+    <view wx:elif="{{pageStatus === 'empty'}}" class="forum-state"><view class="forum-symbol">○</view><text class="forum-state-title">还没有校园分享</text><text class="forum-state-description">论坛功能将在后续版本开放</text></view>
+    <view wx:elif="{{pageStatus === 'error'}}" class="forum-state"><view class="forum-symbol">!</view><text class="forum-state-title">加载失败</text><text class="forum-state-description">{{errorMessage}}</text><button class="forum-retry" bindtap="retryLoad">重新加载</button></view>
+    <view wx:else class="post-list"><view wx:for="{{posts}}" wx:key="postId" class="post-card"><text class="post-title">{{item.title}}</text><text class="post-content">{{item.content}}</text></view></view>
+  </view>
+</scroll-view>

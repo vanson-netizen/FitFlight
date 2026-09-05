@@ -1,0 +1,13 @@
+@import "../health-shared/health-shared.wxss";
+.heading-copy { display:block; margin-top:7rpx; color:#7c887f; font-size:20rpx; }
+.latest-card { padding:27rpx; }
+.card-label { color:#668f42; font-size:22rpx; font-weight:600; }
+.metric-row, .record-summary { display:flex; flex-wrap:wrap; gap:12rpx 20rpx; margin-top:16rpx; font-size:23rpx; }
+.prompt-card { display:flex; align-items:center; gap:18rpx; margin-top:18rpx; padding:20rpx 22rpx; border-radius:18rpx; color:#715b2e; background:#fff4d7; font-size:21rpx; line-height:1.5; }
+.prompt-card text { min-width:0; flex:1; }
+.trend-entry { display:flex; justify-content:space-between; margin-top:20rpx; padding:23rpx 26rpx; border-radius:20rpx; color:#466b34; background:#eaf6d5; font-weight:700; }
+.record-list { display:flex; flex-direction:column; gap:16rpx; }
+.record-card { padding:23rpx 25rpx; }
+.record-heading { display:flex; justify-content:space-between; font-weight:700; }
+.record-heading text:last-child { color:#668f42; font-size:21rpx; }
+.record-note { display:-webkit-box; margin-top:12rpx; overflow:hidden; color:#7c887f; font-size:21rpx; line-height:1.5; -webkit-box-orient:vertical; -webkit-line-clamp:2; }

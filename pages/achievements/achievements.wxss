@@ -1,0 +1,35 @@
+page { height: 100vh; display: flex; flex-direction: column; color: #28362d; background: #fbf8ec; font-size: 28rpx; }
+.achievement-scroll { min-height: 0; flex: 1; }
+.achievement-page { width: 100%; max-width: 720rpx; min-height: 100%; margin: 0 auto; padding: 32rpx 40rpx calc(40rpx + env(safe-area-inset-bottom)); box-sizing: border-box; }
+.summary-card, .state-card, .achievement-card, .detail-card { border: 1rpx solid rgba(93, 121, 79, .14); border-radius: 24rpx; background: #fffefa; box-shadow: 0 10rpx 28rpx rgba(72, 91, 61, .07); box-sizing: border-box; }
+.state-card { min-height: 360rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18rpx; padding: 36rpx; color: #7c887f; text-align: center; }
+.loading-dot { width: 18rpx; height: 18rpx; border-radius: 50%; background: #a8d96f; }
+.state-title { color: #28362d; font-weight: 700; }
+.state-copy { line-height: 1.55; }
+.retry-button { margin: 8rpx 0 0; padding: 0 28rpx; border-radius: 16rpx; color: #668f42; background: #eaf6d5; font-size: 24rpx; line-height: 58rpx; }
+.retry-button::after { border: 0; }
+.summary-card { padding: 30rpx 32rpx; }
+.summary-label { color: #7c887f; font-size: 22rpx; }
+.summary-value { margin-top: 4rpx; color: #668f42; font-size: 52rpx; font-weight: 700; }
+.summary-total { color: #9aa59c; font-size: 28rpx; font-weight: 500; }
+.summary-copy { display: block; margin-top: 8rpx; color: #7c887f; font-size: 22rpx; }
+.empty-note { display: block; margin: 24rpx 0 0; color: #7c887f; font-size: 22rpx; line-height: 1.5; }
+.achievement-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18rpx; margin-top: 28rpx; }
+.achievement-card { min-width: 0; min-height: 180rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20rpx 8rpx; text-align: center; }
+.achievement-card-locked .grid-icon { background: #bdcdb1; }
+.grid-icon { width: 66rpx; height: 66rpx; }
+.grid-name { width: 100%; margin-top: 10rpx; overflow: hidden; font-size: 22rpx; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.grid-status { margin-top: 3rpx; color: #7c887f; font-size: 18rpx; }
+.detail-card { margin-top: 28rpx; padding: 28rpx; }
+.detail-heading { display: flex; align-items: center; gap: 18rpx; }
+.detail-icon { width: 72rpx; height: 72rpx; flex: none; }
+.detail-icon.detail-icon-locked { background: #bdcdb1; }
+.detail-name, .detail-status { display: block; }
+.detail-name { font-size: 28rpx; font-weight: 700; }
+.detail-status { margin-top: 4rpx; color: #668f42; font-size: 21rpx; }
+.detail-row { display: flex; justify-content: space-between; gap: 24rpx; margin-top: 22rpx; padding-top: 20rpx; border-top: 1rpx solid rgba(93, 121, 79, .14); color: #7c887f; font-size: 22rpx; line-height: 1.5; }
+.detail-row text:last-child { min-width: 0; flex: 1; color: #28362d; text-align: right; }
+@media (max-width: 340px) { .achievement-page { padding-right: 28rpx; padding-left: 28rpx; } .achievement-grid { gap: 12rpx; } .achievement-card { min-height: 164rpx; } }
+
+.grid-icon, .detail-icon { position: relative; border-radius: 50%; background: #668f42; }
+.achievement-check { position: absolute; left: 35%; top: 22%; width: 23%; height: 43%; border-right: 5rpx solid #fff; border-bottom: 5rpx solid #fff; transform: rotate(45deg); box-sizing: border-box; }

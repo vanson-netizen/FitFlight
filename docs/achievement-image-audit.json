@@ -1,0 +1,92 @@
+﻿[
+    {
+        "file":  "first-meeting.png",
+        "width":  144,
+        "height":  144,
+        "bytes":  14599,
+        "sourceWidth":  1254,
+        "sourceHeight":  1254,
+        "sourceSha256":  "3A6E0C46CFDCCF910BB0D754C62F2DF147F1BF4E6C9CC4FACD4F711C71F11449",
+        "bounds":  [
+                       64,
+                       246,
+                       1126,
+                       683
+                   ],
+        "transparentPixels":  14636,
+        "partialAlphaPixels":  5603,
+        "opaquePixels":  497
+    },
+    {
+        "file":  "streak-3-days.png",
+        "width":  144,
+        "height":  144,
+        "bytes":  25258,
+        "sourceWidth":  1254,
+        "sourceHeight":  1254,
+        "sourceSha256":  "810ED13964769540DC5740CCEC8F4774A2A5A004E9455BB1C67FEA67E0351410",
+        "bounds":  [
+                       143,
+                       137,
+                       969,
+                       932
+                   ],
+        "transparentPixels":  13212,
+        "partialAlphaPixels":  6837,
+        "opaquePixels":  687
+    },
+    {
+        "file":  "streak-7-days.png",
+        "width":  144,
+        "height":  144,
+        "bytes":  13595,
+        "sourceWidth":  1254,
+        "sourceHeight":  1254,
+        "sourceSha256":  "B2989DC2D0EE9BBA6FA41AB61FDCB3C7A651E7171439D895D4B955AF21174EC6",
+        "bounds":  [
+                       229,
+                       112,
+                       797,
+                       999
+                   ],
+        "transparentPixels":  16345,
+        "partialAlphaPixels":  3632,
+        "opaquePixels":  759
+    },
+    {
+        "file":  "perfect-day.png",
+        "width":  144,
+        "height":  144,
+        "bytes":  17746,
+        "sourceWidth":  1254,
+        "sourceHeight":  1254,
+        "sourceSha256":  "C21BD8BC66FA8AB522BFA7522B80E8DC1472CF7B9F10B22CAF15CB4C56275F31",
+        "bounds":  [
+                       293,
+                       40,
+                       668,
+                       1095
+                   ],
+        "transparentPixels":  13270,
+        "partialAlphaPixels":  6930,
+        "opaquePixels":  536
+    },
+    {
+        "file":  "active-partner.png",
+        "width":  144,
+        "height":  144,
+        "bytes":  28339,
+        "sourceWidth":  1254,
+        "sourceHeight":  1254,
+        "sourceSha256":  "71D8C0320729C1E7689E5CBE97D02C7F02325758A1D6FC45DA23FCAB134FA254",
+        "bounds":  [
+                       128,
+                       124,
+                       998,
+                       988
+                   ],
+        "transparentPixels":  9041,
+        "partialAlphaPixels":  11140,
+        "opaquePixels":  555
+    }
+]

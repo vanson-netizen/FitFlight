@@ -1,0 +1,22 @@
+page { height: 100vh; display: flex; flex-direction: column; color: #28362d; background: #fbf8ec; font-size: 28rpx; }
+.journal-scroll { min-height: 0; flex: 1; }
+.journal-page { width: 100%; max-width: 720rpx; min-height: 100%; margin: 0 auto; padding: 30rpx 38rpx calc(42rpx + env(safe-area-inset-bottom)); box-sizing: border-box; }
+.page-heading { display: flex; align-items: center; justify-content: space-between; gap: 20rpx; margin-bottom: 24rpx; }
+.page-title { min-width: 0; overflow: hidden; font-size: 34rpx; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.primary-button, .secondary-button, .retry-button { margin: 0; border-radius: 18rpx; font-size: 24rpx; font-weight: 600; }
+.primary-button { padding: 0 26rpx; color: #263820; background: #a8d96f; line-height: 66rpx; }
+.secondary-button, .retry-button { padding: 0 24rpx; color: #668f42; background: #eaf6d5; line-height: 58rpx; }
+.primary-button::after, .secondary-button::after, .retry-button::after { border: 0; }
+.state-card, .journal-card, .editor-card { border: 1rpx solid rgba(93, 121, 79, .14); border-radius: 24rpx; background: #fffefa; box-shadow: 0 10rpx 28rpx rgba(72, 91, 61, .07); box-sizing: border-box; }
+.state-card { min-height: 340rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18rpx; padding: 36rpx; color: #7c887f; text-align: center; }
+.state-title { color: #28362d; font-size: 28rpx; font-weight: 700; }
+.state-copy { line-height: 1.55; }
+.loading-dot { width: 18rpx; height: 18rpx; border-radius: 50%; background: #a8d96f; }
+.card-list { display: flex; flex-direction: column; gap: 18rpx; }
+.dialog-mask { position: fixed; z-index: 20; inset: 0; display: flex; align-items: center; justify-content: center; padding: 40rpx; background: rgba(31, 43, 34, .42); box-sizing: border-box; }
+.dialog-card { width: 100%; max-width: 620rpx; padding: 32rpx; border-radius: 26rpx; background: #fffefa; box-sizing: border-box; }
+.dialog-title { display: block; font-size: 30rpx; font-weight: 700; }
+.dialog-input { height: 82rpx; margin-top: 24rpx; padding: 0 22rpx; border: 1rpx solid rgba(93, 121, 79, .2); border-radius: 16rpx; background: #f4f7ec; box-sizing: border-box; }
+.dialog-error { display: block; margin-top: 12rpx; color: #b45353; font-size: 22rpx; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: 16rpx; margin-top: 26rpx; }
+@media (max-width: 340px) { .journal-page { padding-right: 28rpx; padding-left: 28rpx; } .page-title { font-size: 31rpx; } }

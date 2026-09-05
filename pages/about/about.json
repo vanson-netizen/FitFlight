@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "关于 FitFlight",
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar"
+  }
+}

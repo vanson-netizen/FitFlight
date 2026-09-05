@@ -1,0 +1,7 @@
+<navigation-bar title="关于 FitFlight" back="{{true}}" color="#25352b" background="#dff3b7"></navigation-bar>
+<scroll-view class="settings-scroll" scroll-y="{{true}}" enhanced="{{true}}"><view class="settings-page"><view class="content-card">
+  <text class="content-title">FitFlight</text>
+  <text class="content-copy">面向校园生活的运动、饮食、作息培养辅助小程序。</text>
+  <view class="content-section"><text class="content-heading">当前版本</text><text class="content-copy">v{{appVersion}}</text></view>
+  <view class="content-section"><text class="content-heading">免责声明</text><text class="content-copy">本项目不提供医疗诊断、康复治疗或营养处方。若训练过程中出现身体不适，请立即停止训练，并及时寻求医生或其他专业人员的帮助。</text></view>
+</view></view></scroll-view>

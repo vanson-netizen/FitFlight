@@ -1,0 +1,65 @@
+page { height: 100vh; display: flex; flex-direction: column; overflow: hidden; color: #28362d; background: #fbf8ec; }
+.fifi-scene { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; overflow: hidden; background: #e4efcf; }
+.scene-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+.fifi-scroll { position: relative; flex: 1; min-height: 0; height: 0; }
+.fifi-page { width: 100%; max-width: 760rpx; min-height: 100%; margin: 0 auto; padding: 20rpx 28rpx 24rpx; box-sizing: border-box; }
+.eyebrow { color: #668f42; font-size: 22rpx; }
+.info-card, .state-card { border: 1rpx solid rgba(93,121,79,.14); border-radius: 28rpx; background: rgba(255,254,250,.92); box-shadow: 0 12rpx 34rpx rgba(72,91,61,.08); box-sizing: border-box; }
+.companion-card { height: 36vh; min-height: 310rpx; max-height: 560rpx; display: flex; flex-direction: column; align-items: center; box-sizing: border-box; }
+.speech-bubble { margin-top: 16rpx; padding-top: 14rpx; border-top: 1rpx solid rgba(93,121,79,.12); color: #435443; font-size: 24rpx; line-height: 1.5; }
+.pet-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; margin: 8rpx 0; }
+.pet-image { width: 100%; height: 100%; }
+.pet-fallback { color: #435443; background: rgba(255,254,250,.9); border-radius: 20rpx; padding: 20rpx; font-size: 24rpx; }
+.state-pill { padding: 9rpx 22rpx; border-radius: 999rpx; color: #55763d; background: #dff3b7; font-size: 22rpx; font-weight: 650; }
+.info-card { margin-top: 20rpx; padding: 24rpx; }
+.card-title-row { display: flex; align-items: center; justify-content: space-between; gap: 20rpx; }
+.card-title { font-size: 29rpx; font-weight: 720; }
+.stage-name, .achievement-chip { padding: 7rpx 16rpx; border-radius: 999rpx; color: #55763d; background: #eaf6d5; font-size: 22rpx; }
+.score-row { margin-top: 12rpx; display: flex; align-items: baseline; gap: 12rpx; }
+.score-value { color: #5d873e; font-size: 54rpx; font-weight: 760; }
+.score-unit, .progress-copy, .state-copy { color: #7c887f; font-size: 23rpx; }
+.progress-track { height: 14rpx; margin-top: 18rpx; overflow: hidden; border-radius: 999rpx; background: #edf0e8; }
+.progress-fill { height: 100%; border-radius: inherit; background: linear-gradient(90deg,#a8d96f,#79b750); }
+.progress-copy { display: block; margin-top: 12rpx; line-height: 1.5; }
+.today-points { color: #668f42; font-size: 22rpx; font-weight: 650; }
+.task-list { margin-top: 18rpx; }
+.task-item { min-height: 58rpx; display: flex; align-items: center; border-bottom: 1rpx solid rgba(93,121,79,.1); }
+.task-item:last-child { border-bottom: 0; }
+.task-name { flex: 1; font-size: 26rpx; font-weight: 620; }
+.task-status { color: #7c887f; font-size: 23rpx; }
+.retry-button { border: 0; border-radius: 19rpx; color: #294021; background: #a8d96f; font-size: 27rpx; font-weight: 680; }
+.retry-button::after { border: 0; }
+.record-row { min-height: 76rpx; display: flex; align-items: center; justify-content: space-between; gap: 22rpx; }
+.record-label { color: #68746b; font-size: 24rpx; }
+.record-value { color: #4d7137; font-size: 29rpx; font-weight: 720; }
+.achievement-row { align-items: flex-start; padding-top: 12rpx; }
+.empty-achievement { max-width: 430rpx; color: #8b958d; font-size: 22rpx; line-height: 1.5; text-align: right; }
+.empty-note { margin-top: 20rpx; padding: 22rpx; border-radius: 20rpx; color: #78847c; background: #f0f3e9; font-size: 23rpx; line-height: 1.55; text-align: center; }
+.state-card { min-height: 360rpx; padding: 50rpx 34rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.loading-dot { width: 18rpx; height: 18rpx; margin-bottom: 22rpx; border-radius: 50%; background: #a8d96f; }
+.state-title { margin-bottom: 12rpx; font-size: 29rpx; font-weight: 700; }
+.state-copy { line-height: 1.6; }
+.retry-button { min-width: 210rpx; margin-top: 26rpx; line-height: 74rpx; }
+.bottom-navigation { position: relative; flex: none; z-index: 20; right: 0; bottom: 0; left: 0; display: flex; padding: 10rpx 12rpx calc(10rpx + env(safe-area-inset-bottom)); border-top: 1rpx solid rgba(93,121,79,.12); background: #dff3b7; box-shadow: 0 -8rpx 24rpx rgba(72,91,61,.06); }
+.bottom-navigation-item { min-height: 70rpx; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #74816f; font-size: 21rpx; line-height: 30rpx; }
+.nav-icon { width: 28rpx; height: 28rpx; flex: none; margin-bottom: 2rpx; }
+.bottom-navigation-item-active { color: #466b34; font-weight: 700; }
+@media (max-width: 340px) { .fifi-page { padding-right: 20rpx; padding-left: 20rpx; } .info-card { padding-right: 18rpx; padding-left: 18rpx; } }
+
+.small-card-row { display: flex; align-items: stretch; gap: 18rpx; }
+.small-card-row .info-card { flex: 1; min-width: 0; }
+.small-card-row .card-title { font-size: 27rpx; }
+.task-item { gap: 10rpx; }
+.task-name { font-size: 24rpx; }
+.task-status { flex: none; font-size: 22rpx; }
+.task-status-complete { color: #4e7c36; }
+.task-status-dormant { color: #97764e; }
+.today-points { display: block; margin-top: 12rpx; }
+.task-hint { display: block; margin-top: 12rpx; color: #78847c; font-size: 20rpx; line-height: 1.5; }
+.days-total { margin: 18rpx 0 0; }
+.record-row { flex-wrap: wrap; gap: 6rpx; }
+.record-label { font-size: 22rpx; }
+.record-value { font-size: 25rpx; }
+.achievement-row { flex-direction: column; }
+.empty-achievement { text-align: left; font-size: 20rpx; }
+@media (max-width: 320px) { .small-card-row { flex-direction: column; gap: 0; } }

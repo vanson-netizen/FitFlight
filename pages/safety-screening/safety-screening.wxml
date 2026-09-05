@@ -1,0 +1,18 @@
+<navigation-bar title="安全信息" color="#25352b" background="#dff3b7"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list"><view class="page">
+  <view class="notice">这些信息仅用于判断是否适合自动生成一般健康方案，不用于诊断。医疗问题请咨询专业医生。</view>
+  <view wx:if="{{loading}}" class="card">正在读取…</view>
+  <view wx:elif="{{errorMessage}}" class="card"><text>{{errorMessage}}</text><button bindtap="load">重新读取</button></view>
+  <block wx:else>
+    <view wx:for="{{questions}}" wx:key="field" class="card">
+      <text class="question">{{index + 1}}. {{item.label}}</text>
+      <radio-group data-field="{{item.field}}" bindchange="choose">
+        <label wx:for="{{options}}" wx:for-item="option" wx:key="value" class="option"><radio value="{{option.value}}" checked="{{answers[item.field] === option.value}}"/><text>{{option.label}}</text></label>
+      </radio-group>
+    </view>
+    <view class="card confirmation-card"><checkbox-group bindchange="acknowledge"><label class="option"><checkbox value="acknowledged" checked="{{safetyAcknowledged}}"/><text>我确认以上回答真实，并理解本方案不是医疗建议</text></label></checkbox-group></view>
+  </block>
+</view></scroll-view>
+<view wx:if="{{!loading && !errorMessage}}" class="action-bar">
+  <button class="save" loading="{{saving}}" disabled="{{saving}}" bindtap="save">{{saving ? '保存中…' : '保存并返回'}}</button>
+</view>

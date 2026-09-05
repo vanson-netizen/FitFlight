@@ -1,0 +1,57 @@
+<navigation-bar main-page="{{true}}" back="{{false}}" color="#25352b" background="#dff3b7"></navigation-bar>
+
+<view class="fifi-scene">
+<image wx:if="{{!backgroundLoadError}}" class="scene-background" src="{{appearance.backgroundImage}}" style="{{backgroundStyle}}" mode="aspectFill" binderror="handleBackgroundError" aria-hidden="true"></image>
+<scroll-view class="fifi-scroll" scroll-y enhanced type="list">
+  <view class="fifi-page">
+
+    <view wx:if="{{pageStatus === 'loading'}}" class="state-card"><view class="loading-dot"></view><text class="state-title">正在读取培养记录</text><text class="state-copy">FIFI 马上就来。</text></view>
+    <view wx:elif="{{pageStatus === 'error'}}" class="state-card"><text class="state-title">暂时没有读到培养记录</text><text class="state-copy">{{errorMessage}}</text><button class="retry-button" bindtap="retryLoad">重新加载</button></view>
+
+    <block wx:else>
+      <view class="companion-card" style="{{petAreaStyle}}">
+        <text class="eyebrow">轻轻陪伴每一天</text>
+        <view class="pet-stage" style="width:{{appearance.petDisplayConfig.widthPercent}}%;max-width:{{appearance.petDisplayConfig.maxWidthRpx}}rpx;" role="button" aria-label="点击 FIFI 切换一句陪伴话语" bindtap="changeDialogue">
+          <image wx:if="{{!imageLoadError}}" class="pet-image" src="{{appearance.petImage}}" mode="aspectFit" binderror="handleImageError"></image>
+          <text wx:else class="pet-fallback">FIFI 在这里陪你</text>
+        </view>
+        <text class="state-pill">{{model.today.state === 'celebrate' ? '今天超有活力' : (model.today.state === 'happy' ? '今天有进步' : '陪你慢慢来')}}</text>
+      </view>
+
+      <view class="info-card growth-card">
+        <view class="card-title-row"><text class="card-title">成长信息</text><text class="stage-name">{{model.stage.name}}</text></view>
+        <view class="score-row"><text class="score-value">{{model.totalPoints}}</text><text class="score-unit">总成长值</text></view>
+        <view class="progress-track"><view class="progress-fill" style="width: {{model.stage.progressPercent}}%;"></view></view>
+        <text class="progress-copy">{{model.stage.nextStageName ? '距离“' + model.stage.nextStageName + '”还差 ' + model.stage.pointsToNextStage + ' 分' : '已经成为活力搭档啦'}}</text>
+        <view class="speech-bubble">{{dialogue}}</view>
+      </view>
+
+      <view class="small-card-row">
+      <view class="info-card task-card">
+        <text class="card-title">今日任务</text>
+        <view class="task-list"><view wx:for="{{taskItems}}" wx:key="key" class="task-item"><text class="task-name">{{item.name}}</text><text class="task-status {{item.dormant ? 'task-status-dormant' : (item.complete ? 'task-status-complete' : '')}}">{{item.status}}</text></view></view>
+        <text class="today-points">今日成长值 {{model.today.points}}/10</text>
+        <text class="task-hint">请前往培养页完成今日任务</text>
+      </view>
+
+      <view class="info-card record-card">
+        <text class="card-title">陪伴天数</text>
+        <view class="days-total"><text class="score-value">{{model.cultivationDays}}</text><text class="score-unit"> 天</text></view>
+        <text class="record-label">累计培养</text>
+        <view class="record-row"><text class="record-label">连续培养</text><text class="record-value">{{model.streak}} 天</text></view>
+        <view class="record-row achievement-row"><text class="record-label">最新成就</text><text wx:if="{{model.latestAchievement}}" class="achievement-chip">{{model.latestAchievement.name}}</text><text wx:else class="empty-achievement">一起完成第一项培养任务，就会点亮成就。</text></view>
+      </view>
+      </view>
+
+      <view wx:if="{{pageStatus === 'empty'}}" class="empty-note">还没有培养记录。完成任意一项后，FIFI 会陪你一起成长。</view>
+    </block>
+  </view>
+</scroll-view>
+
+<view class="bottom-navigation">
+  <view class="bottom-navigation-item bottom-navigation-item-active"><image class="nav-icon" src="/assets/icons/tab-fifi-active.png" mode="aspectFit"></image><text>FIFI</text></view>
+  <view class="bottom-navigation-item" role="button" bindtap="openCultivation"><image class="nav-icon" src="/assets/icons/tab-cultivation-inactive.png" mode="aspectFit"></image><text>培养</text></view>
+  <view class="bottom-navigation-item" role="button" bindtap="openCommunity"><image class="nav-icon" src="/assets/icons/tab-community-inactive.png" mode="aspectFit"></image><text>社区</text></view>
+  <view class="bottom-navigation-item" role="button" bindtap="openMine"><image class="nav-icon" src="/assets/icons/tab-mine-inactive.png" mode="aspectFit"></image><text>我的</text></view>
+</view>
+</view>

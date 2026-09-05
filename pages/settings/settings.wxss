@@ -1,0 +1,2 @@
+@import "../settings-shared/settings-shared.wxss";
+.cache-note { display:block; margin:26rpx 8rpx 0; color:#7c887f; font-size:21rpx; line-height:1.6; }

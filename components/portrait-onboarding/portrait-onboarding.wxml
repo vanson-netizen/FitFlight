@@ -1,0 +1,9 @@
+<view wx:if="{{visible}}" class="onboarding-layer" catchtouchmove="preventTouchMove">
+  <view class="onboarding-mask"></view>
+  <view class="onboarding-card" role="dialog" aria-label="生成我的初始画像">
+    <text class="onboarding-title">生成我的初始画像</text>
+    <text class="onboarding-description">我们会根据你的基础信息计算 BMI 和体重目标差，并通过几个简单问题了解你的目标与训练条件。画像完成后，可用于后续生成更适合你的培养方案。</text>
+    <button class="primary-button" disabled="{{loading}}" bindtap="confirm">生成我的画像</button>
+    <button class="secondary-button" disabled="{{loading}}" bindtap="dismiss">暂时跳过</button>
+  </view>
+</view>

@@ -1,0 +1,23 @@
+@import "../community-shared/community-shared.wxss";
+
+.community-scroll { flex: 1; height: 0; min-height: 0; }
+.community-home { display: flex; flex-direction: column; min-height: 0; padding-top: 18rpx; padding-bottom: 18rpx; }
+.community-heading { flex: none; margin-bottom: 18rpx; }
+.community-eyebrow, .community-title, .community-description { display: block; }
+.community-eyebrow { color: #668f42; font-size: 22rpx; font-weight: 650; }
+.community-title { max-width: 610rpx; margin-top: 6rpx; color: #28362d; font-size: 30rpx; font-weight: 750; line-height: 1.35; }
+.community-description { margin-top: 6rpx; color: #78847c; font-size: 22rpx; line-height: 1.4; white-space: nowrap; }
+.entry-list { display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 18rpx; }
+.entry-card { position: relative; flex: 1; min-height: 200rpx; padding: 20rpx 28rpx; display: flex; align-items: flex-end; overflow: hidden; border-radius: 28rpx; background-position: center; background-size: cover; box-shadow: 0 14rpx 34rpx rgba(72, 91, 61, .12); box-sizing: border-box; }
+.entry-sport { background: linear-gradient(135deg, #8dbd6c 0%, #416b4c 100%); }
+.entry-food { background: linear-gradient(135deg, #e2bb75 0%, #9a7651 100%); }
+.entry-forum { background: linear-gradient(135deg, #91b9aa 0%, #4c6d6d 100%); }
+.entry-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(27, 43, 32, .08), rgba(27, 43, 32, .48)); }
+.entry-content { position: relative; z-index: 1; min-width: 0; flex: 1; color: #fff; }
+.entry-title, .entry-description { display: block; text-shadow: 0 2rpx 8rpx rgba(24, 37, 29, .28); }
+.entry-title { font-size: 32rpx; font-weight: 750; }
+.entry-description { margin-top: 4rpx; font-size: 22rpx; line-height: 1.4; }
+.entry-arrow { position: relative; z-index: 1; margin-left: 20rpx; color: #fff; font-size: 46rpx; line-height: 1; }
+.entry-card-hover { opacity: .86; transform: scale(.99); }
+
+.entry-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }

@@ -1,0 +1,19 @@
+@import "../community-shared/community-shared.wxss";
+
+.forum-page { padding-top: 42rpx; padding-bottom: calc(42rpx + env(safe-area-inset-bottom)); }
+.forum-heading { margin-bottom: 30rpx; }
+.forum-eyebrow, .forum-title, .forum-description { display: block; }
+.forum-eyebrow { color: #668f42; font-size: 22rpx; font-weight: 650; }
+.forum-title { margin-top: 8rpx; font-size: 40rpx; font-weight: 750; }
+.forum-description { margin-top: 12rpx; color: #78847c; font-size: 23rpx; line-height: 1.6; }
+.forum-state { min-height: 420rpx; padding: 40rpx 30rpx; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1rpx solid rgba(93,121,79,.14); border-radius: 28rpx; background: #fffefa; box-shadow: 0 12rpx 30rpx rgba(72,91,61,.07); text-align: center; box-sizing: border-box; }
+.forum-symbol { width: 78rpx; height: 78rpx; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: #668f42; background: #edf5df; font-size: 42rpx; }
+.forum-state-title { display: block; margin-top: 22rpx; font-size: 29rpx; font-weight: 700; }
+.forum-state-description { display: block; margin-top: 12rpx; color: #7b877f; font-size: 23rpx; line-height: 1.6; }
+.forum-retry { min-height: 70rpx; margin-top: 24rpx; padding: 0 34rpx; border-radius: 999rpx; color: #35562b; background: #dff3b7; font-size: 23rpx; }
+.forum-retry::after { border: 0; }
+.post-list { display: flex; flex-direction: column; gap: 18rpx; }
+.post-card { padding: 24rpx; border-radius: 22rpx; background: #fffefa; }
+.post-title, .post-content { display: block; overflow-wrap: anywhere; }
+.post-title { font-size: 27rpx; font-weight: 700; }
+.post-content { margin-top: 10rpx; color: #6f7d73; font-size: 22rpx; line-height: 1.6; }

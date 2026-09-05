@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0-draft",
+  "dataVersion": "buaa-venues-draft.1",
+  "status": "draft",
+  "records": [
+    {
+      "venueId": "preview-xueyuan-road-venue-001",
+      "campus": "xueyuan_road",
+      "name": "待调查：学院路校区场地结构示例",
+      "capabilityTags": [],
+      "equipmentTags": [],
+      "indoorOutdoor": "unknown",
+      "openingHours": [],
+      "reservation": { "required": null, "method": null },
+      "usageRestrictions": [],
+      "locationText": null,
+      "coordinates": null,
+      "sourceIds": [],
+      "verifiedAt": null,
+      "validUntil": null,
+      "status": "pending_verification",
+      "notes": "占位记录，不代表真实场地、开放时间或使用规则。"
+    },
+    {
+      "venueId": "preview-shahe-venue-001",
+      "campus": "shahe",
+      "name": "待调查：沙河校区场地结构示例",
+      "capabilityTags": [],
+      "equipmentTags": [],
+      "indoorOutdoor": "unknown",
+      "openingHours": [],
+      "reservation": { "required": null, "method": null },
+      "usageRestrictions": [],
+      "locationText": null,
+      "coordinates": null,
+      "sourceIds": [],
+      "verifiedAt": null,
+      "validUntil": null,
+      "status": "pending_verification",
+      "notes": "占位记录，不代表真实场地、开放时间或使用规则。"
+    }
+  ]
+}

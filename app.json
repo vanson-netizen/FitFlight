@@ -1,8 +1,27 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/fifi/fifi",
+    "pages/cultivation/cultivation",
+    "pages/community/community",
+    "pages/community-sport/community-sport",
+    "pages/community-food/community-food",
+    "pages/community-forum/community-forum",
     "pages/my-portrait/my-portrait",
+    "pages/my-plan/my-plan",
+    "pages/achievements/achievements",
+    "pages/journal-notebooks/journal-notebooks",
+    "pages/journal-entries/journal-entries",
+    "pages/journal-editor/journal-editor",
+    "pages/health-records/health-records",
+    "pages/health-record-editor/health-record-editor",
+    "pages/health-trends/health-trends",
+    "pages/settings/settings",
+    "pages/data-usage/data-usage",
+    "pages/about/about",
+    "pages/portrait-editor/portrait-editor",
     "pages/body-profile/body-profile"
+    ,"pages/safety-screening/safety-screening"
   ],
   "window": {
     "navigationBarTextStyle": "black",

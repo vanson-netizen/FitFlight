@@ -1,0 +1,107 @@
+<navigation-bar main-page="{{true}}" back="{{false}}" color="#25352b" background="#dff3b7"></navigation-bar>
+
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="page">
+    <view class="today-heading">
+      <view class="today-copy">
+        <text class="today-eyebrow">今日培养</text>
+        <text class="today-date">{{todayLabel}}</text>
+      </view>
+      <view wx:if="{{displayModel}}" class="cycle-badge">
+        <text>第 {{displayModel.cycle.currentWeek}} 周 · 第 {{displayModel.cycle.dayOfWeek}} 天</text>
+        <text class="cycle-stage">{{displayModel.cycle.stageName}}</text>
+      </view>
+    </view>
+
+    <view wx:if="{{displayModel}}" class="progress-panel">
+      <view class="progress-copy">
+        <text>今日完成度</text>
+        <text wx:if="{{checkinLoading}}" class="progress-value">加载中…</text>
+        <text wx:elif="{{checkin}}" class="progress-value">{{displayModel.progress.completedCount}} / {{displayModel.progress.totalCount}}</text>
+        <text wx:else class="progress-value">-- / 3</text>
+      </view>
+      <view class="progress-track"><view class="progress-fill" style="width: {{checkin ? displayModel.progress.percent : 0}}%;"></view></view>
+      <view wx:if="{{checkinLoadError}}" class="checkin-error"><text>{{checkinLoadError}}</text><text class="checkin-retry" bindtap="retryDailyCheckin">重新加载</text></view>
+    </view>
+
+    <view class="quick-entry-list">
+      <view class="quick-entry" role="button" bindtap="openHealthRecords">
+        <view class="quick-icon">+</view><view class="quick-copy"><text class="quick-title">健康记录</text><text class="quick-description">查看身体数据变化</text></view><text class="quick-arrow">›</text>
+      </view>
+      <view class="quick-entry" role="button" bindtap="openJournal">
+        <view class="quick-icon quick-icon-note">·</view><view class="quick-copy"><text class="quick-title">我的日志</text><text class="quick-description">回顾每日感受</text></view><text class="quick-arrow">›</text>
+      </view>
+    </view>
+
+    <view wx:if="{{pageStatus === 'loading'}}" class="state-card">
+      <view class="loading-dot"></view><text class="state-title">正在读取今日方案</text><text class="state-description">请稍候…</text>
+    </view>
+
+    <view wx:elif="{{pageStatus === 'empty'}}" class="state-card">
+      <text class="state-symbol">○</text><text class="state-title">{{emptyKind === 'no_day_plan' ? '方案中没有当天安排' : '暂无有效培养方案'}}</text>
+      <text class="state-description">{{emptyKind === 'no_day_plan' ? '当前日期不在该方案的可执行周期内。' : '完成画像并生成培养方案后，这里会显示当天的锻炼、饮食与作息安排。'}}</text>
+    </view>
+
+    <view wx:elif="{{pageStatus === 'generating'}}" class="state-card"><view class="loading-dot"></view><text class="state-title">培养方案正在生成</text><text class="state-description">生成完成后再回来查看今日安排。</text></view>
+
+    <view wx:elif="{{pageStatus === 'archived'}}" class="state-card"><text class="state-title">方案已归档</text><text class="state-description">归档方案仅供查看，不能新增或修改今日打卡。</text></view>
+
+    <view wx:elif="{{pageStatus === 'safety_blocked'}}" class="state-card">
+      <text class="state-title">当前方案已暂停使用</text><text class="state-description">安全信息发生变化，旧方案仍会保留，但不继续作为可执行的今日方案。请先咨询专业人员。</text>
+      <button class="state-action" bindtap="openSafetyScreening">查看安全信息</button>
+    </view>
+
+    <view wx:elif="{{pageStatus === 'outdated'}}" class="state-card">
+      <text class="state-title">当前方案需要更新</text><text class="state-description">用户画像已经变化，旧方案仍保留，但不再作为当前画像的可执行培养任务。请前往“我的方案”生成新方案。</text>
+    </view>
+
+    <view wx:elif="{{pageStatus === 'error'}}" class="state-card">
+      <text class="state-title">今日方案读取失败</text><text class="state-description">{{errorMessage}}</text>
+      <button class="state-action" disabled="{{isLoading}}" bindtap="retryLoad">重新加载</button>
+    </view>
+
+    <block wx:else>
+      <view class="plan-card exercise-card">
+        <view class="card-heading"><view class="section-icon">动</view><view class="heading-copy"><text class="card-title">{{displayModel.plannedExercise.theme || '今日锻炼'}}</text><text class="card-subtitle">{{displayModel.plannedExercise.trainingDayLabel || displayModel.plannedExercise.suggestedTime || '时间可灵活安排'}}</text></view><button class="card-checkin {{checkin && checkin.exerciseCompleted ? 'card-checkin-complete' : ''}}" data-item="exercise" disabled="{{!checkin || checkinReadOnly || savingItems.exercise}}" bindtap="toggleCheckin">{{savingItems.exercise ? '处理中…' : (checkin && checkin.exerciseCompleted ? '✓ 已完成' : '打卡')}}</button></view>
+        <view wx:if="{{pageStatus === 'rest'}}" class="rest-panel"><text class="rest-title">今天是休息日</text><text class="rest-description">{{displayModel.plannedExercise.summary || '按方案安排休息。'}}</text></view>
+        <block wx:else>
+          <view class="metric-row"><view class="metric"><text class="metric-label">总时长</text><text class="metric-value">{{displayModel.plannedExercise.totalDurationText}}</text></view><view class="metric"><text class="metric-label">强度</text><text class="metric-value">{{displayModel.plannedExercise.intensity || '--'}}</text></view></view>
+          <view class="location-panel"><text class="metric-label">推荐场景</text><text class="location-value">{{displayModel.plannedExercise.recommendedSceneText || '安全、通风且空间足够的场地'}}</text><text class="metric-label location-label">推荐地点</text><text class="location-value">{{displayModel.plannedExercise.recommendedLocation || '暂无已核实地点'}}</text><text class="location-status">地点状态：{{displayModel.plannedExercise.locationStatusText || '无已核实地点'}}</text></view>
+          <text wx:if="{{displayModel.plannedExercise.dataPendingVerification}}" class="verification-warning">北航资源数据待核实，未作为已核实地点或菜品推荐。</text>
+          <text wx:if="{{displayModel.plannedExercise.summary}}" class="card-note">{{displayModel.plannedExercise.summary}}</text>
+          <view wx:if="{{displayModel.plannedExercise.dayType === 'training' && !displayModel.plannedExercise.isExecutableTraining}}" class="legacy-training-panel"><text class="rest-title">当前是旧结构方案</text><text class="rest-description">旧快照没有保存具体动作、组次和休息，请重新生成可执行方案。</text><button class="state-action" bindtap="openMyPlan">前往“我的方案”重新生成</button></view>
+          <view wx:elif="{{displayModel.plannedExercise.items.length}}" class="exercise-list">
+            <view wx:for="{{displayModel.plannedExercise.items}}" wx:key="itemId" class="exercise-item">
+              <view class="item-copy"><text class="item-title">{{item.title}}</text><text class="item-meta">{{item.durationText}}{{item.setsText ? ' · ' + item.setsText : ''}}{{item.repsText ? ' · ' + item.repsText : ''}}{{item.setDurationText ? ' · ' + item.setDurationText : ''}}</text><text wx:if="{{item.intensityText}}" class="item-description">强度：{{item.intensityText}}</text><text wx:if="{{item.restText}}" class="item-description">{{item.restText}}</text><text wx:if="{{item.substituteText}}" class="item-description">替代：{{item.substituteText}}</text><text wx:if="{{item.description}}" class="item-description">{{item.description}}</text><text wx:if="{{item.safetyText}}" class="item-safety">注意：{{item.safetyText}}</text></view>
+            </view>
+          </view>
+          <text wx:else class="inline-empty">今日暂无锻炼项目</text>
+          <view wx:if="{{displayModel.plannedExercise.safetyNotices.length}}" class="safety-panel"><text class="metric-label">安全提示</text><text wx:for="{{displayModel.plannedExercise.safetyNotices}}" wx:key="*this" class="item-safety">· {{item}}</text></view>
+        </block>
+      </view>
+
+      <view class="plan-card nutrition-card">
+        <view class="card-heading"><view class="section-icon section-icon-food">食</view><view class="heading-copy"><text class="card-title">今日饮食</text><text class="card-subtitle">完成这些小任务即可</text></view><button class="card-checkin {{checkin && checkin.dietCompleted ? 'card-checkin-complete' : ''}}" data-item="diet" disabled="{{!checkin || checkinReadOnly || savingItems.diet}}" bindtap="toggleCheckin">{{savingItems.diet ? '处理中…' : (checkin && checkin.dietCompleted ? '✓ 已完成' : '打卡')}}</button></view>
+        <view class="task-list">
+          <view wx:for="{{displayModel.nutrition.tasks}}" wx:key="*this" class="daily-task"><text class="task-dot">{{index + 1}}</text><text class="task-copy">{{item}}</text></view>
+        </view>
+        <view wx:if="{{displayModel.nutrition.nearbyFoodOptions.length}}" class="nearby-card"><text class="nearby-title">附近可选</text><view wx:for="{{displayModel.nutrition.nearbyFoodOptions}}" wx:key="foodOptionId" class="nearby-item"><text class="nearby-dish">{{item.dishName}}</text><text wx:if="{{item.locationText}}" class="nearby-location">{{item.locationText}}</text></view><text class="nearby-source">北航饮食资源：人工整理、信息仅供参考</text></view>
+        <text wx:if="{{displayModel.nutrition.disclaimer}}" class="disclaimer">{{displayModel.nutrition.disclaimer}}</text>
+      </view>
+
+      <view class="plan-card sleep-card">
+        <view class="card-heading"><view class="section-icon section-icon-sleep">眠</view><view class="heading-copy"><text class="card-title">今日作息</text><text class="card-subtitle">保持规律，量力安排</text></view><button class="card-checkin {{checkin && checkin.sleepCompleted ? 'card-checkin-complete' : ''}}" data-item="sleep" disabled="{{!checkin || checkinReadOnly || savingItems.sleep}}" bindtap="toggleCheckin">{{savingItems.sleep ? '处理中…' : (checkin && checkin.sleepCompleted ? '✓ 已完成' : '打卡')}}</button></view>
+        <view class="sleep-task"><text class="sleep-task-label">今日任务</text><text class="sleep-task-copy">{{displayModel.sleep.recommendedSleep.task}}</text><text class="sleep-advice">{{displayModel.sleep.recommendedSleep.advice}}</text></view>
+      </view>
+      <text class="health-disclaimer">{{displayModel.planDisclaimer || '仅供健康管理参考，医疗问题请咨询专业医生'}}</text>
+      <text wx:if="{{displayModel.ruleReviewStatus === 'product_draft'}}" class="draft-status">规则状态：product_draft · 当前仅用于开发测试</text>
+    </block>
+  </view>
+</scroll-view>
+
+<view class="bottom-navigation">
+  <view class="bottom-navigation-item" role="button" bindtap="openFifi"><image class="nav-icon" src="/assets/icons/tab-fifi-inactive.png" mode="aspectFit"></image><text>FIFI</text></view>
+  <view class="bottom-navigation-item bottom-navigation-item-active"><image class="nav-icon" src="/assets/icons/tab-cultivation-active.png" mode="aspectFit"></image><text>培养</text></view>
+  <view class="bottom-navigation-item" role="button" bindtap="openCommunity"><image class="nav-icon" src="/assets/icons/tab-community-inactive.png" mode="aspectFit"></image><text>社区</text></view>
+  <view class="bottom-navigation-item" role="button" bindtap="openMine"><image class="nav-icon" src="/assets/icons/tab-mine-inactive.png" mode="aspectFit"></image><text>我的</text></view>
+</view>

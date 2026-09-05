@@ -1,0 +1,973 @@
+{
+  "schemaVersion": "1.0.0",
+  "targetEnvironmentId": "cloud1-d2gdhogc6193c3024",
+  "dataVersion": "buaa-resources-student-v1",
+  "policy": {
+    "meaningOfVerified": "仅表示在本课程项目内允许参与展示和方案匹配，不代表北航官方认证",
+    "displayNotice": "人工整理、信息仅供参考"
+  },
+  "sourceFiles": [
+    {
+      "filename": "运动.csv",
+      "sha256": "cce1a67e7908e8f7073c81a8871339173b445326fc512980df807a456508bcd7"
+    },
+    {
+      "filename": "餐厅.csv",
+      "sha256": "48529f03376d68cf4bb5b5b041f536b53141fd48257bba14a02ce26c60c6b14f"
+    },
+    {
+      "filename": "菜品.csv",
+      "sha256": "11f6eee21835bc8a83d0d965debedad40a2848d1d4328f8925b21560fdb46f08"
+    }
+  ],
+  "counts": {
+    "campus_venues": 9,
+    "campus_dining_halls": 10,
+    "campus_food_options": 4
+  },
+  "collections": {
+    "campus_venues": [
+      {
+        "venueId": "venue-xueyuan-gym-179643f6a0",
+        "campus": "xueyuan_road",
+        "originalName": "北区健身房",
+        "name": "北区健身房",
+        "insideOrOutsideCampus": "inside",
+        "category": "gym",
+        "subcategory": "健身房",
+        "locationText": "北区15公寓B1下沉广场",
+        "supportedActivities": [
+          "力量训练",
+          "有氧运动",
+          "辅助拉伸"
+        ],
+        "capabilityTags": [
+          "strength_equipment",
+          "open_space"
+        ],
+        "equipmentTags": [
+          "爬坡机",
+          "登山机",
+          "哑铃（含高低重量）",
+          "少量力量器械",
+          "瑜伽垫",
+          "拉伸工具"
+        ],
+        "indoorOutdoor": "indoor",
+        "openHoursText": "非节假日开放",
+        "reservationRequired": false,
+        "reservationMethod": null,
+        "priceText": "会员",
+        "priceCny": null,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "venue-xueyuan-gym-179643f6a0",
+        "contentHash": "9f1633091ca1d4f1f8fad7f516c39e2b1f105d1b3ebf21aea1c8e9f9c9f4672e"
+      },
+      {
+        "venueId": "venue-xueyuan-gym-d8d6990026",
+        "campus": "xueyuan_road",
+        "originalName": "游泳馆健身房",
+        "name": "游泳馆健身房",
+        "insideOrOutsideCampus": "inside",
+        "category": "gym",
+        "subcategory": "健身房",
+        "locationText": "游泳馆2楼",
+        "supportedActivities": [
+          "力量训练",
+          "有氧运动",
+          "辅助拉伸"
+        ],
+        "capabilityTags": [
+          "strength_equipment",
+          "open_space"
+        ],
+        "equipmentTags": [
+          "爬坡机",
+          "登山机",
+          "哑铃（含高低重量）",
+          "固定力量器械",
+          "活动力量器械",
+          "瑜伽垫",
+          "拉伸工具"
+        ],
+        "indoorOutdoor": "indoor",
+        "openHoursText": "非节假日开放",
+        "reservationRequired": false,
+        "reservationMethod": null,
+        "priceText": "会员",
+        "priceCny": null,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "venue-xueyuan-gym-d8d6990026",
+        "contentHash": "55ce57b45d722a1aeb59c295729a1d53107c3aa962e5cf9cbf4acdbea75784a3"
+      },
+      {
+        "venueId": "venue-xueyuan-gym-34926a4072",
+        "campus": "xueyuan_road",
+        "originalName": "吉格健身",
+        "name": "吉格健身",
+        "insideOrOutsideCampus": "outside",
+        "category": "gym",
+        "subcategory": "健身房",
+        "locationText": "知春路锦秋家园西门",
+        "supportedActivities": [
+          "力量训练",
+          "有氧运动",
+          "辅助拉伸"
+        ],
+        "capabilityTags": [
+          "strength_equipment",
+          "open_space"
+        ],
+        "equipmentTags": [
+          "爬坡机",
+          "登山机",
+          "哑铃（含高低重量）",
+          "少量力量器械",
+          "瑜伽垫",
+          "拉伸工具"
+        ],
+        "indoorOutdoor": "indoor",
+        "openHoursText": "非节假日开放",
+        "reservationRequired": false,
+        "reservationMethod": null,
+        "priceText": "会员",
+        "priceCny": null,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "venue-xueyuan-gym-34926a4072",
+        "contentHash": "99e24783247997d782c993445cc7a9f18ba32a172d58090c4aa0832c13ad1a5c"
+      },
+      {
+        "venueId": "venue-xueyuan-gym-7212bc20d5",
+        "campus": "xueyuan_road",
+        "originalName": "翘猩猩24h自助健身",
+        "name": "翘猩猩24h自助健身",
+        "insideOrOutsideCampus": "outside",
+        "category": "gym",
+        "subcategory": "健身房",
+        "locationText": "北四环西路甲2号",
+        "supportedActivities": [
+          "力量训练",
+          "有氧运动",
+          "辅助拉伸"
+        ],
+        "capabilityTags": [
+          "strength_equipment",
+          "open_space"
+        ],
+        "equipmentTags": [
+          "爬坡机",
+          "登山机",
+          "哑铃（含高低重量）",
+          "少量力量器械",
+          "瑜伽垫",
+          "拉伸工具"
+        ],
+        "indoorOutdoor": "indoor",
+        "openHoursText": "非节假日开放",
+        "reservationRequired": false,
+        "reservationMethod": null,
+        "priceText": "会员",
+        "priceCny": null,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "venue-xueyuan-gym-7212bc20d5",
+        "contentHash": "cd2629a447d7008e93084c9d648aa0a25e77cca59c67b155d04db14915b4daea"
+      },
+      {
+        "venueId": "venue-xueyuan-ball-sports-f36627c68a",
+        "campus": "xueyuan_road",
+        "originalName": "羽毛球馆（1）",
+        "name": "羽毛球馆（1）",
+        "insideOrOutsideCampus": "inside",
+        "category": "ball_sports",
+        "subcategory": "球类",
+        "locationText": "体育馆主馆",
+        "supportedActivities": [
+          "羽毛球"
+        ],
+        "capabilityTags": [],
+        "equipmentTags": [
+          "羽毛球场地"
+        ],
+        "indoorOutdoor": "indoor",
+        "openHoursText": "非节假日开放",
+        "reservationRequired": true,
+        "reservationMethod": "智慧北航app“智慧场馆”",
+        "priceText": "15-35/h",
+        "priceCny": null,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "venue-xueyuan-ball-sports-f36627c68a",
+        "contentHash": "c58fd3973465b817f84747068fb382841190d302bf6674c2ca7efb325d143e85"
+      },
+      {
+        "venueId": "venue-xueyuan-ball-sports-b69bcc106d",
+        "campus": "xueyuan_road",
+        "originalName": "羽毛球馆（2）",
+        "name": "羽毛球馆（2）",
+        "insideOrOutsideCampus": "inside",
+        "category": "ball_sports",
+        "subcategory": "球类",
+        "locationText": "体育馆训练馆（副馆）",
+        "supportedActivities": [
+          "羽毛球"
+        ],
+        "capabilityTags": [],
+        "equipmentTags": [
+          "羽毛球场地"
+        ],
+        "indoorOutdoor": "indoor",
+        "openHoursText": "非节假日开放",
+        "reservationRequired": true,
+        "reservationMethod": "智慧北航app“智慧场馆”",
+        "priceText": "15-35/h",
+        "priceCny": null,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "venue-xueyuan-ball-sports-b69bcc106d",
+        "contentHash": "c89e3ff05653626f561b2737d3c216580cc543e217a2f671cbe353451cd2db8b"
+      },
+      {
+        "venueId": "venue-xueyuan-ball-sports-284873dc9d",
+        "campus": "xueyuan_road",
+        "originalName": "乒乓球馆",
+        "name": "乒乓球馆",
+        "insideOrOutsideCampus": "inside",
+        "category": "ball_sports",
+        "subcategory": "球类",
+        "locationText": "体育馆主馆",
+        "supportedActivities": [
+          "乒乓球"
+        ],
+        "capabilityTags": [],
+        "equipmentTags": [
+          "乒乓球场地"
+        ],
+        "indoorOutdoor": "indoor",
+        "openHoursText": "非节假日开放",
+        "reservationRequired": true,
+        "reservationMethod": "智慧北航app“智慧场馆”",
+        "priceText": "15-35/h",
+        "priceCny": null,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "venue-xueyuan-ball-sports-284873dc9d",
+        "contentHash": "aabaee79746571d5c44fe958210db200489c5c530984fec31bb6c3a782967e4b"
+      },
+      {
+        "venueId": "venue-xueyuan-track-and-other-b8971b0aa9",
+        "campus": "xueyuan_road",
+        "originalName": "田径场",
+        "name": "田径场",
+        "insideOrOutsideCampus": "inside",
+        "category": "track_and_other",
+        "subcategory": "田径场",
+        "locationText": "学院路37号",
+        "supportedActivities": [
+          "跑步",
+          "散步",
+          "休闲运动"
+        ],
+        "capabilityTags": [
+          "running_track",
+          "walkable_route",
+          "open_space"
+        ],
+        "equipmentTags": [],
+        "indoorOutdoor": "outdoor",
+        "openHoursText": "全年开放（非特殊活动）",
+        "reservationRequired": false,
+        "reservationMethod": null,
+        "priceText": "免费",
+        "priceCny": null,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "venue-xueyuan-track-and-other-b8971b0aa9",
+        "contentHash": "6fad48e83bb4c6992b721b929d8e9ab5516733f7bc480eeb6a54bb6af28d6688"
+      },
+      {
+        "venueId": "venue-xueyuan-swimming-019329917c",
+        "campus": "xueyuan_road",
+        "originalName": "游泳馆",
+        "name": "游泳馆",
+        "insideOrOutsideCampus": "inside",
+        "category": "swimming",
+        "subcategory": "游泳",
+        "locationText": "游泳馆",
+        "supportedActivities": [
+          "游泳"
+        ],
+        "capabilityTags": [],
+        "equipmentTags": [
+          "游泳场地",
+          "深水区浅水区"
+        ],
+        "indoorOutdoor": "indoor",
+        "openHoursText": "非节假日开放",
+        "reservationRequired": true,
+        "reservationMethod": "智慧北航app“智慧场馆”",
+        "priceText": "15-35/h",
+        "priceCny": null,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "venue-xueyuan-swimming-019329917c",
+        "contentHash": "67e89036157568b75079a5479b590e14f90473a083d1025a79adc0bf484fe966"
+      }
+    ],
+    "campus_dining_halls": [
+      {
+        "diningHallId": "dining-xueyuan-hall-d519415fe8",
+        "entityType": "campus_dining_hall",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "originalName": "学二餐厅",
+        "name": "学二餐厅",
+        "floor": "1",
+        "locationText": "学院路5公寓旁",
+        "openHoursText": null,
+        "mealPeriodText": {
+          "breakfast": "7:00-10:00",
+          "lunch": "11:00-14:00",
+          "dinner": "17:00-20:00",
+          "lateNight": null
+        },
+        "halalAvailable": true,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "dining-xueyuan-hall-d519415fe8",
+        "contentHash": "3d058b5d0620766c18be4a2514b9d09b53580852ac14a4eeda558b70d9c6d589"
+      },
+      {
+        "diningHallId": "dining-xueyuan-hall-4f5c07a4f2",
+        "entityType": "campus_dining_hall",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "originalName": "教职工餐厅",
+        "name": "教职工餐厅",
+        "floor": "2",
+        "locationText": "学二餐厅2楼",
+        "openHoursText": null,
+        "mealPeriodText": {
+          "breakfast": "7:00-10:00",
+          "lunch": "11:00-14:00",
+          "dinner": "17:00-20:00",
+          "lateNight": null
+        },
+        "halalAvailable": true,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "dining-xueyuan-hall-4f5c07a4f2",
+        "contentHash": "90a4c5d9ca707e2a532e4a59fe34d9dd48483ee61099314ec9b0def1fd8f2092"
+      },
+      {
+        "diningHallId": "dining-xueyuan-hall-b96eba561e",
+        "entityType": "campus_dining_hall",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "originalName": "航味餐厅",
+        "name": "航味餐厅",
+        "floor": "3",
+        "locationText": "学二餐厅3楼",
+        "openHoursText": null,
+        "mealPeriodText": {
+          "breakfast": null,
+          "lunch": "11:00-14:00",
+          "dinner": "17:00-20:00",
+          "lateNight": null
+        },
+        "halalAvailable": true,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "dining-xueyuan-hall-b96eba561e",
+        "contentHash": "f870febbe43054b8c9fd737f82bfd9d5a9a6ca1ee0127dff31fdb087baf28abb"
+      },
+      {
+        "diningHallId": "dining-xueyuan-hall-e9ba17ae34",
+        "entityType": "campus_dining_hall",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "originalName": "合一餐厅",
+        "name": "合一餐厅",
+        "floor": "2",
+        "locationText": "南区20公寓西侧合一餐厅2楼",
+        "openHoursText": null,
+        "mealPeriodText": {
+          "breakfast": null,
+          "lunch": "11:00-14:00",
+          "dinner": "17:00-20:00",
+          "lateNight": null
+        },
+        "halalAvailable": true,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "dining-xueyuan-hall-e9ba17ae34",
+        "contentHash": "dad65ca7c344ca61b5a79e4d9e7c73470444dd046d9d7d8dcc984c474d0605ca"
+      },
+      {
+        "diningHallId": "dining-xueyuan-hall-a171d7fc11",
+        "entityType": "campus_dining_hall",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "originalName": "合一餐厅",
+        "name": "合一餐厅",
+        "floor": "3",
+        "locationText": "南区20公寓西侧合一餐厅3楼",
+        "openHoursText": null,
+        "mealPeriodText": {
+          "breakfast": "7:00-10:00",
+          "lunch": "11:00-14:00",
+          "dinner": "17:00-20:00",
+          "lateNight": null
+        },
+        "halalAvailable": true,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "dining-xueyuan-hall-a171d7fc11",
+        "contentHash": "a21d7bbec9df3226281c25ef46be4c7ef93858b979b522f503ab66b138ce1c6c"
+      },
+      {
+        "diningHallId": "dining-xueyuan-hall-b3ae834b90",
+        "entityType": "campus_dining_hall",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "originalName": "新北餐厅",
+        "name": "新北餐厅",
+        "floor": "1",
+        "locationText": "北区13公寓西侧新北餐厅1楼",
+        "openHoursText": null,
+        "mealPeriodText": {
+          "breakfast": "7:00-10:00",
+          "lunch": "11:00-14:00",
+          "dinner": "17:00-20:00",
+          "lateNight": null
+        },
+        "halalAvailable": true,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "dining-xueyuan-hall-b3ae834b90",
+        "contentHash": "07539a6ec0a832afaa5968c0e38dc43d4c9412c11dcf10b165b5a8ddabe2fc7e"
+      },
+      {
+        "diningHallId": "dining-xueyuan-hall-131f02dc64",
+        "entityType": "campus_dining_hall",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "originalName": "新北餐厅",
+        "name": "新北餐厅",
+        "floor": "2",
+        "locationText": "北区13公寓西侧新北餐厅2楼",
+        "openHoursText": null,
+        "mealPeriodText": {
+          "breakfast": null,
+          "lunch": "11:00-14:00",
+          "dinner": "17:00-20:00",
+          "lateNight": null
+        },
+        "halalAvailable": true,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "dining-xueyuan-hall-131f02dc64",
+        "contentHash": "82254c8c6bbe5f69a0d1ac6313e575bd3d7e27e36f96cc35f0dd38753fa00520"
+      },
+      {
+        "diningHallId": "dining-xueyuan-hall-52a647c53c",
+        "entityType": "campus_dining_hall",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "originalName": "新北餐厅",
+        "name": "新北餐厅",
+        "floor": "B1",
+        "locationText": "北区13公寓西侧新北餐厅B1楼",
+        "openHoursText": null,
+        "mealPeriodText": {
+          "breakfast": null,
+          "lunch": "11:00-14:00",
+          "dinner": "17:00-20:00",
+          "lateNight": null
+        },
+        "halalAvailable": true,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "dining-xueyuan-hall-52a647c53c",
+        "contentHash": "0316c4b396bc60fef493b4a7c5e08e2a9e399118c8874f145f3a93760cd669c6"
+      },
+      {
+        "diningHallId": "dining-xueyuan-hall-1f269a4cb6",
+        "entityType": "campus_dining_hall",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "originalName": "航味星语",
+        "name": "航味星语",
+        "floor": "1",
+        "locationText": "学二餐厅西侧",
+        "openHoursText": null,
+        "mealPeriodText": {
+          "breakfast": "7:00-10:00",
+          "lunch": "11:00-15:00",
+          "dinner": "15:00-20:00",
+          "lateNight": "20:00-23:00"
+        },
+        "halalAvailable": true,
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "dining-xueyuan-hall-1f269a4cb6",
+        "contentHash": "c0a8aea800cf6d806b81472030c2e67efc03864bf9be10c16f3a34e89c4e1b64"
+      },
+      {
+        "diningHallId": "dining-xueyuan-road-manwei-light-meal",
+        "entityType": "external_merchant",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "outside",
+        "originalName": "蔓味轻食",
+        "name": "蔓味轻食",
+        "floor": null,
+        "locationText": "线上外卖",
+        "openHoursText": "08:30-22:10",
+        "mealPeriodText": {
+          "breakfast": null,
+          "lunch": null,
+          "dinner": null,
+          "lateNight": null
+        },
+        "halalAvailable": null,
+        "confirmedAt": "2026-09-03",
+        "description": "供应时间：08:30-22:10；校外轻食商家/外卖商家，信息仅供参考",
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "dining-xueyuan-road-manwei-light-meal",
+        "contentHash": "5c70f7d5de4b20cb75f4c5d72afcdb739532138b06507fee7fcdeb7b00caa606"
+      }
+    ],
+    "campus_food_options": [
+      {
+        "foodOptionId": "food-xueyuan-option-af35c57c1a",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "serviceMode": "dine_in",
+        "diningHallId": "dining-xueyuan-hall-131f02dc64",
+        "diningHallName": "新北餐厅",
+        "floorOrStall": "2",
+        "originalName": "湖南小碗菜",
+        "dishName": "湖南小碗菜",
+        "category": "other_food",
+        "mealPeriods": [
+          "lunch",
+          "dinner"
+        ],
+        "foodGroupTags": {
+          "staples": [
+            "米饭",
+            "粗粮"
+          ],
+          "vegetables": [
+            "多种素菜"
+          ],
+          "proteins": [
+            "肉类",
+            "豆类",
+            "蛋类"
+          ]
+        },
+        "foodTags": [
+          "米饭",
+          "粗粮",
+          "多种素菜",
+          "肉类",
+          "豆类",
+          "蛋类"
+        ],
+        "cookingMethodText": "多种",
+        "priceText": "10-25/人",
+        "priceCny": null,
+        "servingText": null,
+        "nutrition": {
+          "estimatedKcal": null,
+          "otherText": null
+        },
+        "nutritionSource": {
+          "kcalSourceText": null,
+          "originalKcalText": "根据自身挑选"
+        },
+        "supplyDaysText": "与食堂相同",
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "food-xueyuan-option-af35c57c1a",
+        "contentHash": "87c534c091a804c6882d29b1883b4a7418fa4d1b67a801c98d1ae69fab060e3c"
+      },
+      {
+        "foodOptionId": "food-xueyuan-option-bf22a4c884",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "serviceMode": "dine_in",
+        "diningHallId": "dining-xueyuan-hall-52a647c53c",
+        "diningHallName": "新北餐厅",
+        "floorOrStall": "B1",
+        "originalName": "健康餐",
+        "dishName": "健康餐",
+        "category": "healthy_light_meal",
+        "mealPeriods": [
+          "lunch",
+          "dinner"
+        ],
+        "foodGroupTags": {
+          "staples": [
+            "杂粮饭",
+            "粗粮"
+          ],
+          "vegetables": [
+            "多种水煮菜"
+          ],
+          "proteins": [
+            "肉类",
+            "豆类",
+            "蛋类"
+          ]
+        },
+        "foodTags": [
+          "杂粮饭",
+          "粗粮",
+          "多种水煮菜",
+          "肉类",
+          "豆类",
+          "蛋类"
+        ],
+        "cookingMethodText": "水煮为主",
+        "priceText": "10-25/人",
+        "priceCny": null,
+        "servingText": null,
+        "nutrition": {
+          "estimatedKcal": null,
+          "otherText": null
+        },
+        "nutritionSource": {
+          "kcalSourceText": null,
+          "originalKcalText": "根据自身挑选"
+        },
+        "supplyDaysText": "与食堂相同",
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "food-xueyuan-option-bf22a4c884",
+        "contentHash": "23e15562811c0610f2f86cceccc2e41ad6786a644ecee9fd105c2b355de5c4c1"
+      },
+      {
+        "foodOptionId": "food-xueyuan-option-bd51c94c2f",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "inside",
+        "serviceMode": "dine_in",
+        "diningHallId": "dining-xueyuan-hall-e9ba17ae34",
+        "diningHallName": "合一餐厅",
+        "floorOrStall": "2",
+        "originalName": "减脂餐",
+        "dishName": "减脂餐",
+        "category": "healthy_light_meal",
+        "mealPeriods": [
+          "lunch",
+          "dinner"
+        ],
+        "foodGroupTags": {
+          "staples": [
+            "杂粮饭",
+            "荞麦面",
+            "粗粮"
+          ],
+          "vegetables": [
+            "水煮菜"
+          ],
+          "proteins": [
+            "肉类",
+            "蛋类"
+          ]
+        },
+        "foodTags": [
+          "杂粮饭",
+          "荞麦面",
+          "粗粮",
+          "水煮菜",
+          "肉类",
+          "蛋类"
+        ],
+        "cookingMethodText": "水煮为主",
+        "priceText": "10-20/人",
+        "priceCny": null,
+        "servingText": null,
+        "nutrition": {
+          "estimatedKcal": null,
+          "otherText": null
+        },
+        "nutritionSource": {
+          "kcalSourceText": null,
+          "originalKcalText": "400-600kcal"
+        },
+        "supplyDaysText": "与食堂相同",
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "food-xueyuan-option-bd51c94c2f",
+        "contentHash": "8bee88f8e4688bd35dd5435baa48f64430fe698db1380e52be5ba468a3f13874"
+      },
+      {
+        "foodOptionId": "food-xueyuan-option-27c87b7d71",
+        "campus": "xueyuan_road",
+        "insideOrOutsideCampus": "outside",
+        "serviceMode": "delivery",
+        "diningHallId": "dining-xueyuan-road-manwei-light-meal",
+        "diningHallName": "蔓味轻食",
+        "floorOrStall": null,
+        "originalName": "减脂餐",
+        "dishName": "减脂餐",
+        "category": "healthy_light_meal",
+        "mealPeriods": [
+          "breakfast",
+          "lunch",
+          "dinner"
+        ],
+        "foodGroupTags": {
+          "staples": [
+            "杂粮饭",
+            "荞麦面",
+            "粗粮"
+          ],
+          "vegetables": [
+            "水煮菜"
+          ],
+          "proteins": [
+            "肉类",
+            "蛋类"
+          ]
+        },
+        "foodTags": [
+          "杂粮饭",
+          "荞麦面",
+          "粗粮",
+          "水煮菜",
+          "肉类",
+          "蛋类"
+        ],
+        "cookingMethodText": "水煮为主",
+        "priceText": "10-21/人",
+        "priceCny": null,
+        "servingText": null,
+        "nutrition": {
+          "estimatedKcal": null,
+          "otherText": null
+        },
+        "nutritionSource": {
+          "kcalSourceText": null,
+          "originalKcalText": "400-600kcal"
+        },
+        "supplyDaysText": "8:30-22:10",
+        "confirmedAt": "2026-09-03",
+        "description": null,
+        "dataVersion": "buaa-resources-student-v1",
+        "status": "verified",
+        "verifiedAt": "2026-09-03",
+        "validUntil": "2026-12-02",
+        "sourceType": "student_curated",
+        "sourceText": "学生整理",
+        "curatedBy": "student",
+        "displayNotice": "人工整理、信息仅供参考",
+        "imageFileId": null,
+        "_id": "food-xueyuan-option-27c87b7d71",
+        "contentHash": "9b1f33ba1a63676084cb6d27442b0cd8d35027891a6a9245024b54e079e71b71"
+      }
+    ]
+  }
+}

@@ -21,3 +21,13 @@ page { height: 100vh; color: #28362d; background: #fbf8ec; }
 .profile-label { flex: none; color: #7c887f; font-size: 25rpx; }
 .profile-value { min-width: 0; flex: 1; margin-left: 24rpx; font-size: 27rpx; font-weight: 600; text-align: right; }
 .profile-value-long { line-height: 1.45; }
+.portrait-state-card, .portrait-card { margin-top: 28rpx; }
+.stale-notice, .safety-hint, .ready-note, .metric-note { display: block; margin-top: 24rpx; padding: 20rpx; border-radius: 18rpx; font-size: 23rpx; line-height: 1.6; }
+.stale-notice { color: #765e35; background: #fff2d4; }
+.safety-hint { color: #735d36; background: #fff3d8; }
+.ready-note { color: #466b34; background: #edf7dc; }
+.metric-grid { margin-top: 28rpx; display: flex; gap: 18rpx; }
+.metric-card { flex: 1; padding: 24rpx; border-radius: 20rpx; background: #f0f6e5; }
+.metric-label { display: block; color: #748078; font-size: 22rpx; }
+.metric-value { display: block; margin-top: 8rpx; font-size: 34rpx; font-weight: 700; }
+.metric-note { padding: 0; color: #7c887f; }

@@ -1,0 +1,15 @@
+<navigation-bar title="{{notebookTitle}}" color="#25352b" background="#dff3b7"></navigation-bar>
+<scroll-view class="journal-scroll" scroll-y="{{true}}" enhanced="{{true}}" type="list">
+  <view class="journal-page">
+    <view class="page-heading"><text class="page-title">{{notebookTitle}}</text><button class="primary-button" bindtap="createEntry">写日志</button></view>
+    <view wx:if="{{pageStatus === 'loading'}}" class="state-card"><view class="loading-dot"></view><text>正在读取日志…</text></view>
+    <view wx:elif="{{pageStatus === 'error'}}" class="state-card"><text class="state-title">日志读取失败</text><text class="state-copy">{{errorMessage}}</text><button class="retry-button" bindtap="retryLoad">重试</button></view>
+    <view wx:elif="{{pageStatus === 'empty'}}" class="state-card"><text class="state-title">这个日志本还没有内容</text><text class="state-copy">写下今天的培养感受吧</text><button class="primary-button" bindtap="createEntry">写日志</button></view>
+    <view wx:elif="{{pageStatus === 'ready'}}" class="card-list">
+      <view wx:for="{{entries}}" wx:key="_id" class="journal-card entry-card" role="button" data-id="{{item._id}}" bindtap="openEntry">
+        <view class="entry-heading"><text class="entry-title">{{item.displayTitle}}</text><text class="entry-time">{{item.updatedAtText}}</text></view>
+        <text class="entry-summary">{{item.summary}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

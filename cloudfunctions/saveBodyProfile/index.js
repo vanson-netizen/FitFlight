@@ -1,12 +1,17 @@
 const cloud = require('wx-server-sdk')
 const { validate } = require('./validator')
+const { PLAN_STATUS } = require('./plan-status')
 
 cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV })
 
 const db = cloud.database()
 const _ = db.command
 const COLLECTION_NAME = 'body_profiles'
+const PLAN_STATE_COLLECTION_NAME = 'training_plan_states'
+const PLAN_COLLECTION_NAME = 'training_plans'
 const PROFILE_FIELDS = ['gender', 'birthDate', 'heightCm', 'weightKg', 'targetWeightKg', 'activityLevel']
+// 后续身体表单增加方案相关字段时，只需在此处集中扩展。
+const PLAN_RELEVANT_FIELDS = ['gender', 'birthDate', 'heightCm', 'weightKg', 'targetWeightKg', 'activityLevel']
 const IDENTITY_FIELDS = ['openid', 'openId', '_openid', 'ownerOpenId', 'userId']
 
 function pickProfile(record) {
@@ -41,6 +46,35 @@ async function findCurrentProfile(collection, openid) {
   return { record: result.data[0] || null }
 }
 
+async function getActivePlanStatus(openid) {
+  const result = await db.collection(PLAN_STATE_COLLECTION_NAME).where({ _openid: openid }).limit(2).get()
+  if (result.data.length > 1) return { error: failure('PLAN_STATE_CONFLICT', '方案状态存在异常，请联系支持人员') }
+  const state = result.data[0]
+  if (!state || !state.currentPlanId) return { status: PLAN_STATUS.NONE, state: null }
+  return { status: state.planStatus === PLAN_STATUS.OUTDATED ? PLAN_STATUS.OUTDATED : PLAN_STATUS.ACTIVE, state }
+}
+
+function targetDirection(weight, target) {
+  if (!Number.isFinite(Number(target)) || Number(target) === Number(weight)) return 'same'
+  return Number(target) < Number(weight) ? 'loss' : 'gain'
+}
+
+async function evaluatePlanImpact(openid, state, nextProfile, changedFields) {
+  if (!state || !state.currentPlanId) return { shouldPrompt: false, reasons: [] }
+  const result = await db.collection(PLAN_COLLECTION_NAME).where({ _id: state.currentPlanId, _openid: openid }).limit(1).get()
+  const snapshot = result.data[0] && result.data[0].content && result.data[0].content.profileSnapshot
+  if (!snapshot) return { shouldPrompt: false, reasons: [] }
+  const reasons = []
+  if (changedFields.includes('weightKg') && Math.abs(Number(nextProfile.weightKg) - Number(snapshot.currentWeightKg)) >= 5) reasons.push('weightKg')
+  if (changedFields.includes('targetWeightKg')) {
+    const directionChanged = targetDirection(snapshot.currentWeightKg, snapshot.targetWeightKg) !== targetDirection(nextProfile.weightKg, nextProfile.targetWeightKg)
+    const bothNumeric = Number.isFinite(Number(nextProfile.targetWeightKg)) && nextProfile.targetWeightKg !== null && Number.isFinite(Number(snapshot.targetWeightKg)) && snapshot.targetWeightKg !== null
+    if (directionChanged || (bothNumeric && Math.abs(Number(nextProfile.targetWeightKg) - Number(snapshot.targetWeightKg)) >= 3)) reasons.push('targetWeightKg')
+  }
+  if (changedFields.includes('activityLevel')) reasons.push('activityLevel')
+  return { shouldPrompt: reasons.length > 0, reasons }
+}
+
 async function getBodyProfile(collection, openid) {
   const lookup = await findCurrentProfile(collection, openid)
   if (lookup.error) return lookup.error
@@ -73,6 +107,8 @@ async function saveBodyProfile(collection, openid, event) {
 
   const lookup = await findCurrentProfile(collection, openid)
   if (lookup.error) return lookup.error
+  const planState = await getActivePlanStatus(openid)
+  if (planState.error) return planState.error
   const existing = lookup.record
   const currentVersion = existing ? getProfileVersion(existing) : 0
 
@@ -86,6 +122,8 @@ async function saveBodyProfile(collection, openid, event) {
       ok: true,
       profileVersion: currentVersion,
       isFirstCompletion: false,
+      planRelevantChanged: false,
+      activePlanStatus: planState.status,
       changedFields: []
     }
   }
@@ -96,6 +134,8 @@ async function saveBodyProfile(collection, openid, event) {
     : PROFILE_FIELDS.filter((field) => value[field] !== null)
   const profileVersion = currentVersion + 1
   const isFirstCompletion = !isCompleteProfile(existing)
+  const planImpact = await evaluatePlanImpact(openid, planState.state, value, changedFields)
+  const planRelevantChanged = planImpact.shouldPrompt
 
   if (!existing) {
     await collection.add({
@@ -131,7 +171,19 @@ async function saveBodyProfile(collection, openid, event) {
     }
   }
 
-  return { ok: true, profileVersion, isFirstCompletion, changedFields }
+  if (planImpact.shouldPrompt && planState.state) {
+    await db.collection(PLAN_STATE_COLLECTION_NAME).doc(planState.state._id).update({ data: { planStatus: 'pending_confirmation', pendingProfileVersion: profileVersion, pendingGenerationType: 'adjustment', updatedAt: db.serverDate() } })
+  }
+
+  return {
+    ok: true,
+    profileVersion,
+    isFirstCompletion,
+    planRelevantChanged,
+    changedFields,
+    planImpactReasons: planImpact.reasons,
+    activePlanStatus: planState.status
+  }
 }
 
 exports.main = async (event = {}) => {

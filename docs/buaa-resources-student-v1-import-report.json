@@ -1,0 +1,49 @@
+{
+  "environmentId": "cloud1-d2gdhogc6193c3024",
+  "dataVersion": "buaa-resources-student-v1",
+  "executedAt": "2026-09-03T16:29:24+08:00",
+  "result": "committed_and_verified_after_client_timeout",
+  "applyInvocation": {
+    "attempts": 1,
+    "automaticRetry": false,
+    "clientResult": "timeout_after_3_seconds",
+    "resolution": "post_timeout_inspect_confirmed_commit"
+  },
+  "before": {
+    "applyEnabled": true,
+    "collectionRecordCounts": {
+      "campus_venues": 0,
+      "campus_dining_halls": 0,
+      "campus_food_options": 0
+    },
+    "comparison": {
+      "insert": 23,
+      "update": 0,
+      "unchanged": 0,
+      "conflict": 0
+    }
+  },
+  "after": {
+    "collectionRecordCounts": {
+      "campus_venues": 9,
+      "campus_dining_halls": 10,
+      "campus_food_options": 4
+    },
+    "comparison": {
+      "insert": 0,
+      "update": 0,
+      "unchanged": 23,
+      "conflict": 0
+    },
+    "stableIdsMatchFixedRelease": true,
+    "contentHashesMatchFixedRelease": true,
+    "noExtraRecords": true,
+    "noPartialWrite": true
+  },
+  "writeBoundary": {
+    "applyEnabledAtVerification": true,
+    "closureStatus": "closed_and_verified",
+    "closedAndVerifiedAt": "2026-09-03T16:33:27+08:00",
+    "applyEnabledAfterClosure": false
+  }
+}

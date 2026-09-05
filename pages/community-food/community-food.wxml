@@ -1,0 +1,20 @@
+<navigation-bar title="饮食资源" color="#25352b" background="#dff3b7"></navigation-bar>
+<view class="resource-layout" style="height: {{layoutHeight}}px;">
+  <scroll-view class="category-nav" style="height: {{layoutHeight}}px;" scroll-y="{{true}}" enhanced="{{true}}" show-scrollbar="{{true}}" type="list"><view wx:for="{{categories}}" wx:key="id" class="category-item {{selectedCategoryId === item.id ? 'category-item-active' : ''}}" role="button" data-category="{{item.id}}" bindtap="selectCategory">{{item.label}}</view></scroll-view>
+  <view class="resource-pane">
+    <text class="resource-heading">{{selectedCategoryLabel}}</text>
+    <scroll-view class="resource-list" style="height: {{resourceListHeight}}px;" scroll-y="{{true}}" enhanced="{{true}}" show-scrollbar="{{true}}" scroll-top="{{resourceScrollTop}}">
+      <view wx:if="{{pageStatus === 'loading'}}" class="state-card"><view class="state-symbol">·</view><text class="state-title">正在读取资源</text></view>
+      <view wx:elif="{{pageStatus === 'empty'}}" class="state-card"><view class="state-symbol">○</view><text class="state-title">暂无资源</text><text class="state-description">该分类暂无已整理资源，后续补充经过核实的餐饮信息。</text></view>
+      <view wx:elif="{{pageStatus === 'error'}}" class="state-card"><view class="state-symbol">!</view><text class="state-title">加载失败</text><text class="state-description">{{errorMessage}}</text><button class="retry-button" bindtap="retryLoad">重新加载</button></view>
+      <block wx:elif="{{pageStatus === 'success'}}">
+      <view wx:for="{{resources}}" wx:key="resourceId" class="resource-card">
+        <view class="resource-image-frame"><image wx:if="{{!item.imageHidden}}" class="resource-image" src="{{item.displayImage}}" mode="aspectFill" data-id="{{item.resourceId}}" data-src="{{item.displayImage}}" binderror="onImageError"></image></view>
+        <view class="resource-body"><text class="resource-name">{{item.name}}</text><text class="resource-meta">{{item.campusScopeText}}</text><text wx:if="{{item.diningLocationText}}" class="resource-meta">{{item.diningLocationText}}</text><text wx:if="{{item.mealTypesText}}" class="resource-tag-line">餐次：{{item.mealTypesText}}</text><text wx:if="{{item.effectiveOpenHoursText}}" class="resource-meta">{{item.effectiveOpenHoursText}}</text><text wx:if="{{item.foodTagsText}}" class="resource-tag-line">分类：{{item.foodTagsText}}</text><text wx:if="{{item.priceDisplayText}}" class="resource-meta">{{item.priceDisplayText}}</text><text wx:if="{{item.nutritionDisplayText}}" class="resource-meta">{{item.nutritionDisplayText}}</text><text wx:if="{{item.description}}" class="resource-description">{{item.description}}</text><text class="verification-badge {{item.isVerified ? 'verification-badge-verified' : ''}}">{{item.verificationLabel}}</text></view>
+      </view>
+      </block>
+      <view wx:else class="state-card"><view class="state-symbol">!</view><text class="state-title">暂时无法显示资源</text><text class="state-description">页面状态异常，请返回后重新进入。</text></view>
+      <view class="resource-list-safe-area"></view>
+    </scroll-view>
+  </view>
+</view>

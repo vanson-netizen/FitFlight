@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0-draft",
+  "dataVersion": "meal-pattern-draft.1",
+  "status": "draft",
+  "records": [
+    {
+      "patternId": "preview-balanced-breakfast",
+      "mealPeriod": "breakfast",
+      "foodGroupCombination": ["whole_or_mixed_grain", "protein_source", "vegetable_or_fruit", "dairy_or_soy_optional"],
+      "applicableGoals": ["fat_loss", "muscle_gain", "fitness_improvement", "weight_gain", "maintain"],
+      "portionExpression": "按一般成年人平衡膳食结构选择，具体份量待营养师审核。",
+      "prohibitedClaims": ["燃脂", "排毒", "治疗", "快速减重", "保证增肌"],
+      "sourceIds": ["cn-dietary-guidelines-2022"],
+      "reviewStatus": "draft"
+    },
+    {
+      "patternId": "preview-balanced-main-meal",
+      "mealPeriod": "lunch",
+      "foodGroupCombination": ["grain_or_tuber", "vegetable", "protein_source"],
+      "applicableGoals": ["fat_loss", "muscle_gain", "fitness_improvement", "weight_gain", "maintain"],
+      "portionExpression": "优先保证食物类别多样，具体份量和能量不在无来源时推算。",
+      "prohibitedClaims": ["燃脂", "排毒", "治疗", "零负担", "无限量"],
+      "sourceIds": ["cn-dietary-guidelines-2022", "healthy-china-action-2019-2030"],
+      "reviewStatus": "draft"
+    },
+    {
+      "patternId": "preview-balanced-dinner",
+      "mealPeriod": "dinner",
+      "foodGroupCombination": ["grain_or_tuber", "vegetable", "protein_source"],
+      "applicableGoals": ["fat_loss", "muscle_gain", "fitness_improvement", "weight_gain", "maintain"],
+      "portionExpression": "保持规律和多样，避免用产品文案替代个体营养评估。",
+      "prohibitedClaims": ["不吃主食", "快速减脂", "治愈", "清肠", "绝对健康"],
+      "sourceIds": ["cn-dietary-guidelines-2022"],
+      "reviewStatus": "draft"
+    }
+  ],
+  "notes": "结构样本，不是菜单或营养处方。"
+}

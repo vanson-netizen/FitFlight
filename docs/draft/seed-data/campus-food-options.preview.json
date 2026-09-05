@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0-draft",
+  "dataVersion": "buaa-food-options-draft.1",
+  "status": "draft",
+  "records": [
+    {
+      "foodOptionId": "preview-xueyuan-road-food-001",
+      "campus": "xueyuan_road",
+      "diningHallName": "待调查：学院路校区食堂结构示例",
+      "floorOrStall": null,
+      "dishName": "待调查菜品结构占位",
+      "mealPeriods": [],
+      "foodGroupTags": [],
+      "nutrition": { "estimatedKcal": null, "proteinG": null, "carbohydrateG": null, "fatG": null, "sodiumMg": null },
+      "nutritionSource": { "type": "none", "sourceId": null, "url": null },
+      "supplySchedule": [],
+      "verifiedAt": null,
+      "status": "pending_verification",
+      "notes": "不代表真实食堂、窗口、菜品、供应时间或营养值。"
+    },
+    {
+      "foodOptionId": "preview-shahe-food-001",
+      "campus": "shahe",
+      "diningHallName": "待调查：沙河校区食堂结构示例",
+      "floorOrStall": null,
+      "dishName": "待调查菜品结构占位",
+      "mealPeriods": [],
+      "foodGroupTags": [],
+      "nutrition": { "estimatedKcal": null, "proteinG": null, "carbohydrateG": null, "fatG": null, "sodiumMg": null },
+      "nutritionSource": { "type": "none", "sourceId": null, "url": null },
+      "supplySchedule": [],
+      "verifiedAt": null,
+      "status": "pending_verification",
+      "notes": "不代表真实食堂、窗口、菜品、供应时间或营养值。"
+    }
+  ]
+}

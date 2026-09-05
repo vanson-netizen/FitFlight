@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "完善画像",
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar"
+  }
+}

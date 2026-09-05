@@ -1,40 +1,42 @@
 <navigation-bar title="我的画像" color="#25352b" background="#dff3b7"></navigation-bar>
-
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="page">
-    <view wx:if="{{profileStatus === 'loading'}}" class="state-card">
-      <view class="loading-dot"></view>
-      <text>正在读取身体档案…</text>
-    </view>
-
-    <view wx:elif="{{profileStatus === 'error'}}" class="state-card">
-      <text class="state-title">身体档案读取失败</text>
-      <text class="state-description">{{errorMessage}}</text>
-      <button class="state-action" bindtap="retryLoad">重试</button>
-    </view>
-
-    <view wx:elif="{{profileStatus === 'incomplete'}}" class="state-card">
-      <text class="state-title">身体信息尚未完善</text>
-      <text class="state-description">填写后可用于生成个性化培养方案</text>
-      <button class="state-action" bindtap="openBodyProfile">继续填写</button>
-    </view>
-
-    <view wx:else class="profile-card">
-      <view class="card-heading">
-        <view class="heading-copy">
-          <text class="card-title">身体档案</text>
-          <text class="card-description">仅展示当前微信用户的云端资料</text>
+    <view wx:if="{{profileStatus === 'loading'}}" class="state-card"><view class="loading-dot"></view><text>正在读取画像…</text></view>
+    <view wx:elif="{{profileStatus === 'error'}}" class="state-card"><text class="state-title">画像读取失败</text><text class="state-description">{{errorMessage}}</text><button class="state-action" bindtap="retryLoad">重试</button></view>
+    <view wx:elif="{{profileStatus === 'incomplete'}}" class="state-card"><text class="state-title">身体信息尚未完善</text><text class="state-description">先完善基础资料，再生成初始画像。</text><button class="state-action" bindtap="openBodyProfile">继续填写</button></view>
+    <block wx:else>
+      <view class="profile-card">
+        <view class="card-heading"><view class="heading-copy"><text class="card-title">基础资料摘要</text><text class="card-description">数据来自当前身体档案</text></view><button class="edit-button" bindtap="openBodyProfile">查看/修改</button></view>
+        <view class="profile-list">
+          <view class="profile-row"><text class="profile-label">性别</text><text class="profile-value">{{bodyProfile.gender}}</text></view>
+          <view class="profile-row"><text class="profile-label">出生日期</text><text class="profile-value">{{bodyProfile.birthDate}}</text></view>
+          <view class="profile-row"><text class="profile-label">身高</text><text class="profile-value">{{bodyProfile.height}}</text></view>
+          <view class="profile-row"><text class="profile-label">当前体重</text><text class="profile-value">{{bodyProfile.weight}}</text></view>
+          <view class="profile-row"><text class="profile-label">目标体重</text><text class="profile-value">{{bodyProfile.targetWeight}}</text></view>
+          <view class="profile-row"><text class="profile-label">日常活动水平</text><text class="profile-value profile-value-long">{{bodyProfile.activityLevel}}</text></view>
         </view>
-        <button class="edit-button" bindtap="openBodyProfile">查看/修改</button>
       </view>
-      <view class="profile-list">
-        <view class="profile-row"><text class="profile-label">性别</text><text class="profile-value">{{bodyProfile.gender}}</text></view>
-        <view class="profile-row"><text class="profile-label">出生日期</text><text class="profile-value">{{bodyProfile.birthDate}}</text></view>
-        <view class="profile-row"><text class="profile-label">身高</text><text class="profile-value">{{bodyProfile.height}}</text></view>
-        <view class="profile-row"><text class="profile-label">当前体重</text><text class="profile-value">{{bodyProfile.weight}}</text></view>
-        <view class="profile-row"><text class="profile-label">目标体重</text><text class="profile-value">{{bodyProfile.targetWeight}}</text></view>
-        <view class="profile-row"><text class="profile-label">日常活动水平</text><text class="profile-value profile-value-long">{{bodyProfile.activityLevel}}</text></view>
+      <view wx:if="{{profileStatus === 'not_generated' || profileStatus === 'skipped'}}" class="state-card portrait-state-card"><text class="state-title">{{profileStatus === 'skipped' ? '本次已暂时跳过' : '尚未生成初始画像'}}</text><text class="state-description">通过几个简单问题生成目标与训练条件画像。</text><button class="state-action" bindtap="openPortraitEditor">生成我的画像</button></view>
+      <view wx:elif="{{profileStatus === 'needs_regeneration'}}" class="state-card portrait-state-card"><text class="state-title">画像需要更新</text><text class="state-description">身体基础资料已变化，请根据最新资料重新生成画像。</text><button class="state-action" bindtap="openPortraitEditor">更新画像</button></view>
+      <view wx:if="{{portrait}}" class="profile-card portrait-card">
+        <button class="edit-button" bindtap="openSafetyScreening">安全信息筛查</button>
+        <view class="card-heading"><view class="heading-copy"><text class="card-title">V1 用户画像</text><text class="card-description">画像版本 {{portrait.portraitVersion}}</text></view><button class="edit-button" bindtap="openPortraitEditor">修改</button></view>
+        <view wx:if="{{profileStatus === 'needs_regeneration'}}" class="stale-notice">以下内容基于旧版身体资料，仅供回顾，请更新后再用于后续方案。</view>
+        <view class="metric-grid"><view class="metric-card"><text class="metric-label">BMI 参考值</text><text class="metric-value">{{portrait.bmi}}</text></view><view class="metric-card"><text class="metric-label">体重目标差</text><text class="metric-value">{{portrait.weightDifference}}</text></view></view>
+        <text class="metric-note">BMI 仅为根据当前身高和体重计算的参考指标，不代表体脂率、疾病诊断或健康结论。</text>
+        <view class="profile-list">
+          <view class="profile-row"><text class="profile-label">所在校区</text><text class="profile-value">{{portrait.campus}}</text></view>
+          <view class="profile-row"><text class="profile-label">训练目标</text><text class="profile-value">{{portrait.trainingGoal}}</text></view>
+          <view class="profile-row"><text class="profile-label">每周训练</text><text class="profile-value">{{portrait.availableDays}}</text></view>
+          <view class="profile-row"><text class="profile-label">单次时间</text><text class="profile-value">{{portrait.sessionDuration}}</text></view>
+          <view class="profile-row"><text class="profile-label">训练经验</text><text class="profile-value">{{portrait.experienceLevel}}</text></view>
+          <view class="profile-row"><text class="profile-label">器械条件</text><text class="profile-value">{{portrait.equipmentAccess}}</text></view>
+          <view class="profile-row"><text class="profile-label">运动偏好</text><text class="profile-value profile-value-long">{{portrait.exercisePreferences}}</text></view>
+          <view class="profile-row"><text class="profile-label">运动限制</text><text class="profile-value">{{portrait.exerciseLimitation}}</text></view>
+        </view>
+        <text wx:if="{{portrait.showSafetyHint}}" class="safety-hint">生成或执行运动方案前，建议根据自身情况咨询医生或专业人士。</text>
+        <text wx:if="{{profileStatus === 'complete'}}" class="ready-note">画像已准备完成，培养规则准备好后可生成方案。</text>
       </view>
-    </view>
+    </block>
   </view>
 </scroll-view>

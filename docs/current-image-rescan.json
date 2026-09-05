@@ -1,0 +1,732 @@
+[
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\fifi\\samoyed.png",
+    "format": ".png",
+    "width": 500,
+    "height": 545,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 84165,
+    "sha256": "5AB05A2B8446AAFA4B926B034CA3AABCDF58C6A96C06BB1AFE495C32E2DB41EB",
+    "relativePath": "assets/fifi/samoyed.png",
+    "references": [
+      "constants/fifi-appearance.js"
+    ],
+    "pages": [
+      "pages/fifi/fifi"
+    ],
+    "package": "main",
+    "afterBytes": 84165,
+    "afterWidth": 500,
+    "afterHeight": 545,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\fifi\\fifi-background.jpg",
+    "format": ".jpg",
+    "width": 750,
+    "height": 1250,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 83202,
+    "sha256": "F77AD64F868BB26FA3D9FFB046F6E73668BF19982DB73B0B0110E391E3BED408",
+    "relativePath": "assets/fifi/fifi-background.jpg",
+    "references": [
+      "constants/fifi-appearance.js"
+    ],
+    "pages": [
+      "pages/fifi/fifi"
+    ],
+    "package": "main",
+    "afterBytes": 83202,
+    "afterWidth": 750,
+    "afterHeight": 1250,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\community-home-forum.jpg",
+    "format": ".jpg",
+    "width": 768,
+    "height": 432,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 63543,
+    "sha256": "DBC7CAFE431530E6884515F083974793020EE8269E59009FA0C2A7FB0E5CC5C8",
+    "relativePath": "assets/community/community-home-forum.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community/community"
+    ],
+    "package": "main",
+    "afterBytes": 63543,
+    "afterWidth": 768,
+    "afterHeight": 432,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\community-home-dining.jpg",
+    "format": ".jpg",
+    "width": 768,
+    "height": 432,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 57981,
+    "sha256": "55660E2C64E74E1129351095F8079BAFCB1B878F5E20B108D3CA0B536CC3569C",
+    "relativePath": "assets/community/community-home-dining.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community/community"
+    ],
+    "package": "main",
+    "afterBytes": 57981,
+    "afterWidth": 768,
+    "afterHeight": 432,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\food-xueyuan-option-bf22a4c884.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 51008,
+    "sha256": "6B6DB35D5E831DFFFB2B5E3B8AE0652061202098950FB9520E27691EE7030719",
+    "relativePath": "assets/community/food-xueyuan-option-bf22a4c884.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ],
+    "package": "main",
+    "afterBytes": 51008,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\venue-xueyuan-ball-sports-f36627c68a.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 47381,
+    "sha256": "47AFBB88667862B0715306C3F89F5DF9CF025CD3D6C861F01AB6E09A73DFEFDF",
+    "relativePath": "assets/community/venue-xueyuan-ball-sports-f36627c68a.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ],
+    "package": "main",
+    "afterBytes": 47381,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\dining-xueyuan-hall-d519415fe8.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 46337,
+    "sha256": "2375B38CA50FD45759A9A00CD96FC46767102E7E8B4E2F86C753F7CC4AE95040",
+    "relativePath": "assets/community/dining-xueyuan-hall-d519415fe8.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ],
+    "package": "main",
+    "afterBytes": 46337,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\dining-xueyuan-hall-b3ae834b90.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 41999,
+    "sha256": "3A536CCD6BB3238D6C8A1FB125207F005CC84F919443FE832EF12CFAD10BD2AA",
+    "relativePath": "assets/community/dining-xueyuan-hall-b3ae834b90.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ],
+    "package": "main",
+    "afterBytes": 41999,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\food-xueyuan-option-af35c57c1a.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 41695,
+    "sha256": "D9F113C6E5BE7FD18ABAD54458C3CA06A4A80B57723E9524CF91ABBF7285EDDA",
+    "relativePath": "assets/community/food-xueyuan-option-af35c57c1a.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ],
+    "package": "main",
+    "afterBytes": 41695,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\venue-xueyuan-swimming-019329917c.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 40810,
+    "sha256": "C65BB9FD94A2AFEA81C2726064AB45B03A173C6DCE1BD11850D0ED8C3C33174C",
+    "relativePath": "assets/community/venue-xueyuan-swimming-019329917c.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ],
+    "package": "main",
+    "afterBytes": 40810,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\venue-xueyuan-gym-d8d6990026.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 40426,
+    "sha256": "9A130C0ACC6EEB27EC6048C45EFB6E13517A846EAAFEB884F02434AD424043ED",
+    "relativePath": "assets/community/venue-xueyuan-gym-d8d6990026.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ],
+    "package": "main",
+    "afterBytes": 40426,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\dining-xueyuan-hall-b96eba561e.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 39430,
+    "sha256": "9599AEEFFA505431FE55D8BBCFB7EB0359B4AE5A4EA7FA78F05041C16213DDAA",
+    "relativePath": "assets/community/dining-xueyuan-hall-b96eba561e.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ],
+    "package": "main",
+    "afterBytes": 39430,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\food-xueyuan-option-bd51c94c2f.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 39014,
+    "sha256": "E6905C00B5D68A67CE233D5ADC0A5852BF1033927BCAEFEA10A02FEAC6884ACA",
+    "relativePath": "assets/community/food-xueyuan-option-bd51c94c2f.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ],
+    "package": "main",
+    "afterBytes": 39014,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\venue-xueyuan-gym-34926a4072.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 37066,
+    "sha256": "04748771FBEFD636A5321F492F3705421284410CC35ECBFEC3A164ADC2863517",
+    "relativePath": "assets/community/venue-xueyuan-gym-34926a4072.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ],
+    "package": "main",
+    "afterBytes": 37066,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\venue-xueyuan-gym-179643f6a0.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 36415,
+    "sha256": "4A7FBDEA5D0E1007866A37E7427478AC15366D37D1F65C34ADAD469A7FAF67D4",
+    "relativePath": "assets/community/venue-xueyuan-gym-179643f6a0.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ],
+    "package": "main",
+    "afterBytes": 36415,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\venue-xueyuan-ball-sports-b69bcc106d.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 36390,
+    "sha256": "9F7726FC11F8DFAD91AD93B71EDFC89DF0F38D850231D95FBCD194C236582DBC",
+    "relativePath": "assets/community/venue-xueyuan-ball-sports-b69bcc106d.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ],
+    "package": "main",
+    "afterBytes": 36390,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\dining-xueyuan-hall-1f269a4cb6.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 34297,
+    "sha256": "5280DEE034EA72A283F249BBD0621EC85ED494FB7B5C449AFA0F4ABC94605D63",
+    "relativePath": "assets/community/dining-xueyuan-hall-1f269a4cb6.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ],
+    "package": "main",
+    "afterBytes": 34297,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\community-home-sports.jpg",
+    "format": ".jpg",
+    "width": 768,
+    "height": 432,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 34009,
+    "sha256": "A6F09D62FF19AC8BE5BCFF17CE415F9CB473D0BC04068D82E6F1395D729D7818",
+    "relativePath": "assets/community/community-home-sports.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community/community"
+    ],
+    "package": "main",
+    "afterBytes": 34009,
+    "afterWidth": 768,
+    "afterHeight": 432,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\dining-xueyuan-hall-e9ba17ae34.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 33453,
+    "sha256": "E10AAC760B02A1AE653FE8C6289AEFDEF1675CBC16DBAEA3A64FB68B00145399",
+    "relativePath": "assets/community/dining-xueyuan-hall-e9ba17ae34.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ],
+    "package": "main",
+    "afterBytes": 33453,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\venue-xueyuan-gym-7212bc20d5.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 32639,
+    "sha256": "CED2297289E7E4C38AB717F261547D23C6C2444F2A482C77ADF9308D1333BFA1",
+    "relativePath": "assets/community/venue-xueyuan-gym-7212bc20d5.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ],
+    "package": "main",
+    "afterBytes": 32639,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\dining-xueyuan-hall-4f5c07a4f2.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 31836,
+    "sha256": "B627115C9125CA18FCEE2E830761A40FF95C4C93EA6CA25E579C7557A52F85F1",
+    "relativePath": "assets/community/dining-xueyuan-hall-4f5c07a4f2.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ],
+    "package": "main",
+    "afterBytes": 31836,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\merchant-xueyuan-road-manwei-light-meal.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 31314,
+    "sha256": "D9B96AA7C026505BD9392EC118550179DFE0966BC63F5DB8AB3E2601163CB1A6",
+    "relativePath": "assets/community/merchant-xueyuan-road-manwei-light-meal.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ],
+    "package": "main",
+    "afterBytes": 31314,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\community\\venue-xueyuan-ball-sports-284873dc9d.jpg",
+    "format": ".jpg",
+    "width": 640,
+    "height": 360,
+    "pixelFormat": "Format24bppRgb",
+    "bytes": 22956,
+    "sha256": "B14224D9599AC4D9C01BBB6257188908C49163937EF29235639CEACEFEAA3816",
+    "relativePath": "assets/community/venue-xueyuan-ball-sports-284873dc9d.jpg",
+    "references": [
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ],
+    "package": "main",
+    "afterBytes": 22956,
+    "afterWidth": 640,
+    "afterHeight": 360,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\icons\\plan.png",
+    "format": ".png",
+    "width": 96,
+    "height": 96,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 10020,
+    "sha256": "B9083AFC692B8219F24A1C0F96A55714BE8517F94CB87CD23987770537A83AC3",
+    "relativePath": "assets/icons/plan.png",
+    "references": [
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/index/index.wxml"
+    ],
+    "package": "main",
+    "afterBytes": 10020,
+    "afterWidth": 96,
+    "afterHeight": 96,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\icons\\settings-privacy.png",
+    "format": ".png",
+    "width": 96,
+    "height": 96,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 9521,
+    "sha256": "0199766F6020AA72BF2A9F5A6458B8603E92F1E3E9E5A485E64A133C4842F8CA",
+    "relativePath": "assets/icons/settings-privacy.png",
+    "references": [
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/index/index.wxml"
+    ],
+    "package": "main",
+    "afterBytes": 9521,
+    "afterWidth": 96,
+    "afterHeight": 96,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\icons\\profile.png",
+    "format": ".png",
+    "width": 96,
+    "height": 96,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 8439,
+    "sha256": "0339FD8D3CCD71A34118FBB7E7749A209A05313B41BE6545999F870B2C5B4976",
+    "relativePath": "assets/icons/profile.png",
+    "references": [
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/index/index.wxml"
+    ],
+    "package": "main",
+    "afterBytes": 8439,
+    "afterWidth": 96,
+    "afterHeight": 96,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\icons\\tab-fifi-inactive.png",
+    "format": ".png",
+    "width": 81,
+    "height": 81,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 5587,
+    "sha256": "92A570CD6A9DDAAEF2B84F286A6370A153F0C20EB56D63475E6BA1114F280E3F",
+    "relativePath": "assets/icons/tab-fifi-inactive.png",
+    "references": [
+      "pages/community/community.wxml",
+      "pages/cultivation/cultivation.wxml",
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/community/community.wxml",
+      "pages/cultivation/cultivation.wxml",
+      "pages/index/index.wxml"
+    ],
+    "package": "main",
+    "afterBytes": 5587,
+    "afterWidth": 81,
+    "afterHeight": 81,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\icons\\tab-fifi-active.png",
+    "format": ".png",
+    "width": 81,
+    "height": 81,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 5334,
+    "sha256": "D8A1C5ED70CAEE67D3CC6C3FE9C1C3DB0F65AB9AF197B64F1F78329DD4094E36",
+    "relativePath": "assets/icons/tab-fifi-active.png",
+    "references": [
+      "pages/fifi/fifi.wxml"
+    ],
+    "pages": [
+      "pages/fifi/fifi.wxml"
+    ],
+    "package": "main",
+    "afterBytes": 5334,
+    "afterWidth": 81,
+    "afterHeight": 81,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\icons\\tab-community-inactive.png",
+    "format": ".png",
+    "width": 81,
+    "height": 81,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 4324,
+    "sha256": "4D89E7F5C96719394458B2190DF9F9FBA22A190774D674CF35F704F66CEBAEF7",
+    "relativePath": "assets/icons/tab-community-inactive.png",
+    "references": [
+      "pages/cultivation/cultivation.wxml",
+      "pages/fifi/fifi.wxml",
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/cultivation/cultivation.wxml",
+      "pages/fifi/fifi.wxml",
+      "pages/index/index.wxml"
+    ],
+    "package": "main",
+    "afterBytes": 4324,
+    "afterWidth": 81,
+    "afterHeight": 81,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\icons\\tab-cultivation-inactive.png",
+    "format": ".png",
+    "width": 81,
+    "height": 81,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 4082,
+    "sha256": "40882B33132BCB9B7ADBE8512D1127358D4B9A8868EF16E6B5D6A7A9BA93562D",
+    "relativePath": "assets/icons/tab-cultivation-inactive.png",
+    "references": [
+      "pages/community/community.wxml",
+      "pages/fifi/fifi.wxml",
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/community/community.wxml",
+      "pages/fifi/fifi.wxml",
+      "pages/index/index.wxml"
+    ],
+    "package": "main",
+    "afterBytes": 4082,
+    "afterWidth": 81,
+    "afterHeight": 81,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\icons\\tab-cultivation-active.png",
+    "format": ".png",
+    "width": 81,
+    "height": 81,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 3977,
+    "sha256": "BE1A398CB1A7075B683E01F7401D7DD5BED0212BB2BFB35CE746F3D1BE2CEE36",
+    "relativePath": "assets/icons/tab-cultivation-active.png",
+    "references": [
+      "pages/cultivation/cultivation.wxml"
+    ],
+    "pages": [
+      "pages/cultivation/cultivation.wxml"
+    ],
+    "package": "main",
+    "afterBytes": 3977,
+    "afterWidth": 81,
+    "afterHeight": 81,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\icons\\tab-community-active.png",
+    "format": ".png",
+    "width": 81,
+    "height": 81,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 3950,
+    "sha256": "F368368334CC13F123CF8374747010A05C0B50399A93E5269DC3F87036B308CB",
+    "relativePath": "assets/icons/tab-community-active.png",
+    "references": [
+      "pages/community/community.wxml"
+    ],
+    "pages": [
+      "pages/community/community.wxml"
+    ],
+    "package": "main",
+    "afterBytes": 3950,
+    "afterWidth": 81,
+    "afterHeight": 81,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\icons\\tab-mine-inactive.png",
+    "format": ".png",
+    "width": 81,
+    "height": 81,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 3371,
+    "sha256": "A9B73ED4341F3AB36927331888B6C6CD91B6FADA965CAA0D9D800C57219A5036",
+    "relativePath": "assets/icons/tab-mine-inactive.png",
+    "references": [
+      "pages/community/community.wxml",
+      "pages/cultivation/cultivation.wxml",
+      "pages/fifi/fifi.wxml"
+    ],
+    "pages": [
+      "pages/community/community.wxml",
+      "pages/cultivation/cultivation.wxml",
+      "pages/fifi/fifi.wxml"
+    ],
+    "package": "main",
+    "afterBytes": 3371,
+    "afterWidth": 81,
+    "afterHeight": 81,
+    "reductionPercent": 0
+  },
+  {
+    "path": "C:\\Users\\31598\\WeChatProjects\\miniprogram-1\\assets\\icons\\tab-mine-active.png",
+    "format": ".png",
+    "width": 81,
+    "height": 81,
+    "pixelFormat": "Format32bppArgb",
+    "bytes": 3192,
+    "sha256": "7278BC5D00483F66AB133764FF406AED0344F18DFFDF16FD83BC2337BA4C6189",
+    "relativePath": "assets/icons/tab-mine-active.png",
+    "references": [
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/index/index.wxml"
+    ],
+    "package": "main",
+    "afterBytes": 3192,
+    "afterWidth": 81,
+    "afterHeight": 81,
+    "reductionPercent": 0
+  }
+]

@@ -1,0 +1,13 @@
+@import "../journal-shared/journal-shared.wxss";
+.custom-back { width: 80rpx; height: 80rpx; display: flex; align-items: center; justify-content: center; font-size: 52rpx; font-weight: 300; }
+.editor-page { padding-bottom: calc(60rpx + env(safe-area-inset-bottom)); }
+.editor-card { padding: 30rpx; }
+.notebook-label { display: block; overflow: hidden; color: #668f42; font-size: 22rpx; text-overflow: ellipsis; white-space: nowrap; }
+.title-input { height: 90rpx; margin-top: 14rpx; border-bottom: 1rpx solid rgba(93, 121, 79, .16); font-size: 32rpx; font-weight: 700; }
+.content-input { width: 100%; min-height: 500rpx; max-height: none; margin-top: 24rpx; padding: 0; color: #28362d; font-size: 27rpx; line-height: 1.75; box-sizing: border-box; }
+.editor-footer { display: flex; justify-content: flex-end; margin-top: 18rpx; }
+.character-count { color: #8b968e; font-size: 21rpx; }
+.save-error { margin-top: 18rpx; padding: 18rpx; border-radius: 16rpx; color: #a34848; background: #fff0ee; font-size: 22rpx; line-height: 1.5; }
+.conflict-actions { display: flex; flex-wrap: wrap; gap: 12rpx; margin-top: 16rpx; }
+.save-button { width: 100%; margin-top: 26rpx; border-radius: 18rpx; color: #263820; background: #a8d96f; font-size: 27rpx; font-weight: 700; line-height: 82rpx; }
+.save-button::after { border: 0; }

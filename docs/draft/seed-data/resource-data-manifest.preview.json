@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0-draft",
+  "resourceDataVersion": "buaa-resource-draft.1",
+  "status": "draft",
+  "datasets": {
+    "healthRuleSets": "health-rules-draft.2",
+    "exerciseCatalog": "exercise-catalog-draft.1",
+    "campusVenues": "buaa-venues-draft.1",
+    "mealPatternCatalog": "meal-pattern-draft.1",
+    "campusFoodOptions": "buaa-food-options-draft.1"
+  },
+  "eligibleForProduction": false,
+  "createdFor": "structure_validation_only",
+  "notes": "版本控制中的 preview manifest，不得导入云数据库或被正式生成器读取。"
+}

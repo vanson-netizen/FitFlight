@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "数据使用说明",
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar"
+  }
+}

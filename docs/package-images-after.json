@@ -1,0 +1,597 @@
+[
+  {
+    "path": "assets/community/community-home-forum.jpg",
+    "width": 768,
+    "height": 432,
+    "bytes": 72628,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community/community"
+    ]
+  },
+  {
+    "path": "assets/community/community-home-dining.jpg",
+    "width": 768,
+    "height": 432,
+    "bytes": 71002,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community/community"
+    ]
+  },
+  {
+    "path": "assets/community/food-xueyuan-option-bf22a4c884.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 63863,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ]
+  },
+  {
+    "path": "assets/community/venue-xueyuan-ball-sports-f36627c68a.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 57915,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ]
+  },
+  {
+    "path": "assets/community/dining-xueyuan-hall-d519415fe8.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 56723,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ]
+  },
+  {
+    "path": "assets/community/dining-xueyuan-hall-b3ae834b90.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 51905,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ]
+  },
+  {
+    "path": "assets/community/food-xueyuan-option-af35c57c1a.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 51536,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ]
+  },
+  {
+    "path": "assets/community/venue-xueyuan-swimming-019329917c.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 50871,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ]
+  },
+  {
+    "path": "assets/community/venue-xueyuan-gym-d8d6990026.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 48976,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ]
+  },
+  {
+    "path": "assets/community/dining-xueyuan-hall-b96eba561e.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 48746,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ]
+  },
+  {
+    "path": "assets/community/food-xueyuan-option-bd51c94c2f.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 47994,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ]
+  },
+  {
+    "path": "assets/community/venue-xueyuan-gym-179643f6a0.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 44948,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ]
+  },
+  {
+    "path": "assets/community/venue-xueyuan-gym-34926a4072.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 44713,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ]
+  },
+  {
+    "path": "assets/community/venue-xueyuan-ball-sports-b69bcc106d.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 44545,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ]
+  },
+  {
+    "path": "assets/community/community-home-sports.jpg",
+    "width": 768,
+    "height": 432,
+    "bytes": 43802,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community/community"
+    ]
+  },
+  {
+    "path": "assets/community/dining-xueyuan-hall-1f269a4cb6.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 42547,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ]
+  },
+  {
+    "path": "assets/community/dining-xueyuan-hall-e9ba17ae34.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 42025,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ]
+  },
+  {
+    "path": "assets/community/venue-xueyuan-gym-7212bc20d5.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 39784,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ]
+  },
+  {
+    "path": "assets/community/dining-xueyuan-hall-4f5c07a4f2.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 38859,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ]
+  },
+  {
+    "path": "assets/community/merchant-xueyuan-road-manwei-light-meal.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 31314,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-food/community-food"
+    ]
+  },
+  {
+    "path": "assets/achievements/active-partner.png",
+    "width": 144,
+    "height": 144,
+    "bytes": 28339,
+    "package": "main",
+    "references": [
+      "constants/fifi.js"
+    ],
+    "pages": [
+      "pages/index/index",
+      "pages/achievements/achievements"
+    ]
+  },
+  {
+    "path": "assets/achievements/streak-3-days.png",
+    "width": 144,
+    "height": 144,
+    "bytes": 25258,
+    "package": "main",
+    "references": [
+      "constants/fifi.js"
+    ],
+    "pages": [
+      "pages/index/index",
+      "pages/achievements/achievements"
+    ]
+  },
+  {
+    "path": "assets/community/venue-xueyuan-ball-sports-284873dc9d.jpg",
+    "width": 640,
+    "height": 360,
+    "bytes": 22956,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community-sport/community-sport"
+    ]
+  },
+  {
+    "path": "assets/achievements/perfect-day.png",
+    "width": 144,
+    "height": 144,
+    "bytes": 17746,
+    "package": "main",
+    "references": [
+      "constants/fifi.js"
+    ],
+    "pages": [
+      "pages/index/index",
+      "pages/achievements/achievements"
+    ]
+  },
+  {
+    "path": "assets/achievements/first-meeting.png",
+    "width": 144,
+    "height": 144,
+    "bytes": 14599,
+    "package": "main",
+    "references": [
+      "constants/fifi.js"
+    ],
+    "pages": [
+      "pages/index/index",
+      "pages/achievements/achievements"
+    ]
+  },
+  {
+    "path": "assets/achievements/streak-7-days.png",
+    "width": 144,
+    "height": 144,
+    "bytes": 13595,
+    "package": "main",
+    "references": [
+      "constants/fifi.js"
+    ],
+    "pages": [
+      "pages/index/index",
+      "pages/achievements/achievements"
+    ]
+  },
+  {
+    "path": "assets/icons/plan.png",
+    "width": 96,
+    "height": 96,
+    "bytes": 10020,
+    "package": "main",
+    "references": [
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/index/index.wxml"
+    ]
+  },
+  {
+    "path": "assets/icons/settings-privacy.png",
+    "width": 96,
+    "height": 96,
+    "bytes": 9521,
+    "package": "main",
+    "references": [
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/index/index.wxml"
+    ]
+  },
+  {
+    "path": "assets/icons/profile.png",
+    "width": 96,
+    "height": 96,
+    "bytes": 8439,
+    "package": "main",
+    "references": [
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/index/index.wxml"
+    ]
+  },
+  {
+    "path": "assets/icons/tab-fifi-inactive.png",
+    "width": 81,
+    "height": 81,
+    "bytes": 5587,
+    "package": "main",
+    "references": [
+      "pages/community/community.wxml",
+      "pages/cultivation/cultivation.wxml",
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/community/community.wxml",
+      "pages/cultivation/cultivation.wxml",
+      "pages/index/index.wxml"
+    ]
+  },
+  {
+    "path": "assets/icons/tab-fifi-active.png",
+    "width": 81,
+    "height": 81,
+    "bytes": 5334,
+    "package": "main",
+    "references": [
+      "pages/fifi/fifi.wxml"
+    ],
+    "pages": [
+      "pages/fifi/fifi.wxml"
+    ]
+  },
+  {
+    "path": "assets/icons/tab-community-inactive.png",
+    "width": 81,
+    "height": 81,
+    "bytes": 4324,
+    "package": "main",
+    "references": [
+      "pages/cultivation/cultivation.wxml",
+      "pages/fifi/fifi.wxml",
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/cultivation/cultivation.wxml",
+      "pages/fifi/fifi.wxml",
+      "pages/index/index.wxml"
+    ]
+  },
+  {
+    "path": "assets/icons/tab-cultivation-inactive.png",
+    "width": 81,
+    "height": 81,
+    "bytes": 4082,
+    "package": "main",
+    "references": [
+      "pages/community/community.wxml",
+      "pages/fifi/fifi.wxml",
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/community/community.wxml",
+      "pages/fifi/fifi.wxml",
+      "pages/index/index.wxml"
+    ]
+  },
+  {
+    "path": "assets/icons/tab-cultivation-active.png",
+    "width": 81,
+    "height": 81,
+    "bytes": 3977,
+    "package": "main",
+    "references": [
+      "pages/cultivation/cultivation.wxml"
+    ],
+    "pages": [
+      "pages/cultivation/cultivation.wxml"
+    ]
+  },
+  {
+    "path": "assets/icons/tab-community-active.png",
+    "width": 81,
+    "height": 81,
+    "bytes": 3950,
+    "package": "main",
+    "references": [
+      "pages/community/community.wxml"
+    ],
+    "pages": [
+      "pages/community/community.wxml"
+    ]
+  },
+  {
+    "path": "assets/icons/tab-mine-inactive.png",
+    "width": 81,
+    "height": 81,
+    "bytes": 3371,
+    "package": "main",
+    "references": [
+      "pages/community/community.wxml",
+      "pages/cultivation/cultivation.wxml",
+      "pages/fifi/fifi.wxml"
+    ],
+    "pages": [
+      "pages/community/community.wxml",
+      "pages/cultivation/cultivation.wxml",
+      "pages/fifi/fifi.wxml"
+    ]
+  },
+  {
+    "path": "assets/icons/tab-mine-active.png",
+    "width": 81,
+    "height": 81,
+    "bytes": 3192,
+    "package": "main",
+    "references": [
+      "pages/index/index.wxml"
+    ],
+    "pages": [
+      "pages/index/index.wxml"
+    ]
+  },
+  {
+    "path": "assets/fifi/fifi-celebrate.svg",
+    "width": 0,
+    "height": 0,
+    "bytes": 800,
+    "package": "main",
+    "references": [
+      "constants/fifi.js"
+    ],
+    "pages": [
+      "pages/fifi/fifi",
+      "pages/index/index"
+    ]
+  },
+  {
+    "path": "assets/fifi/fifi-normal.svg",
+    "width": 0,
+    "height": 0,
+    "bytes": 676,
+    "package": "main",
+    "references": [
+      "constants/fifi.js"
+    ],
+    "pages": [
+      "pages/fifi/fifi",
+      "pages/index/index"
+    ]
+  },
+  {
+    "path": "assets/fifi/fifi-happy.svg",
+    "width": 0,
+    "height": 0,
+    "bytes": 669,
+    "package": "main",
+    "references": [
+      "constants/fifi.js"
+    ],
+    "pages": [
+      "pages/fifi/fifi",
+      "pages/index/index"
+    ]
+  },
+  {
+    "path": "assets/achievements/achievement-placeholder.svg",
+    "width": 0,
+    "height": 0,
+    "bytes": 266,
+    "package": "main",
+    "references": [
+      "constants/fifi.js"
+    ],
+    "pages": [
+      "pages/index/index",
+      "pages/achievements/achievements"
+    ]
+  },
+  {
+    "path": "assets/community/placeholder.svg",
+    "width": 0,
+    "height": 0,
+    "bytes": 258,
+    "package": "main",
+    "references": [
+      "constants/community-resource-images.js",
+      "constants/community-resource-images.js"
+    ],
+    "pages": [
+      "pages/community/community",
+      "pages/community-sport/community-sport",
+      "pages/community-food/community-food"
+    ]
+  }
+]

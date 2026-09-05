@@ -1,0 +1,6 @@
+@import "../journal-shared/journal-shared.wxss";
+.entry-card { min-width: 0; padding: 26rpx; }
+.entry-heading { min-width: 0; display: flex; align-items: baseline; justify-content: space-between; gap: 18rpx; }
+.entry-title { min-width: 0; flex: 1; overflow: hidden; font-size: 28rpx; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.entry-time { flex: none; color: #8b968e; font-size: 18rpx; }
+.entry-summary { display: -webkit-box; margin-top: 14rpx; overflow: hidden; color: #657168; font-size: 23rpx; line-height: 1.55; word-break: break-all; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }

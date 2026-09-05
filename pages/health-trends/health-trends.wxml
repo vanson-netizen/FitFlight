@@ -1,0 +1,18 @@
+<navigation-bar title="健康趋势" color="#25352b" background="#dff3b7"></navigation-bar>
+<scroll-view class="health-scroll" scroll-y="{{true}}" enhanced="{{true}}" type="list"><view class="health-page">
+  <view class="heading"><text class="title">趋势</text></view>
+  <view wx:if="{{pageStatus === 'loading'}}" class="state-card"><view class="loading-dot"></view><text>正在生成趋势…</text></view>
+  <view wx:elif="{{pageStatus === 'error'}}" class="state-card"><text class="state-title">趋势读取失败</text><text class="state-copy">{{errorMessage}}</text><button class="retry-button" bindtap="retryLoad">重试</button></view>
+  <view wx:elif="{{pageStatus === 'empty'}}" class="state-card"><text class="state-title">暂无趋势数据</text><text class="state-copy">至少记录两次同一指标后，才会绘制趋势。</text></view>
+  <block wx:elif="{{pageStatus === 'ready'}}">
+    <view class="selector"><view wx:for="{{metrics}}" wx:key="value" class="selector-item {{selectedMetric === item.value ? 'selector-active' : ''}}" data-value="{{item.value}}" bindtap="selectMetric">{{item.label}}</view></view>
+    <view class="selector range-selector"><view wx:for="{{ranges}}" wx:key="value" class="selector-item {{selectedRange === item.value ? 'selector-active' : ''}}" data-value="{{item.value}}" bindtap="selectRange">{{item.label}}</view></view>
+    <view class="card chart-card">
+      <view class="chart-heading"><text>{{metricLabel}}趋势</text><text wx:if="{{trend.status === 'ready'}}">变化 {{trend.change > 0 ? '+' : ''}}{{trend.change}}{{metricUnit}}</text></view>
+      <view wx:if="{{trend.status === 'insufficient'}}" class="insufficient"><text>当前区间有效数据不足</text><text>至少需要两次记录，不根据单次波动判断趋势。</text></view>
+      <canvas wx:elif="{{selectedMetric !== 'energyLevel'}}" class="trend-canvas" canvas-id="healthTrendCanvas"></canvas>
+      <view wx:else class="energy-chart"><view wx:for="{{energyPoints}}" wx:key="date" class="energy-column"><view class="energy-track"><view class="energy-bar" style="height:{{item.height}}%"></view></view><text>{{item.label}}</text><text>{{item.dateLabel}}</text></view></view>
+    </view>
+  </block>
+  <text class="disclaimer">趋势仅用于一般健康管理观察，不作医疗诊断，不会自动调整画像或培养方案。变化提示规则当前为 product_draft。</text>
+</view></scroll-view>

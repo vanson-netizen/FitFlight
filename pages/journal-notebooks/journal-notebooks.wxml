@@ -1,0 +1,23 @@
+<navigation-bar title="我的日志" color="#25352b" background="#dff3b7"></navigation-bar>
+<scroll-view class="journal-scroll" scroll-y="{{true}}" enhanced="{{true}}" type="list">
+  <view class="journal-page">
+    <view class="page-heading"><text class="page-title">日志本</text><button class="primary-button" bindtap="openCreate">新建日志本</button></view>
+    <view wx:if="{{pageStatus === 'loading'}}" class="state-card"><view class="loading-dot"></view><text>正在读取日志本…</text></view>
+    <view wx:elif="{{pageStatus === 'error'}}" class="state-card"><text class="state-title">日志本读取失败</text><text class="state-copy">{{errorMessage}}</text><button class="retry-button" bindtap="retryLoad">重试</button></view>
+    <view wx:elif="{{pageStatus === 'empty'}}" class="state-card"><text class="state-title">还没有日志本</text><text class="state-copy">记录下你的第一段培养感受吧</text><button class="primary-button" bindtap="openCreate">新建日志本</button></view>
+    <view wx:elif="{{pageStatus === 'ready'}}" class="card-list">
+      <view wx:for="{{notebooks}}" wx:key="_id" class="journal-card notebook-card" role="button" data-id="{{item._id}}" bindtap="openNotebook">
+        <view class="notebook-main"><text class="notebook-title">{{item.title}}</text><text class="notebook-meta">{{item.entryCount}} 篇日志 · 更新于 {{item.updatedAtText}}</text></view>
+        <button class="rename-button" catchtap="openRename" data-id="{{item._id}}">重命名</button><text class="card-arrow">›</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view wx:if="{{editorVisible}}" class="dialog-mask" catchtap="closeEditor">
+  <view class="dialog-card" catchtap="noop">
+    <text class="dialog-title">{{editorMode === 'create' ? '新建日志本' : '重命名日志本'}}</text>
+    <input class="dialog-input" value="{{editorTitle}}" maxlength="30" focus="{{true}}" placeholder="请输入日志本名称" bindinput="updateEditorTitle" />
+    <text wx:if="{{editorError}}" class="dialog-error">{{editorError}}</text>
+    <view class="dialog-actions"><button class="secondary-button" disabled="{{isSubmitting}}" bindtap="closeEditor">取消</button><button class="primary-button" loading="{{isSubmitting}}" disabled="{{isSubmitting}}" bindtap="submitEditor">保存</button></view>
+  </view>
+</view>

@@ -1,0 +1,182 @@
+<navigation-bar title="我的方案" color="#25352b" background="#dff3b7"></navigation-bar>
+
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="page">
+    <view wx:if="{{loadStatus === 'loading'}}" class="state-card">
+      <view class="loading-dot"></view>
+      <text>正在读取方案状态…</text>
+    </view>
+
+    <view wx:elif="{{loadStatus === 'error'}}" class="state-card">
+      <text class="state-title">方案状态读取失败</text>
+      <text class="state-description">{{errorMessage}}</text>
+      <button class="action-button" bindtap="retryLoad">重试</button>
+    </view>
+
+    <view wx:elif="{{planEligibilityStatus !== 'eligible'}}" class="state-card">
+      <text class="state-title">暂不自动生成个性化方案</text>
+      <text class="state-description">{{planEligibilityStatus === 'incomplete' ? '请先完成安全信息筛查。' : planEligibilityStatus === 'age_not_supported' ? 'V1 个性化方案仅面向年满 18 周岁的用户。' : '根据你的回答，建议先咨询医生或专业人士。已有方案会保留，但不再作为当前可执行方案。'}}</text>
+      <button wx:if="{{planEligibilityStatus !== 'age_not_supported'}}" class="action-button" bindtap="openSafetyScreening">填写或更新安全信息</button>
+      <text class="state-description">仅供健康管理参考，医疗问题请咨询专业医生。</text>
+    </view>
+
+    <view wx:elif="{{viewState.isNone}}" class="state-card">
+      <text class="state-title">暂未生成方案</text>
+      <text class="state-description">完善身体档案后，可以在这里主动生成培养方案。</text>
+      <button class="action-button" loading="{{isRequesting}}" disabled="{{isRequesting}}" bindtap="requestGeneration">生成方案</button>
+    </view>
+
+    <view wx:elif="{{viewState.isGenerating}}" class="state-card">
+      <view class="loading-dot"></view>
+      <text class="state-title">方案生成中</text>
+      <text class="state-description">请稍候，生成期间无需重复操作。</text>
+    </view>
+
+    <view wx:elif="{{viewState.isNotConfigured}}" class="state-card">
+      <text class="state-title">方案规则正在准备中。</text>
+      <text class="state-description">你的身体信息已经安全保存，之后可以从“我的方案”生成。</text>
+      <view wx:if="{{activePlan}}" class="preserved-plan">
+        <text>原方案仍保留，可继续查看。</text>
+        <text>档案版本：{{activePlan.profileVersion}}</text>
+      </view>
+      <button class="action-button" loading="{{isRequesting}}" disabled="{{isRequesting}}" bindtap="retryGeneration">重新尝试</button>
+    </view>
+
+    <view wx:elif="{{viewState.isFailed}}" class="state-card">
+      <text class="state-title">方案生成失败</text>
+      <text class="state-description">身体信息和原有方案均未受影响，可以安全重试。</text>
+      <view wx:if="{{activePlan}}" class="preserved-plan">
+        <text>原方案仍保留，可继续查看。</text>
+        <text>档案版本：{{activePlan.profileVersion}}</text>
+      </view>
+      <button class="action-button" loading="{{isRequesting}}" disabled="{{isRequesting}}" bindtap="retryGeneration">重试生成</button>
+    </view>
+
+    <view wx:else class="plan-card">
+      <view class="plan-heading">
+        <text class="status-label {{viewState.isOutdated ? 'status-label-warning' : ''}}">{{viewState.isOutdated ? '方案已过期' : (viewState.isPending ? '等待调整' : '当前有效方案')}}</text>
+        <text class="plan-title">{{planView.planName}}</text>
+        <text class="plan-description">{{viewState.isOutdated ? '当前画像已变化。以下内容仍来自原方案快照，不代表新目标方案。' : '查看本周期全貌，并按周了解简要安排。'}}</text>
+      </view>
+
+      <view wx:if="{{planView && planView.goalChanged}}" class="goal-change-note">
+        <text>当前画像目标已变为{{planView.currentGoalLabel}}；本页仍显示方案生成时保存的“{{planView.goalLabel}}”目标。</text>
+      </view>
+      <view wx:elif="{{viewState.isPending}}" class="goal-change-note"><text>当前画像已经变化，请生成新方案，或选择暂不调整并保留旧方案。</text></view>
+
+      <view wx:if="{{planView && !planView.isLegacy}}" class="overview-grid">
+        <view class="overview-item"><text class="overview-label">培养目标</text><text class="overview-value">{{planView.goalLabel}}</text></view>
+        <view class="overview-item"><text class="overview-label">当前进度</text><text class="overview-value">第 {{planView.currentWeekNumber}} 周</text><text class="overview-hint">{{planView.currentStage}}</text></view>
+        <view class="overview-item overview-item-wide"><text class="overview-label">培养周期</text><text class="overview-value">{{planView.dateRange}}</text></view>
+        <view class="overview-item"><text class="overview-label">每周训练</text><text class="overview-value">{{planView.trainingDaysPerWeek}}</text></view>
+        <view class="overview-item"><text class="overview-label">单次预计</text><text class="overview-value">{{planView.sessionMinutes}}</text></view>
+      </view>
+
+      <view wx:if="{{planView && planView.isLegacy}}" class="legacy-panel">
+        <text class="legacy-note">当前显示的是旧结构方案快照，未保存训练主题、具体动作、组次和休息。本页不会补算或伪造缺失内容。</text>
+        <button class="action-button legacy-action" loading="{{isRequesting}}" disabled="{{isRequesting}}" bindtap="requestGeneration">按当前画像重新生成可执行方案</button>
+      </view>
+
+      <block wx:if="{{planView && !planView.isLegacy}}">
+        <view class="explanation-card" bindtap="openExplanation" hover-class="card-hover">
+          <view class="explanation-copy">
+            <text class="section-eyebrow">方案说明</text>
+            <text class="section-title">{{planView.coreGoal}}</text>
+            <text class="section-summary">{{planView.explanationSummary}}</text>
+          </view>
+          <view class="entry-action"><text>查看方案说明</text><text class="entry-arrow">›</text></view>
+        </view>
+
+        <view class="lifestyle-card">
+          <text class="section-eyebrow">生活策略</text>
+          <text wx:for="{{planView.lifestylePrinciples}}" wx:key="*this" class="lifestyle-item">· {{item}}</text>
+        </view>
+
+        <view class="section-heading">
+          <view><text class="section-title">四周概览</text><text class="section-description">点击卡片查看本周简要安排</text></view>
+        </view>
+        <view
+          wx:for="{{planView.weeks}}"
+          wx:key="weekNumber"
+          wx:for-item="week"
+          class="week-card {{week.isCurrent ? 'week-card-current' : ''}} {{expandedWeekNumber === week.weekNumber ? 'week-card-expanded' : ''}}"
+        >
+          <view class="week-trigger" data-week="{{week.weekNumber}}" bindtap="toggleWeek" hover-class="week-trigger-hover">
+            <view class="week-title-row">
+              <view class="week-title-wrap">
+                <text class="week-title">第{{week.weekNumber}}周｜{{week.stageLabel}}</text>
+                <text wx:if="{{week.isCurrent}}" class="current-week-tag">本周</text>
+              </view>
+              <text class="expand-icon">{{expandedWeekNumber === week.weekNumber ? '−' : '+'}}</text>
+            </view>
+            <text class="week-date">{{week.dateRange}}</text>
+            <view class="week-metrics">
+              <text>训练 {{week.plannedTrainingDaysLabel}}</text>
+              <text>每次 {{week.sessionMinutesLabel}}</text>
+            </view>
+            <text class="week-focus">{{week.focusText}}</text>
+            <text class="expand-hint">{{expandedWeekNumber === week.weekNumber ? '收起本周安排' : '展开本周安排'}}</text>
+          </view>
+
+          <view wx:if="{{expandedWeekNumber === week.weekNumber}}" class="week-detail">
+            <view class="detail-section">
+              <text class="detail-title">锻炼</text>
+              <text class="detail-meta">一周 {{week.plannedTrainingDaysLabel}} · 每次 {{week.sessionMinutesLabel}}</text>
+              <text class="detail-meta">强度：{{week.intensityLabel}}</text>
+              <view wx:if="{{week.daySummaries.length}}" class="day-list">
+                <view wx:for="{{week.daySummaries}}" wx:key="date" wx:for-item="day" class="day-row">
+                  <text class="day-date">{{day.weekday}}</text>
+                  <text class="day-type">{{day.typeLabel}}</text>
+                  <text class="day-duration">{{day.durationLabel}}</text>
+                </view>
+              </view>
+              <text wx:else class="detail-empty">旧方案未保存本周每日类型，具体安排以原方案内容为准。</text>
+              <text class="detail-title progression-title">本周递进与恢复</text>
+              <text class="detail-meta">{{week.progressionFocus}}</text>
+            </view>
+          </view>
+        </view>
+
+      </block>
+
+        <view class="plan-meta" wx:if="{{planView}}">
+          <text class="plan-meta-title">方案信息</text>
+          <view class="meta-row"><text>规则版本</text><text>{{planView.ruleVersion}}</text></view>
+          <view class="meta-row"><text>动作库版本</text><text>{{planView.exerciseLibraryVersion}}</text></view>
+          <view class="meta-row"><text>训练模板版本</text><text>{{planView.templateVersion}}</text></view>
+          <view class="meta-row"><text>规则审核状态</text><text>{{planView.ruleReviewStatus}}</text></view>
+          <view class="meta-row"><text>画像版本</text><text>{{planView.portraitVersion}}</text></view>
+          <view class="meta-row"><text>资源数据版本</text><text>{{planView.resourceDataVersion}}</text></view>
+          <view class="meta-row"><text>生成日期</text><text>{{planView.generatedDate}}</text></view>
+          <view class="meta-row"><text>预计复盘日期</text><text>{{planView.reviewDate}}</text></view>
+          <text wx:if="{{planView.isProductDraft}}" class="draft-status-note">当前方案规则处于开发验证阶段，仅供一般健康管理参考。</text>
+        </view>
+        <text wx:if="{{planView}}" class="disclaimer-note">{{planView.disclaimer}}</text>
+
+      <button wx:if="{{(viewState.isOutdated || viewState.isPending) && !(planView && planView.isLegacy)}}" class="action-button full-button" loading="{{isRequesting}}" disabled="{{isRequesting}}" bindtap="requestGeneration">根据当前画像生成新方案</button>
+      <button wx:if="{{viewState.isPending}}" class="secondary-action-button full-button" disabled="{{isRequesting}}" bindtap="deferAdjustment">暂不调整</button>
+    </view>
+  </view>
+</scroll-view>
+
+<view wx:if="{{isExplanationOpen && planView}}" class="modal-mask" bindtap="closeExplanation">
+  <view class="explanation-modal" catchtap="preventModalClose">
+    <view class="modal-heading">
+      <view><text class="section-eyebrow">当前方案快照</text><text class="modal-title">方案说明</text></view>
+      <view class="modal-close" bindtap="closeExplanation" aria-role="button" aria-label="关闭方案说明">×</view>
+    </view>
+    <scroll-view class="modal-scroll" scroll-y>
+      <view class="modal-section">
+        <text class="detail-title">为什么这样安排</text>
+        <text wx:if="{{planView.arrangementReasons.length === 0}}" class="detail-empty">当前方案快照未单独保存原理说明，以下仅展示生成时保存的原则，不补充推断内容。</text>
+        <text wx:for="{{planView.arrangementReasons}}" wx:key="*this" class="detail-bullet">· {{item}}</text>
+      </view>
+      <view class="modal-section"><text class="detail-title">训练原则</text><text wx:if="{{planView.trainingPrinciples.length === 0}}" class="detail-empty">旧方案未保存训练原则。</text><text wx:for="{{planView.trainingPrinciples}}" wx:key="*this" class="detail-bullet">· {{item}}</text></view>
+      <view class="modal-section"><text class="detail-title">饮食原则</text><text wx:if="{{planView.nutritionPrinciples.length === 0}}" class="detail-empty">旧方案未保存饮食原则。</text><text wx:for="{{planView.nutritionPrinciples}}" wx:key="*this" class="detail-bullet">· {{item}}</text></view>
+      <view class="modal-section"><text class="detail-title">作息原则</text><text wx:if="{{planView.sleepPrinciples.length === 0}}" class="detail-empty">旧方案未保存作息原则。</text><text wx:for="{{planView.sleepPrinciples}}" wx:key="*this" class="detail-bullet">· {{item}}</text></view>
+      <view class="modal-section"><text class="detail-title">安全提示</text><text wx:if="{{planView.safetyNotices.length === 0}}" class="detail-empty">旧方案未保存单独安全提示，请以医疗专业人员意见为准。</text><text wx:for="{{planView.safetyNotices}}" wx:key="*this" class="detail-bullet">· {{item}}</text></view>
+      <text wx:if="{{planView.isProductDraft}}" class="draft-status-note">当前方案规则处于开发验证阶段，仅供一般健康管理参考。</text>
+      <text class="modal-disclaimer">{{planView.disclaimer}}</text>
+    </scroll-view>
+  </view>
+</view>

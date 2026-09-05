@@ -1,0 +1,17 @@
+<navigation-bar title="{{entryId ? '编辑日志' : '新建日志'}}" back="{{false}}" color="#25352b" background="#dff3b7">
+  <view slot="left" class="custom-back" role="button" aria-label="返回" bindtap="handleBack">‹</view>
+</navigation-bar>
+<scroll-view class="journal-scroll" scroll-y="{{true}}" enhanced="{{true}}" type="list">
+  <view class="journal-page editor-page">
+    <view wx:if="{{pageStatus === 'loading'}}" class="state-card"><view class="loading-dot"></view><text>正在读取日志…</text></view>
+    <view wx:elif="{{pageStatus === 'error'}}" class="state-card"><text class="state-title">日志读取失败</text><text class="state-copy">{{errorMessage}}</text><button class="retry-button" bindtap="retryLoad">重试</button></view>
+    <view wx:elif="{{pageStatus === 'empty' || pageStatus === 'ready'}}" class="editor-card">
+      <text class="notebook-label">{{notebookTitle}}</text>
+      <input class="title-input" value="{{form.title}}" maxlength="50" placeholder="标题（可不填）" bindinput="updateTitle" />
+      <textarea class="content-input" value="{{form.content}}" maxlength="5000" auto-height="{{true}}" adjust-position="{{true}}" cursor-spacing="24" placeholder="写下今天的培养感受…" bindinput="updateContent"></textarea>
+      <view class="editor-footer"><text class="character-count">{{contentLength}} / 5000</text></view>
+      <view wx:if="{{saveError}}" class="save-error"><text>{{saveError}}</text><view wx:if="{{hasVersionConflict}}" class="conflict-actions"><button class="secondary-button" bindtap="reloadAfterConflict">重新加载</button><button class="secondary-button" bindtap="saveAsNew">另存为新日志</button></view></view>
+      <button class="save-button" loading="{{isSaving}}" disabled="{{isSaving}}" bindtap="save">保存</button>
+    </view>
+  </view>
+</scroll-view>

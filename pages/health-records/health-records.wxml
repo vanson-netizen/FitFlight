@@ -1,0 +1,15 @@
+<navigation-bar title="健康记录" color="#25352b" background="#dff3b7"></navigation-bar>
+<scroll-view class="health-scroll" scroll-y="{{true}}" enhanced="{{true}}" type="list"><view class="health-page">
+  <view class="heading"><view><text class="title">健康记录</text><text class="heading-copy">建议每周记录一次，也可以随时补记</text></view><button class="primary-button" bindtap="addRecord">添加记录</button></view>
+  <view wx:if="{{pageStatus === 'loading'}}" class="state-card"><view class="loading-dot"></view><text>正在读取健康记录…</text></view>
+  <view wx:elif="{{pageStatus === 'error'}}" class="state-card"><text class="state-title">健康记录读取失败</text><text class="state-copy">{{errorMessage}}</text><button class="retry-button" bindtap="retryLoad">重试</button></view>
+  <view wx:elif="{{pageStatus === 'empty'}}" class="state-card"><text class="state-title">还没有健康记录</text><text class="state-copy">记录体重、睡眠或当天感受，观察自己的长期变化。</text><button class="primary-button" bindtap="addRecord">添加第一条记录</button></view>
+  <block wx:elif="{{pageStatus === 'ready'}}">
+    <view class="card latest-card"><text class="card-label">最新数据 · {{latest.recordDate}}</text><view class="metric-row"><text wx:if="{{latest.weightText}}">体重 {{latest.weightText}}</text><text wx:if="{{latest.sleepText}}">睡眠 {{latest.sleepText}}</text><text wx:if="{{latest.energyText}}">精力 {{latest.energyText}}</text><text wx:if="{{latest.feelingText}}">感受 {{latest.feelingText}}</text></view></view>
+    <view wx:for="{{prompts}}" wx:key="key" class="prompt-card"><text>{{item.text}}</text><button wx:if="{{item.key === 'profile_weight_change'}}" class="secondary-button" bindtap="offerProfileUpdate">更新画像</button></view>
+    <view class="trend-entry" role="button" bindtap="openTrends"><text>查看趋势</text><text>›</text></view>
+    <text class="section-title">历史记录</text>
+    <view class="record-list"><view wx:for="{{records}}" wx:key="_id" class="card record-card" role="button" data-date="{{item.recordDate}}" bindtap="editRecord"><view class="record-heading"><text>{{item.recordDate}}</text><text>编辑 ›</text></view><view class="record-summary"><text wx:if="{{item.weightText}}">{{item.weightText}}</text><text wx:if="{{item.sleepText}}">睡眠 {{item.sleepText}}</text><text wx:if="{{item.energyText}}">精力 {{item.energyText}}</text><text wx:if="{{item.feelingText}}">{{item.feelingText}}</text></view><text wx:if="{{item.note}}" class="record-note">{{item.note}}</text></view></view>
+  </block>
+  <text class="disclaimer">健康记录和趋势提示仅供一般健康管理参考，不作医疗诊断，也不会自动修改培养方案。</text>
+</view></scroll-view>

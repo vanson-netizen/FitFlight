@@ -1,0 +1,15 @@
+const assert = require('assert')
+const fs = require('fs')
+const path = require('path')
+const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => entry.isDirectory() ? walk(path.join(dir, entry.name)) : [path.join(dir, entry.name)])
+const media = walk('assets').filter((file) => /\.(png|jpe?g|webp|gif|svg|mp3|wav|aac|ogg|m4a)$/i.test(file))
+for (const file of media) assert(fs.statSync(file).size < 200000, `${file} exceeds media budget`)
+const runtime = ['pages', 'components', 'constants', 'services', 'utils'].flatMap(walk).filter((file) => /\.(js|json|wxml|wxss)$/.test(file))
+for (const file of runtime) {
+  const source = fs.readFileSync(file, 'utf8')
+  for (const match of source.matchAll(/['"](\/assets\/[^'"\s]+\.(?:png|jpe?g|svg|webp))['"]/g)) assert(fs.existsSync('.' + match[1]), `${file}: missing ${match[1]}`)
+}
+const packageInfo = JSON.parse(fs.readFileSync('docs/quality-final-package.json', 'utf8').replace(/^\ufeff/, ''))
+assert(packageInfo.size.total < 1400000, 'last measured main package exceeds 1,400,000 bytes')
+assert(!fs.existsSync('preview/community-resource-fix-20260905.png'))
+console.log(`${media.length} media files under 200KB; runtime paths valid; recorded compiled package under 1,400,000 bytes`)

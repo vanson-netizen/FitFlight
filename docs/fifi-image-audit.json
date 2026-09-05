@@ -1,0 +1,71 @@
+﻿[
+    {
+        "source":  "背景图.png",
+        "sourceWidth":  1536,
+        "sourceHeight":  2560,
+        "sourceBytes":  3699080,
+        "sourceSha256":  "7C239A5B33EA6A20E717C600F8C5FC072421199CDD372E03768D5E0101E9A5F9",
+        "alphaBounds":  [
+                            0,
+                            0,
+                            1536,
+                            2560
+                        ],
+        "transparentPixels":  0,
+        "partialAlphaPixels":  0,
+        "file":  "fifi-background.jpg",
+        "width":  750,
+        "height":  1250,
+        "bytes":  83202,
+        "outputAlpha":  [
+                            0,
+                            0,
+                            750,
+                            1250,
+                            0,
+                            3996
+                        ]
+    },
+    {
+        "source":  "萨摩耶.png",
+        "sourceWidth":  2167,
+        "sourceHeight":  4266,
+        "sourceBytes":  361112,
+        "sourceSha256":  "03819765A11BD6F6B84FC1631D26276478675AD92BFD2E57974E2AF18CA13142",
+        "alphaBounds":  [
+                            554,
+                            1527,
+                            1100,
+                            1200
+                        ],
+        "transparentPixels":  8316782,
+        "partialAlphaPixels":  26237,
+        "file":  "samoyed.png",
+        "width":  500,
+        "height":  545,
+        "bytes":  84165,
+        "outputAlpha":  [
+                            3,
+                            3,
+                            492,
+                            539,
+                            85704,
+                            6103
+                        ]
+    },
+    {
+        "source":  "预览图.png",
+        "sourceWidth":  1536,
+        "sourceHeight":  2560,
+        "sourceBytes":  4280447,
+        "sourceSha256":  "37B6ED4A9E2FAAEF0CAE4D4D8B0495BC65527995D0DC33AA693701BB283DEC98",
+        "alphaBounds":  [
+                            0,
+                            0,
+                            1536,
+                            2560
+                        ],
+        "transparentPixels":  0,
+        "partialAlphaPixels":  0
+    }
+]

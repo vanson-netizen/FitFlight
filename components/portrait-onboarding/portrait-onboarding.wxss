@@ -1,0 +1,9 @@
+.onboarding-layer { position: fixed; z-index: 30; inset: 0; display: flex; align-items: center; justify-content: center; padding: 40rpx; box-sizing: border-box; }
+.onboarding-mask { position: absolute; inset: 0; background: rgba(25, 35, 28, .48); }
+.onboarding-card { position: relative; width: 100%; max-width: 640rpx; padding: 46rpx 38rpx 34rpx; border-radius: 30rpx; background: #fffefa; box-sizing: border-box; box-shadow: 0 20rpx 60rpx rgba(32, 45, 35, .2); }
+.onboarding-title { display: block; color: #28362d; font-size: 36rpx; font-weight: 700; text-align: center; }
+.onboarding-description { display: block; margin: 20rpx 0 34rpx; color: #68766d; font-size: 25rpx; line-height: 1.65; }
+.primary-button, .secondary-button { border-radius: 999rpx; font-size: 27rpx; font-weight: 600; }
+.primary-button { color: #35562b; background: #dff3b7; }
+.secondary-button { margin-top: 16rpx; color: #657269; background: transparent; }
+.primary-button::after, .secondary-button::after { border: 0; }

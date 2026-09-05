@@ -1,0 +1,18 @@
+<navigation-bar title="设置与隐私" back="{{true}}" color="#25352b" background="#dff3b7"></navigation-bar>
+<scroll-view class="settings-scroll" scroll-y="{{true}}" enhanced="{{true}}">
+  <view class="settings-page">
+    <text class="section-label">隐私与权限</text>
+    <view class="list-card">
+      <view class="list-item" role="button" bindtap="openPermissionSettings"><text>权限管理</text><text class="item-value">{{operation === 'permission' ? '打开中…' : '›'}}</text></view>
+      <view class="list-item" role="button" bindtap="openDataUsage"><text>数据使用说明</text><text class="item-value">›</text></view>
+      <view class="list-item" role="button" bindtap="confirmClearCache"><text>清除本地缓存</text><text class="item-value">{{operation === 'cache' ? '清除中…' : '›'}}</text></view>
+    </view>
+    <text class="section-label">关于</text>
+    <view class="list-card">
+      <view class="list-item" role="button" bindtap="openAbout"><text>关于 FitFlight</text><text class="item-value">›</text></view>
+      <view class="list-item"><text>当前版本</text><text class="item-value">v{{appVersion}}</text></view>
+    </view>
+    <text wx:if="{{errorMessage}}" class="error-message" role="alert">{{errorMessage}}</text>
+    <text class="cache-note">清除缓存不会删除用户画像、培养方案、打卡、FIFI 成长、健康记录、日志或其他云端数据。</text>
+  </view>
+</scroll-view>
